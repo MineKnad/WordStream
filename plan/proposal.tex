@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Visualization project proposal - Wordstream (Dang et al. 2019)}
+\author{Franz Ottisch (e12024717), Konrad Szegedy(e12024699) }
+\date{November 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Proposal (What we want to build)}
+We will build a fast, polished GitHub Pages website that makes topic evolution instantly understandable and visually engaging. The core is a WordStream view, flowing bands whose thickness encodes a theme’s strength per year, augmented with a subtle \textbf{sentiment tint} so viewers read what grew and how it felt at the same time. We add a dedicated \textbf{Sentiment tab} that summarizes yearly tone without cluttering the main view, and a prominent \textbf{“Word of the Year”} badge that surfaces the single most characteristic term for each year and lets users jump directly to that moment. A smooth \textbf{year slider with autoplay} animates the timeline with easing and responsive frame pacing; a \textbf{dataset switcher} swaps complete storylines in one click (VIS publications, Rotten Tomatoes reviews, and selected Reddit communities), and an \textbf{A/B side-by-side} mode compares two time ranges for a clear comparison. To improve the project even further, we include \textbf{one-click PNG export} of the current state and an \textbf{accessible color-blind palette} that preserves contrast and meaning across conditions. 
+
+
+\section*{Target Features}
+\begin{itemize}
+  \item \textbf{Sentiment tint on WordStream:} per-year color tint (blue$\rightarrow$positive, red$\rightarrow$negative) on each band.
+  \item \textbf{``Sentiment'' tab (mini view):} a compact separate view (e.g., yearly bars/cloud) to summarize tone without touching the main layout.
+  \item \textbf{``Most-important word'' badge per year:} a single word above each year that spiked the most; clickable to jump to that year.
+  \item \textbf{Dataset switcher (2--3 datasets):} swap VIS/Reviews/Reddit with one dropdown
+  \item \textbf{Year slider + autoplay:} animates the whole wordstream.
+  \item \textbf{A/B comparison (side-by-side):} two synchronized panels for two time ranges (e.g., 2014--2018 vs.\ 2019--2023).
+  \item \textbf{Export:} one-click PNG export
+   \item \textbf{color-blind palette:} toggle a palette that is friendly to color-vision deficiencies.
+\end{itemize}
+
+\section*{Datasets (specific and suitable)}
+We choose three sources with dates and meaningful text so that topic evolution and sentiment both make sense:
+\begin{itemize}
+  \item \textbf{VIS Publication Metadata (vispubdata):} titles and abstracts by year. We selected this dataset because it fits nicely to the visualization course.
+  \item \textbf{Rotten Tomatoes Reviews (Kaggle):} many short reviews with dates and ratings, perfect for the Sentiment tab and the tinted overlay.
+  \item \textbf{Reddit (r/wallstreetbets, r/news, r/politics):} posts from a selected few interesting subreddits. 
+\end{itemize}
+
+\section*{Our Approach}
+\paragraph{Offline} 
+A preprocessing Python script loads each dataset, removes obvious filler words, normalizes text, and groups items by year. 
+We form a set of themes, determine the top words per theme and year, compute a simple per-item sentiment score and average it per (theme, year), and write a JSON file: for each dataset, per-year band values, representative words, and an average sentiment number. 
+We also compute the ``most-important word'' per year by finding the strongest relative increase compared to the previous window.
+
+\paragraph{Online (browser)} 
+A minimal app draws the streams on HTML Canvas, places only a few large words inside each band, and uses clean tooltips for the rest. 
+The sentiment tint is just a color adjustment driven by the per-year average. 
+The dataset switcher changes which JSON is loaded. 
+The A/B view renders the same component twice with different time ranges; interactions are kept in sync. 
+Export uses the Canvas API; the color-blind palette is a predefined theme.
+
+
+
+
+\section*{Expected outcome}
+A public GitHub Pages site that opens fast, switches between datasets, makes sense at first glance, and allows quick comparisons and saving the current view. 
+
+\section*{Preferred Grading Allocation (40 pts)}
+We propose the following weighting to reflect our project’s emphasis on a polished, interactive web demo that reproduces the core WordStream idea while adding sentiment, comparison, and accessibility. This split stays within the provided min–max bounds and sums to \textbf{40} points.
+
+\begin{center}
+\begin{tabular}{l r}
+\hline
+\textbf{Criterion} & \textbf{Points} \\
+\hline
+Quality of algorithm as implemented in reference paper  & \textbf{6} \\
+Visual result & \textbf{6} \\
+Feature-richness  & \textbf{8} \\
+Generalizability  & \textbf{6} \\
+Performance & \textbf{8} \\
+Creativity concerning extensions of paper features  & \textbf{6} \\
+\hline
+\textbf{Total} & \textbf{40} \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Rationale} \emph{Feature--richness} and \emph{generalizability} are weighted more to highlight the dataset switcher, A/B comparison, sentiment tab, and reusability across VIS, Rotten Tomatoes, and Reddit. \emph{Performance} Receives a high score as we want to guarantee smooth animation and quick load times. The other points are weighed equally.
+
+\end{document}
+

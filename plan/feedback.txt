@@ -1,0 +1,34 @@
+Sentiment tab -> the group (Feedback on tuwel) was not well received, too basic and sentiment is red/blue -> quite confusing and has nothing to do with the original wordstream
+
+Add a bit more to it -> project can be interesting but needs to be sufficient
+
+Dataset we want to add is probably already there, find a very cool dataset 
+
+Sentiment Analysis -> maybe a happy score instead of "good/bad" or emotions or something else, more creative
+Important: Better way to do sentiment analysis
+Language Model in this regard -> maybe better, can this make sense?
+
+Individual panel between the word "war" for example, see how the sentiment has evolved
+common words, so importance 
+
+Wordstream -> are always about the given datasets, maybe give users the possibility to uploadtheir own documents
+Can this be done? How?
+
+Keep the solution clean and uncluttered
+
+#### Features
+
+Better Sentiment Analysis  -> ==focus on this==
+
+Quality of Live adjustments (color blind palette, png export)
+
+Animation 
+
+Make a Wordstream out of own documents, on the fly
+
+Basically sind das die Features:
+
+Better Sentiment Analysis  -> focus on this
+Quality of Live adjustments (color blind palette, png export)
+Animation 
+Make a Wordstream out of own documents, on the fly
