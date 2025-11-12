@@ -21,13 +21,16 @@ const ExportManager = {
         if (!menu) return;
 
         const buttonHTML = `
-            <div style="margin-top: 15px; display: flex; gap: 8px;">
-                <button id="exportPNGButton" class="export-btn export-btn-png" title="Export as PNG">
-                    📥 PNG Export
-                </button>
-                <button id="exportSVGButton" class="export-btn export-btn-svg" title="Export as SVG">
-                    📥 SVG Export
-                </button>
+            <div class="control-section">
+                <div class="control-section-title">💾 Export Visualization</div>
+                <div class="export-btn-container">
+                    <button id="exportPNGButton" class="export-btn-small" title="Export as PNG">
+                        📥 PNG
+                    </button>
+                    <button id="exportSVGButton" class="export-btn-small" title="Export as SVG">
+                        📥 SVG
+                    </button>
+                </div>
             </div>
         `;
 
@@ -45,67 +48,11 @@ const ExportManager = {
     },
 
     /**
-     * Add export button styles
+     * Add export button styles (now using control-panel.css)
      */
     addExportStyles: function() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .export-btn {
-                padding: 10px 15px;
-                border: 1px solid #ddd;
-                background: white;
-                color: #333;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 13px;
-                font-weight: 600;
-                transition: all 0.2s;
-                flex: 1;
-            }
-
-            .export-btn:hover {
-                background: #f5f5f5;
-                border-color: #4CAF50;
-                color: #4CAF50;
-                box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
-            }
-
-            .export-btn:active {
-                transform: scale(0.98);
-            }
-
-            .export-btn-png {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                border-color: #667eea;
-            }
-
-            .export-btn-png:hover {
-                background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
-                border-color: #5a67d8;
-                color: white;
-            }
-
-            .export-btn-svg {
-                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-                color: white;
-                border-color: #f093fb;
-            }
-
-            .export-btn-svg:hover {
-                background: linear-gradient(135deg, #e080ea 0%, #e2465c 100%);
-                border-color: #e080ea;
-                color: white;
-            }
-
-            @media (max-width: 600px) {
-                .export-btn {
-                    padding: 8px 12px;
-                    font-size: 12px;
-                }
-            }
-        `;
-        document.head.appendChild(style);
+        // Styles are now in control-panel.css, no inline styles needed
+        console.log('✓ Export styles loaded from control-panel.css');
     },
 
     /**

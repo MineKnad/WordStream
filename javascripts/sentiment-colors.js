@@ -87,9 +87,9 @@ const SentimentVisualization = {
         if (!menu) return;
 
         const paletteHTML = `
-            <div style="margin-top: 15px; padding: 10px; background: #f5f5f5; border-radius: 4px;">
-                <p style="margin: 0 0 8px 0; font-weight: 600; font-size: 13px;">Color Palette:</p>
-                <select id="paletteSelect" style="width: 100%; padding: 6px; border-radius: 3px; border: 1px solid #ddd;">
+            <div class="control-section palette-section">
+                <label>🎨 Color Palette:</label>
+                <select id="paletteSelect">
                     <option value="default">Standard Colors</option>
                     <option value="colorBlindProtan">Protanopia (Red-blind)</option>
                     <option value="colorBlindDeutan">Deuteranopia (Green-blind)</option>

@@ -27,35 +27,36 @@ const ABComparison = {
         if (!menu) return;
 
         const comparisonHTML = `
-            <div id="abComparisonSection" style="margin-top: 15px; padding: 15px; background: #f9f9f9; border-radius: 6px; border-left: 4px solid #667eea;">
+            <div id="abComparisonSection" class="control-section">
+                <div class="control-section-title">🔄 A/B Comparison</div>
                 <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; cursor: pointer;">
                     <input type="checkbox" id="enableABComparison">
-                    <span style="font-weight: 600; color: #333;">Enable A/B Comparison</span>
+                    <span style="font-weight: 600; color: #333; font-size: 13px;">Enable Side-by-Side View</span>
                 </label>
 
                 <div id="abControls" style="display: none;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
                         <div>
-                            <label style="font-size: 12px; font-weight: 600; color: #666; display: block; margin-bottom: 6px;">
-                                Period A (Left)
+                            <label style="font-size: 11px; font-weight: 600; color: #666; display: block; margin-bottom: 5px;">
+                                Period A
                             </label>
-                            <select id="periodASelect" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 12px;">
+                            <select id="periodASelect" style="width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
                                 <option value="">Select period</option>
                             </select>
                         </div>
 
                         <div>
-                            <label style="font-size: 12px; font-weight: 600; color: #666; display: block; margin-bottom: 6px;">
-                                Period B (Right)
+                            <label style="font-size: 11px; font-weight: 600; color: #666; display: block; margin-bottom: 5px;">
+                                Period B
                             </label>
-                            <select id="periodBSelect" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 12px;">
+                            <select id="periodBSelect" style="width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
                                 <option value="">Select period</option>
                             </select>
                         </div>
                     </div>
 
-                    <button id="applyABButton" style="width: 100%; padding: 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s;">
-                        Apply Comparison
+                    <button id="applyABButton" style="width: 100%; padding: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s;">
+                        Compare
                     </button>
 
                     <div style="margin-top: 10px; padding: 10px; background: #e3f2fd; border-radius: 4px; font-size: 12px; color: #1976d2; display: none;" id="comparisonInfo">
