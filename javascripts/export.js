@@ -17,24 +17,24 @@ const ExportManager = {
      * Add export button to UI
      */
     addExportButton: function() {
-        const menu = document.getElementById('menu');
-        if (!menu) return;
+        if (!BottomPanelManager.panelExists()) {
+            console.warn('Bottom panel not ready, retrying...');
+            setTimeout(() => this.addExportButton(), 100);
+            return;
+        }
 
         const buttonHTML = `
-            <div class="control-section">
-                <div class="control-section-title">💾 Export Visualization</div>
-                <div class="export-btn-container">
-                    <button id="exportPNGButton" class="export-btn-small" title="Export as PNG">
-                        📥 PNG
-                    </button>
-                    <button id="exportSVGButton" class="export-btn-small" title="Export as SVG">
-                        📥 SVG
-                    </button>
-                </div>
+            <div class="export-btn-container">
+                <button id="exportPNGButton" class="export-btn-small" title="Export as PNG">
+                    📥 PNG
+                </button>
+                <button id="exportSVGButton" class="export-btn-small" title="Export as SVG">
+                    📥 SVG
+                </button>
             </div>
         `;
 
-        menu.insertAdjacentHTML('beforeend', buttonHTML);
+        BottomPanelManager.addFeatureSection('💾 Export', buttonHTML, 'export-feature');
 
         // Add event listeners
         const pngBtn = document.getElementById('exportPNGButton');

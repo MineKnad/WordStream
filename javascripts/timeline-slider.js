@@ -26,41 +26,39 @@ const TimelineSlider = {
      * Create playback control UI
      */
     createPlayerControls: function() {
-        // Create control panel
+        if (!BottomPanelManager.panelExists()) {
+            console.warn('Bottom panel not ready, retrying...');
+            setTimeout(() => this.createPlayerControls(), 100);
+            return;
+        }
+
         const controlsHTML = `
-            <div class="control-section">
-                <div class="control-section-title">⏯️ Timeline Animation</div>
-                <div id="timelineControls" class="timeline-controls">
-                    <div class="player-buttons">
-                        <button id="playButton" class="player-btn play-btn" title="Play animation">
-                            <span class="play-icon">▶</span>
-                        </button>
-                        <button id="pauseButton" class="player-btn pause-btn" title="Pause animation" style="display:none;">
-                            <span class="pause-icon">⏸</span>
-                        </button>
-                        <button id="resetButton" class="player-btn reset-btn" title="Reset to start">
-                            <span class="reset-icon">⏮</span>
-                        </button>
-                    </div>
+            <div id="timelineControls" class="timeline-controls">
+                <div class="player-buttons">
+                    <button id="playButton" class="player-btn play-btn" title="Play animation">
+                        <span class="play-icon">▶</span>
+                    </button>
+                    <button id="pauseButton" class="player-btn pause-btn" title="Pause animation" style="display:none;">
+                        <span class="pause-icon">⏸</span>
+                    </button>
+                    <button id="resetButton" class="player-btn reset-btn" title="Reset to start">
+                        <span class="reset-icon">⏮</span>
+                    </button>
+                </div>
 
-                    <div class="speed-control">
-                        <label for="speedSlider">Speed:</label>
-                        <input type="range" id="speedSlider" min="0.5" max="3" step="0.5" value="1" title="Playback speed">
-                        <span id="speedLabel">1x</span>
-                    </div>
+                <div class="speed-control">
+                    <label for="speedSlider">Speed:</label>
+                    <input type="range" id="speedSlider" min="0.5" max="3" step="0.5" value="1" title="Playback speed">
+                    <span id="speedLabel">1x</span>
+                </div>
 
-                    <div class="current-period">
-                        <span id="currentPeriodLabel">—</span>
-                    </div>
+                <div class="current-period">
+                    <span id="currentPeriodLabel">—</span>
                 </div>
             </div>
         `;
 
-        // Insert controls into the menu
-        const menu = document.getElementById('menu');
-        if (menu) {
-            menu.insertAdjacentHTML('beforeend', controlsHTML);
-        }
+        BottomPanelManager.addFeatureSection('⏯️ Timeline Animation', controlsHTML, 'timeline-feature');
     },
 
     /**

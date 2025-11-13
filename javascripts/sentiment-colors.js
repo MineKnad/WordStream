@@ -83,23 +83,23 @@ const SentimentVisualization = {
      * Add color palette selector to UI
      */
     addColorPaletteToggle: function() {
-        const menu = document.getElementById('menu');
-        if (!menu) return;
+        if (!BottomPanelManager.panelExists()) {
+            console.warn('Bottom panel not ready, retrying...');
+            setTimeout(() => this.addColorPaletteToggle(), 100);
+            return;
+        }
 
         const paletteHTML = `
-            <div class="control-section palette-section">
-                <label>🎨 Color Palette:</label>
-                <select id="paletteSelect">
-                    <option value="default">Standard Colors</option>
-                    <option value="colorBlindProtan">Protanopia (Red-blind)</option>
-                    <option value="colorBlindDeutan">Deuteranopia (Green-blind)</option>
-                    <option value="colorBlindTritan">Tritanopia (Blue-yellow-blind)</option>
-                    <option value="grayscale">Grayscale</option>
-                </select>
-            </div>
+            <select id="paletteSelect">
+                <option value="default">Standard Colors</option>
+                <option value="colorBlindProtan">Protanopia (Red-blind)</option>
+                <option value="colorBlindDeutan">Deuteranopia (Green-blind)</option>
+                <option value="colorBlindTritan">Tritanopia (Blue-yellow-blind)</option>
+                <option value="grayscale">Grayscale</option>
+            </select>
         `;
 
-        menu.insertAdjacentHTML('beforeend', paletteHTML);
+        BottomPanelManager.addFeatureSection('🎨 Color Palette', paletteHTML, 'palette-feature');
 
         // Add event listener
         const select = document.getElementById('paletteSelect');

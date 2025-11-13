@@ -23,50 +23,39 @@ const ABComparison = {
      * Create A/B comparison interface
      */
     createComparisonUI: function() {
-        const menu = document.getElementById('menu');
-        if (!menu) return;
+        if (!BottomPanelManager.panelExists()) {
+            console.warn('Bottom panel not ready, retrying...');
+            setTimeout(() => this.createComparisonUI(), 100);
+            return;
+        }
 
         const comparisonHTML = `
-            <div id="abComparisonSection" class="control-section">
-                <div class="control-section-title">🔄 A/B Comparison</div>
-                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; cursor: pointer;">
+            <div id="abComparisonInner">
+                <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px; cursor: pointer;">
                     <input type="checkbox" id="enableABComparison">
-                    <span style="font-weight: 600; color: #333; font-size: 13px;">Enable Side-by-Side View</span>
+                    <span style="font-weight: 600; color: #333; font-size: 12px;">Enable</span>
                 </label>
 
                 <div id="abControls" style="display: none;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px;">
-                        <div>
-                            <label style="font-size: 11px; font-weight: 600; color: #666; display: block; margin-bottom: 5px;">
-                                Period A
-                            </label>
-                            <select id="periodASelect" style="width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
-                                <option value="">Select period</option>
-                            </select>
-                        </div>
+                    <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+                        <select id="periodASelect" style="padding: 5px 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
+                            <option value="">Period A</option>
+                        </select>
 
-                        <div>
-                            <label style="font-size: 11px; font-weight: 600; color: #666; display: block; margin-bottom: 5px;">
-                                Period B
-                            </label>
-                            <select id="periodBSelect" style="width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
-                                <option value="">Select period</option>
-                            </select>
-                        </div>
+                        <select id="periodBSelect" style="padding: 5px 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
+                            <option value="">Period B</option>
+                        </select>
+
+                        <button id="applyABButton" style="padding: 5px 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px;">
+                            Compare
+                        </button>
                     </div>
 
-                    <button id="applyABButton" style="width: 100%; padding: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.2s;">
-                        Compare
-                    </button>
-
-                    <div style="margin-top: 10px; padding: 10px; background: #e3f2fd; border-radius: 4px; font-size: 12px; color: #1976d2; display: none;" id="comparisonInfo">
-                        <strong>Note:</strong> Comparison view shows two periods side-by-side for direct comparison
-                    </div>
                 </div>
             </div>
         `;
 
-        menu.insertAdjacentHTML('beforeend', comparisonHTML);
+        BottomPanelManager.addFeatureSection('🔄 A/B Compare', comparisonHTML, 'ab-comparison-feature');
     },
 
     /**
