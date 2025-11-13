@@ -15,6 +15,9 @@ var fileName;
 
 var opacity, layerPath, maxFreq;
 
+// Store current data for redraw on palette change
+var currentDrawData = null;
+
 var axisGroup = svg.append('g').attr("id", "axisGroup");
 var xGridlinesGroup = svg.append('g').attr("id", "xGridlinesGroup");
 var mainGroup = svg.append('g').attr("id", "main");
@@ -104,6 +107,9 @@ function loadNewData(event) {
 }
 
 function draw(data) {
+    // Store data for redraw on color palette changes
+    currentDrawData = data;
+
     //Layout data
     var font = "Arial";
     var interpolation = "cardinal";
@@ -359,6 +365,10 @@ function draw(data) {
                     return d.fontSize;
                 },
                 "fill": function (d, i) {
+                    // Use sentiment color if available, otherwise use category color
+                    if (typeof SentimentVisualization !== 'undefined' && SentimentVisualization.getWordColor) {
+                        return SentimentVisualization.getWordColor(d, categories.indexOf(d.topic));
+                    }
                     return color(categories.indexOf(d.topic));
                 },
                 "fill-opacity": function (d) {
@@ -600,4 +610,48 @@ function styleGridlineNodes(gridlineNodes) {
         'stroke-width': 0.7,
         stroke: 'lightgray'
     });
+}
+
+/**
+ * Update word colors based on current palette
+ * Called when color palette changes without full redraw
+ */
+function updateWordColors() {
+    console.log('updateWordColors() called');
+    console.log('currentDrawData:', currentDrawData ? 'exists' : 'NULL');
+    console.log('SentimentVisualization:', typeof SentimentVisualization);
+    console.log('mainGroup:', mainGroup ? 'exists' : 'NULL');
+
+    if (!currentDrawData) {
+        console.warn('❌ currentDrawData is null or undefined');
+        return;
+    }
+
+    if (typeof SentimentVisualization === 'undefined') {
+        console.warn('❌ SentimentVisualization object not found');
+        return;
+    }
+
+    if (!mainGroup) {
+        console.warn('❌ mainGroup D3 selection not found');
+        return;
+    }
+
+    const textElements = mainGroup.selectAll('.textData');
+    console.log('Found .textData elements:', textElements.size());
+
+    if (textElements.size() === 0) {
+        console.warn('❌ No .textData elements found to update');
+        return;
+    }
+
+    let updateCount = 0;
+    textElements.attr('fill', function (d) {
+        const newColor = SentimentVisualization.getWordColor(d, categories.indexOf(d.topic));
+        updateCount++;
+        return newColor;
+    });
+
+    console.log(`✓ Word colors updated for ${updateCount} elements`);
+    console.log('New palette:', SentimentVisualization.currentPalette);
 }

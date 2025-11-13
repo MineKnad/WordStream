@@ -90,7 +90,7 @@ const SentimentVisualization = {
         }
 
         const paletteHTML = `
-            <select id="paletteSelect">
+            <select id="paletteSelect" style="padding: 5px 8px; border: 1px solid #ddd; border-radius: 3px; font-size: 12px; cursor: pointer;">
                 <option value="default">Standard Colors</option>
                 <option value="colorBlindProtan">Protanopia (Red-blind)</option>
                 <option value="colorBlindDeutan">Deuteranopia (Green-blind)</option>
@@ -101,27 +101,58 @@ const SentimentVisualization = {
 
         BottomPanelManager.addFeatureSection('🎨 Color Palette', paletteHTML, 'palette-feature');
 
-        // Add event listener
-        const select = document.getElementById('paletteSelect');
-        if (select) {
-            select.addEventListener('change', (e) => {
-                this.setPalette(e.target.value);
-            });
-        }
+        // Store reference to this for use in callback
+        const self = this;
+
+        // Delay to ensure element is in DOM - use longer delay for safety
+        setTimeout(() => {
+            const select = document.getElementById('paletteSelect');
+            if (select) {
+                console.log('✓ Palette select found and attaching listener');
+                console.log('Current palette:', self.currentPalette);
+
+                select.addEventListener('change', function(e) {
+                    const selectedValue = e.target.value;
+                    console.log('Palette select change event triggered, value:', selectedValue);
+                    console.log('SentimentVisualization object:', typeof SentimentVisualization);
+                    console.log('updateWordColors function:', typeof window.updateWordColors);
+
+                    self.setPalette(selectedValue);
+                });
+
+                // Test: Log that listener is attached
+                console.log('✓ Event listener attached to palette select');
+            } else {
+                console.warn('❌ Palette select not found in DOM');
+                console.log('Available elements:', document.querySelectorAll('select').length);
+            }
+        }, 100);
     },
 
     /**
-     * Set active color palette and redraw
+     * Set active color palette and update colors
      */
     setPalette: function(paletteName) {
+        console.log('setPalette called with:', paletteName);
+        console.log('Available palettes:', Object.keys(this.colorPalettes));
+
         if (paletteName in this.colorPalettes) {
             this.currentPalette = paletteName;
             console.log(`✓ Switched to palette: ${paletteName}`);
+            console.log('Updated currentPalette to:', this.currentPalette);
 
-            // Redraw visualization if available
-            if (typeof window.draw === 'function') {
-                window.draw(window.currentData);
+            // Update word colors with new palette
+            console.log('Attempting to call updateWordColors...');
+            console.log('typeof window.updateWordColors:', typeof window.updateWordColors);
+
+            if (typeof window.updateWordColors === 'function') {
+                console.log('✓ Calling updateWordColors');
+                window.updateWordColors();
+            } else {
+                console.warn('❌ updateWordColors is not a function');
             }
+        } else {
+            console.warn(`❌ Palette "${paletteName}" not found in colorPalettes`);
         }
     },
 
@@ -154,15 +185,15 @@ const SentimentVisualization = {
             }
         }
 
-        // Fallback: use default category color if no sentiment
-        // This maintains backward compatibility with existing data
-        const defaultColors = [
-            "#4285F4", // Blue for person
-            "#EA4335", // Red for location
-            "#FBBC04", // Yellow for organization
-            "#34A853"  // Green for miscellaneous
+        // Fallback: use palette-based category colors (responds to palette changes)
+        // Map the 4 categories to different palette colors
+        const categoryColorMapping = [
+            palette.positive,   // person -> positive/joy
+            palette.neutral,    // location -> neutral
+            palette.surprise,   // organization -> surprise
+            palette.negative    // miscellaneous -> negative
         ];
-        return defaultColors[topicIndex] || palette.neutral;
+        return categoryColorMapping[topicIndex] || palette.neutral;
     },
 
     /**
