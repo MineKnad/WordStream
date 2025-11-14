@@ -46,7 +46,7 @@ const ABComparison = {
                             <option value="">Period B</option>
                         </select>
 
-                        <button id="applyABButton" style="padding: 5px 10px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px;">
+                        <button id="applyABButton" style="padding: 5px 10px; background: #667eea; color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px;">
                             Compare
                         </button>
                     </div>
@@ -80,8 +80,11 @@ const ABComparison = {
         }
 
         // Listen for dataset changes
+        const self = this;
         window.addEventListener('dataLoaded', (e) => {
-            this.updatePeriodSelectors(e.detail?.periods || []);
+            console.log('✓ dataLoaded event received in A/B Compare');
+            console.log('Periods from event:', e.detail?.periods);
+            self.updatePeriodSelectors(e.detail?.periods || []);
         });
     },
 
@@ -89,6 +92,7 @@ const ABComparison = {
      * Update period selectors with available periods
      */
     updatePeriodSelectors: function(periods) {
+        console.log('updatePeriodSelectors called with periods:', periods);
         this.allPeriods = periods;
 
         const selects = [
@@ -96,8 +100,9 @@ const ABComparison = {
             document.getElementById('periodBSelect')
         ];
 
-        selects.forEach(select => {
+        selects.forEach((select, index) => {
             if (select) {
+                console.log(`Updating select ${index}:`, select.id);
                 const currentValue = select.value;
                 select.innerHTML = '<option value="">Select period</option>';
 
@@ -108,9 +113,13 @@ const ABComparison = {
                     select.appendChild(option);
                 });
 
+                console.log(`Select ${index} now has ${select.options.length} options`);
+
                 if (currentValue && periods.includes(currentValue)) {
                     select.value = currentValue;
                 }
+            } else {
+                console.warn(`Select ${index} not found in DOM`);
             }
         });
     },
@@ -138,8 +147,15 @@ const ABComparison = {
 
         console.log(`✓ A/B Comparison: "${periodA}" vs "${periodB}"`);
 
-        // Create comparison view
-        this.createComparisonView();
+        // Get data for each period from the global currentDrawData
+        const dataA = this.getPeriodData(periodA);
+        const dataB = this.getPeriodData(periodB);
+
+        console.log('Period A data:', dataA);
+        console.log('Period B data:', dataB);
+
+        // Create comparison view with data
+        this.createComparisonView(dataA, dataB);
 
         // Dispatch event
         window.dispatchEvent(new CustomEvent('abComparisonApplied', {
@@ -148,9 +164,24 @@ const ABComparison = {
     },
 
     /**
+     * Get data for a specific period
+     */
+    getPeriodData: function(periodName) {
+        if (typeof currentDrawData === 'undefined' || !currentDrawData) {
+            console.warn('currentDrawData not available');
+            return null;
+        }
+
+        // Find the data object for this period
+        const periodData = currentDrawData.find(d => d.date === periodName);
+        console.log(`Found data for period "${periodName}":`, periodData);
+        return periodData;
+    },
+
+    /**
      * Create side-by-side comparison view
      */
-    createComparisonView: function() {
+    createComparisonView: function(dataA, dataB) {
         // Hide original visualization
         const mainSvg = document.getElementById('mainsvg');
         if (mainSvg) {
@@ -170,21 +201,21 @@ const ABComparison = {
         container.style.gap = '20px';
         container.style.padding = '20px';
         container.style.marginTop = '60px';
+        container.style.marginLeft = '360px';
+        container.style.marginRight = '20px';
         container.innerHTML = `
             <div id="leftPanel" style="border: 2px solid #667eea; border-radius: 8px; padding: 15px;">
                 <h3 style="margin: 0 0 15px 0; color: #667eea;">
                     Period A: <strong>${this.leftPeriod}</strong>
                 </h3>
-                <svg id="leftSVG" width="100%" height="400"></svg>
-                <div id="leftStats" style="margin-top: 15px; padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
+                <div id="leftStats" style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
             </div>
 
             <div id="rightPanel" style="border: 2px solid #764ba2; border-radius: 8px; padding: 15px;">
                 <h3 style="margin: 0 0 15px 0; color: #764ba2;">
                     Period B: <strong>${this.rightPeriod}</strong>
                 </h3>
-                <svg id="rightSVG" width="100%" height="400"></svg>
-                <div id="rightStats" style="margin-top: 15px; padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
+                <div id="rightStats" style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
             </div>
 
             <button id="exitComparisonButton" style="
@@ -204,13 +235,31 @@ const ABComparison = {
             </button>
         `;
 
+        // Populate statistics for both periods
+        const leftStatsDiv = document.getElementById('leftStats');
+        const rightStatsDiv = document.getElementById('rightStats');
+
+        if (dataA) {
+            const statsA = this.generateComparisonStats(dataA);
+            if (leftStatsDiv) leftStatsDiv.innerHTML = statsA;
+        } else {
+            if (leftStatsDiv) leftStatsDiv.innerHTML = '<p>No data available for this period</p>';
+        }
+
+        if (dataB) {
+            const statsB = this.generateComparisonStats(dataB);
+            if (rightStatsDiv) rightStatsDiv.innerHTML = statsB;
+        } else {
+            if (rightStatsDiv) rightStatsDiv.innerHTML = '<p>No data available for this period</p>';
+        }
+
         // Add exit button listener
         const exitButton = document.getElementById('exitComparisonButton');
         if (exitButton) {
             exitButton.addEventListener('click', () => this.deactivateComparison());
         }
 
-        console.log('✓ A/B Comparison view created');
+        console.log('✓ A/B Comparison view created with stats');
     },
 
     /**

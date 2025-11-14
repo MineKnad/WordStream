@@ -110,6 +110,17 @@ function draw(data) {
     // Store data for redraw on color palette changes
     currentDrawData = data;
 
+    // Extract and dispatch periods for A/B Compare
+    if (data && data.length > 0) {
+        const periods = data.map(d => d.date);
+        console.log('✓ Extracted periods:', periods);
+
+        // Dispatch dataLoaded event with periods
+        window.dispatchEvent(new CustomEvent('dataLoaded', {
+            detail: { periods: periods }
+        }));
+    }
+
     //Layout data
     var font = "Arial";
     var interpolation = "cardinal";
