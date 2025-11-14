@@ -23,6 +23,9 @@ var xGridlinesGroup = svg.append('g').attr("id", "xGridlinesGroup");
 var mainGroup = svg.append('g').attr("id", "main");
 var legendGroup = svg.append('g').attr("id", "legend");
 
+// Store uploaded datasets in memory (MUST be before addDatasetsOptions)
+var uploadedDatasets = {};
+
 addDatasetsOptions();
 
 function addDatasetsOptions() {
@@ -35,9 +38,68 @@ function addDatasetsOptions() {
         el["data-image"] = "images2/datasetThumnails/" + fileList[i] + ".png";
         select.appendChild(el);
     }
+
+    // Load uploaded datasets from sessionStorage
+    loadUploadedDatasetsFromStorage();
+
     document.getElementById('datasetsSelect').value = initialDataset;  //************************************************
     fileName = document.getElementById("datasetsSelect").value;
     loadData();
+}
+
+/**
+ * Load uploaded datasets from sessionStorage and add to dropdown
+ */
+function loadUploadedDatasetsFromStorage() {
+    const select = document.getElementById("datasetsSelect");
+
+    // Check sessionStorage for uploaded datasets
+    try {
+        for (let key in sessionStorage) {
+            if (key.startsWith('dataset_')) {
+                try {
+                    const datasetName = key.replace('dataset_', '');
+                    const datasetData = JSON.parse(sessionStorage.getItem(key));
+
+                    // Store in memory
+                    uploadedDatasets[datasetName] = datasetData;
+
+                    // Check if option already exists
+                    const existing = select.querySelector(`option[value="${datasetName}"]`);
+                    if (!existing) {
+                        // Add to dropdown
+                        const option = document.createElement("option");
+                        option.textContent = datasetName + " (uploaded)";
+                        option.value = datasetName;
+                        option.setAttribute('data-uploaded', 'true');
+                        select.appendChild(option);
+
+                        console.log(`✓ Loaded uploaded dataset: ${datasetName}`);
+                    }
+                } catch (e) {
+                    console.warn(`Error loading dataset from storage: ${e}`);
+                }
+            }
+        }
+    } catch (e) {
+        console.warn(`Error reading sessionStorage: ${e}`);
+    }
+}
+
+/**
+ * Reload datasets (called when new dataset is uploaded)
+ */
+function reloadDatasets() {
+    const select = document.getElementById("datasetsSelect");
+
+    // Remove old uploaded options
+    const uploadedOptions = select.querySelectorAll('[data-uploaded="true"]');
+    uploadedOptions.forEach(opt => opt.remove());
+
+    // Reload from storage
+    loadUploadedDatasetsFromStorage();
+
+    console.log('✓ Datasets reloaded');
 }
 
 var spinner;
@@ -57,6 +119,35 @@ function loadData() {
     var target = document.getElementById('loadingSpinner');
     spinner = new Spinner(opts).spin(target);
     // END: loader spinner settings ****************************
+
+    // Check if it's an uploaded dataset
+    if (fileName in uploadedDatasets) {
+        console.log(`✓ Loading uploaded dataset: ${fileName}`);
+        const datasetData = uploadedDatasets[fileName];
+
+        try {
+            // Extract categories from the data
+            if (datasetData.metadata && datasetData.metadata.categories) {
+                categories = datasetData.metadata.categories;
+                console.log('Categories from uploaded data:', categories);
+            }
+
+            // Use the processed data directly
+            if (datasetData.data) {
+                globalData = datasetData.data;
+                draw(datasetData.data);
+                console.log('✓ Uploaded dataset visualized');
+            } else {
+                console.error('No data in uploaded dataset:', datasetData);
+            }
+        } catch (e) {
+            console.error('Error loading uploaded dataset:', e);
+        } finally {
+            spinner.stop();
+        }
+        return;
+    }
+
     fileName = "data/" + fileName + ".tsv"; // Add data folder path
     if (fileName.indexOf("Cards_Fries") >= 0) {
         categories = ["increases_activity", "decreases_activity"];
@@ -101,7 +192,8 @@ function loadNewData(event) {
     xGridlinesGroup.selectAll("*").remove();
     mainGroup.selectAll("*").remove();
 
-    fileName = this.options[this.selectedIndex].text;
+    // Use value instead of text to get the actual dataset name (works for both built-in and uploaded)
+    fileName = this.options[this.selectedIndex].value;
     document.getElementById("rel").checked = false;
     loadData();
 }

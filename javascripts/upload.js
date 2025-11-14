@@ -375,6 +375,18 @@ const UploadManager = {
             window.reloadDatasets();
         }
 
+        // Auto-select and display the uploaded dataset
+        const select = document.getElementById('datasetsSelect');
+        if (select) {
+            select.value = datasetName;
+            console.log(`✓ Selected uploaded dataset: ${datasetName}`);
+
+            // Trigger the change event to load the visualization
+            if (typeof window.loadNewData === 'function') {
+                window.loadNewData.call(select, new Event('change'));
+            }
+        }
+
         // Trigger event for other listeners
         window.dispatchEvent(new CustomEvent('datasetUploaded', {
             detail: { name: datasetName, data: data }

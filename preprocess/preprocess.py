@@ -303,12 +303,17 @@ class DataPreprocessor:
             output_data.append(period_data)
 
         # Build metadata
+        # Flatten category_by_word values (which are sets) into unique categories
+        all_categories = set()
+        for cat_set in category_by_word.values():
+            all_categories.update(cat_set)
+
         metadata = {
             "dataset_name": Path(filepath).stem,
             "total_documents": len(df),
             "total_periods": len(periods),
             "periods": periods,
-            "categories": list(set(category_by_word.values())),
+            "categories": list(all_categories),
             "total_unique_words": len(words_by_period[periods[-1]]) if periods else 0,
             "created": datetime.now().isoformat(),
             "sentiment_model": "happiness" if self.use_happiness else "emotion"
