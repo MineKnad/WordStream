@@ -102,6 +102,36 @@ function reloadDatasets() {
     console.log('✓ Datasets reloaded');
 }
 
+/**
+ * Clear all uploaded datasets
+ */
+function clearAllDatasets() {
+    const select = document.getElementById("datasetsSelect");
+
+    // Remove all uploaded options from dropdown
+    const uploadedOptions = select.querySelectorAll('[data-uploaded="true"]');
+    uploadedOptions.forEach(opt => opt.remove());
+
+    // Clear from sessionStorage
+    const keysToRemove = [];
+    for (let key in sessionStorage) {
+        if (key.startsWith('dataset_')) {
+            keysToRemove.push(key);
+        }
+    }
+    keysToRemove.forEach(key => sessionStorage.removeItem(key));
+
+    // Clear from memory
+    uploadedDatasets = {};
+
+    console.log('✓ All uploaded datasets cleared');
+
+    // Reset to initial dataset
+    select.value = initialDataset;
+    fileName = initialDataset;
+    loadData();
+}
+
 var spinner;
 
 function loadData() {
@@ -132,10 +162,33 @@ function loadData() {
                 console.log('Categories from uploaded data:', categories);
             }
 
-            // Use the processed data directly
+            // Use the processed data
             if (datasetData.data) {
-                globalData = datasetData.data;
-                draw(datasetData.data);
+                let uploadedData = datasetData.data;
+
+                // Extract the actual categories from the first period's words
+                if (uploadedData.length > 0 && uploadedData[0].words) {
+                    const actualCategories = Object.keys(uploadedData[0].words);
+                    categories = actualCategories;
+                    console.log('Extracted actual categories from data:', categories);
+                }
+
+                // Apply preprocessing like the built-in datasets do
+                console.log('Data before processSudden:', uploadedData.length, 'periods');
+                console.log('First period:', uploadedData[0]);
+
+                processSudden(uploadedData);
+                const processedData = getTop(JSON.parse(JSON.stringify(uploadedData)), categories, initTop);
+
+                console.log('Data after processing:', processedData.length, 'periods');
+                console.log('First period after processing:', processedData[0]);
+                console.log('Words in first period:', {
+                    total: Object.values(processedData[0].words).reduce((a, b) => a + b.length, 0),
+                    byCategory: Object.keys(processedData[0].words).map(cat => cat + ': ' + processedData[0].words[cat].length)
+                });
+
+                globalData = processedData;
+                draw(processedData);
                 console.log('✓ Uploaded dataset visualized');
             } else {
                 console.error('No data in uploaded dataset:', datasetData);
@@ -584,8 +637,20 @@ function draw(data) {
             var allTexts = mainGroup.selectAll('.textData').filter(t => {
                 return t && t.text === text && t.topic === topic;
             });
+
             //Select the data for the stream layers
-            var streamLayer = d3.select("path[topic='" + topic + "']")[0][0].__data__;
+            var pathElement = d3.select("path[topic='" + topic + "']");
+            if (!pathElement || !pathElement.node()) {
+                console.warn('Stream layer path not found for topic:', topic);
+                return;
+            }
+
+            var streamLayer = pathElement.datum();
+            if (!streamLayer) {
+                console.warn('No data bound to stream layer path');
+                return;
+            }
+
             //Push all points
             var points = Array();
             //Initialize all points

@@ -270,7 +270,7 @@ class DataPreprocessor:
 
         for period in periods:
             period_data = {
-                "period": period,
+                "date": period,
                 "words": defaultdict(list)
             }
 

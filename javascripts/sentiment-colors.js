@@ -165,6 +165,11 @@ const SentimentVisualization = {
     getWordColor: function(wordData, topicIndex) {
         const palette = this.colorPalettes[this.currentPalette];
 
+        // Debug: check if sentiment data exists
+        if (wordData.sentiment !== undefined && wordData.text === 'excellent') {
+            console.log('Word with sentiment:', {text: wordData.text, sentiment: wordData.sentiment, emotion: wordData.emotion});
+        }
+
         // If word has sentiment data, use sentiment-based color
         if (wordData.sentiment !== undefined) {
             const sentiment = parseFloat(wordData.sentiment);
@@ -186,12 +191,13 @@ const SentimentVisualization = {
         }
 
         // Fallback: use palette-based category colors (responds to palette changes)
-        // Map the 4 categories to different palette colors
+        // Map categories to different palette colors (supports both 4 and 5+ categories)
         const categoryColorMapping = [
-            palette.positive,   // person -> positive/joy
-            palette.neutral,    // location -> neutral
-            palette.surprise,   // organization -> surprise
-            palette.negative    // miscellaneous -> negative
+            palette.positive,   // 0: person/business -> positive/joy
+            palette.neutral,    // 1: location/service -> neutral
+            palette.surprise,   // 2: organization/tech -> surprise
+            palette.negative,   // 3: miscellaneous/complaint -> negative
+            palette.sadness     // 4: review -> sadness (for 5-category datasets)
         ];
         return categoryColorMapping[topicIndex] || palette.neutral;
     },

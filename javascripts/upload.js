@@ -13,6 +13,7 @@ const UploadManager = {
     init: function() {
         this.createUploadModal();
         this.attachEventListeners();
+        this.addClearDatasetsButton();
         console.log('✓ Upload Manager initialized');
     },
 
@@ -409,6 +410,45 @@ const UploadManager = {
         document.getElementById('columnMappingSection').style.display = 'none';
         document.getElementById('processingStatus').style.display = 'none';
         document.getElementById('uploadActions').style.display = 'none';
+    },
+
+    /**
+     * Add clear datasets button to bottom panel
+     */
+    addClearDatasetsButton: function() {
+        // Delay to ensure BottomPanelManager is initialized
+        setTimeout(() => {
+            if (!BottomPanelManager.panelExists()) {
+                console.warn('Bottom panel not ready, retrying...');
+                setTimeout(() => this.addClearDatasetsButton(), 100);
+                return;
+            }
+
+            const buttonHTML = `
+                <button id="clearDatasetsBtn" style="padding: 8px 16px; background-color: #d32f2f; color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; font-weight: 500;">
+                    🗑️ Clear All Datasets
+                </button>
+                <p style="font-size: 11px; color: #999; margin-top: 8px;">Remove all uploaded datasets</p>
+            `;
+
+            BottomPanelManager.addFeatureSection('📋 Dataset Management', buttonHTML, 'dataset-management-feature');
+
+            // Attach click handler
+            setTimeout(() => {
+                const clearBtn = document.getElementById('clearDatasetsBtn');
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', () => {
+                        if (confirm('Are you sure you want to delete all uploaded datasets?')) {
+                            if (typeof window.clearAllDatasets === 'function') {
+                                window.clearAllDatasets();
+                                alert('All uploaded datasets have been cleared.');
+                            }
+                        }
+                    });
+                    console.log('✓ Clear datasets button attached');
+                }
+            }, 100);
+        }, 100);
     }
 };
 
