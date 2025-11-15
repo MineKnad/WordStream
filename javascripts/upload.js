@@ -367,6 +367,15 @@ const UploadManager = {
     storeDataset: function(data, filename) {
         // Store in sessionStorage for current session
         const datasetName = filename.split('.')[0];
+
+        // Debug logging
+        console.log('storeDataset - Data structure:', {
+            hasData: !!data.data,
+            dataLength: data.data?.length,
+            firstItemKeys: data.data?.[0] ? Object.keys(data.data[0]) : 'no first item',
+            firstItem: data.data?.[0]
+        });
+
         sessionStorage.setItem(`dataset_${datasetName}`, JSON.stringify(data));
 
         console.log(`✓ Dataset stored: ${datasetName}`);

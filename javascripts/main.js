@@ -155,6 +155,14 @@ function loadData() {
         console.log(`✓ Loading uploaded dataset: ${fileName}`);
         const datasetData = uploadedDatasets[fileName];
 
+        // Debug: Check structure
+        console.log('Uploaded dataset structure:', {
+            hasMetadata: !!datasetData.metadata,
+            hasData: !!datasetData.data,
+            dataLength: datasetData.data?.length,
+            firstItemKeys: datasetData.data?.[0] ? Object.keys(datasetData.data[0]) : 'no data'
+        });
+
         try {
             // Extract categories from the data
             if (datasetData.metadata && datasetData.metadata.categories) {
@@ -171,6 +179,7 @@ function loadData() {
                     const actualCategories = Object.keys(uploadedData[0].words);
                     categories = actualCategories;
                     console.log('Extracted actual categories from data:', categories);
+                    console.log('First period date field:', uploadedData[0].date);
                 }
 
                 // Apply preprocessing like the built-in datasets do
@@ -257,13 +266,18 @@ function draw(data) {
 
     // Extract and dispatch periods for A/B Compare
     if (data && data.length > 0) {
+        console.log('Draw function - First data item:', JSON.stringify(data[0], null, 2));
         const periods = data.map(d => d.date);
         console.log('✓ Extracted periods:', periods);
+        console.log('Periods count:', periods.length);
+        console.log('Periods with details:', periods.map((p, i) => ({ index: i, period: p, type: typeof p, isEmpty: !p })));
 
         // Dispatch dataLoaded event with periods
         window.dispatchEvent(new CustomEvent('dataLoaded', {
             detail: { periods: periods }
         }));
+    } else {
+        console.warn('Draw function - No data or empty data array');
     }
 
     //Layout data
