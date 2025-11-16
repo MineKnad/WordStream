@@ -187,7 +187,11 @@ function loadData() {
                 console.log('First period:', uploadedData[0]);
 
                 processSudden(uploadedData);
-                const processedData = getTop(JSON.parse(JSON.stringify(uploadedData)), categories, initTop);
+
+                // Store in totalData so control panel features can access it
+                totalData = JSON.parse(JSON.stringify(uploadedData));
+
+                const processedData = getTop(JSON.parse(JSON.stringify(totalData)), categories, initTop);
 
                 console.log('Data after processing:', processedData.length, 'periods');
                 console.log('First period after processing:', processedData[0]);

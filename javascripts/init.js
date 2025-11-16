@@ -2,7 +2,7 @@ const initWidth = (window.innerWidth - 430) ? (window.innerWidth - 430) : 1250,
     initHeight = 660,
     initMinFont = 15,
     initMaxFont = 35,
-    initFlag = "none";// none / fa/ f / a
+    initFlag = "n";// n (none) / f (flow) / a (angle variance) / fa (both)
 
 var initTop = 15;
 
