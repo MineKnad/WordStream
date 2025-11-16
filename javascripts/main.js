@@ -745,26 +745,66 @@ function draw(data) {
 
         //Build the legends
         legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top + legendOffset) + ')');
-        var legendNodes = legendGroup.selectAll('g').data(boxes.topics).enter().append('g')
+
+        // Check if we have sentiment data
+        var hasSentimentData = false;
+        if (currentDrawData && currentDrawData.length > 0) {
+            var firstPeriod = currentDrawData[0];
+            if (firstPeriod.words) {
+                var firstCategory = Object.keys(firstPeriod.words)[0];
+                if (firstCategory && firstPeriod.words[firstCategory].length > 0) {
+                    var firstWord = firstPeriod.words[firstCategory][0];
+                    hasSentimentData = firstWord.sentiment !== undefined;
+                }
+            }
+        }
+
+        var legendData;
+        if (hasSentimentData) {
+            // Use sentiment-based legend with colors from current palette
+            var sentimentPalette = (typeof SentimentVisualization !== 'undefined')
+                ? SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette]
+                : { positive: '#2E7D32', neutral: '#757575', negative: '#F57C00' };
+
+            legendData = [
+                { label: 'Positive', color: sentimentPalette.positive || '#2E7D32' },
+                { label: 'Neutral', color: sentimentPalette.neutral || '#757575' },
+                { label: 'Negative', color: sentimentPalette.negative || '#F57C00' }
+            ];
+        } else {
+            // Use category-based legend
+            legendData = boxes.topics.map(function(topic, i) {
+                return { label: topic, color: color(i) };
+            });
+        }
+
+        var legendNodes = legendGroup.selectAll('g').data(legendData).enter().append('g')
             .attr('transform', function (d, i) {
                 return 'translate(' + 10 + ',' + (i * legendFontSize) + ')';
             });
         legendNodes.append('circle').attr({
             r: 5,
-            fill: function (d, i) {
-                return color(i);
+            fill: function (d) {
+                return d.color;
             },
             'fill-opacity': 1,
             stroke: 'black',
             'stroke-width': .5,
         });
         legendNodes.append('text').text(function (d) {
-            return d;
+            return d.label;
         }).attr({
             'font-size': legendFontSize,
             'alignment-baseline': 'middle',
             dx: 8
         });
+
+        // Update legend height calculation
+        var actualLegendHeight = legendData.length * legendFontSize;
+        if (actualLegendHeight !== legendHeight) {
+            legendHeight = actualLegendHeight;
+        }
+
         spinner.stop();
     };
 }
@@ -836,4 +876,32 @@ function updateWordColors() {
 
     console.log(`✓ Word colors updated for ${updateCount} elements`);
     console.log('New palette:', SentimentVisualization.currentPalette);
+
+    // Also update legend colors if using sentiment-based legend
+    var hasSentimentData = false;
+    if (currentDrawData && currentDrawData.length > 0) {
+        var firstPeriod = currentDrawData[0];
+        if (firstPeriod.words) {
+            var firstCategory = Object.keys(firstPeriod.words)[0];
+            if (firstCategory && firstPeriod.words[firstCategory].length > 0) {
+                var firstWord = firstPeriod.words[firstCategory][0];
+                hasSentimentData = firstWord.sentiment !== undefined;
+            }
+        }
+    }
+
+    if (hasSentimentData && legendGroup) {
+        var sentimentPalette = SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette];
+        var legendCircles = legendGroup.selectAll('circle');
+
+        legendCircles.attr('fill', function(d, i) {
+            // Map legend index to sentiment color
+            if (i === 0) return sentimentPalette.positive || '#2E7D32';
+            if (i === 1) return sentimentPalette.neutral || '#757575';
+            if (i === 2) return sentimentPalette.negative || '#F57C00';
+            return sentimentPalette.neutral || '#757575';
+        });
+
+        console.log('✓ Legend colors updated');
+    }
 }

@@ -165,26 +165,16 @@ const SentimentVisualization = {
     getWordColor: function(wordData, topicIndex) {
         const palette = this.colorPalettes[this.currentPalette];
 
-        // Debug: check if sentiment data exists
-        if (wordData.sentiment !== undefined && wordData.text === 'excellent') {
-            console.log('Word with sentiment:', {text: wordData.text, sentiment: wordData.sentiment, emotion: wordData.emotion});
-        }
-
-        // If word has sentiment data, use sentiment-based color
+        // If word has sentiment data, use sentiment score to determine color
+        // This ensures words with different sentiments get different colors
         if (wordData.sentiment !== undefined) {
             const sentiment = parseFloat(wordData.sentiment);
-            const emotion = wordData.emotion || 'neutral';
 
-            // Map emotion to color
-            if (emotion in palette) {
-                return palette[emotion];
-            }
-
-            // Fallback: map sentiment score to color
+            // Map sentiment score to color (primary determinant)
             if (sentiment > 0.3) {
-                return palette.positive;
+                return palette.positive || palette.joy;
             } else if (sentiment < -0.3) {
-                return palette.negative;
+                return palette.negative || palette.anger;
             } else {
                 return palette.neutral;
             }
