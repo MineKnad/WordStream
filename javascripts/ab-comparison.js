@@ -31,26 +31,18 @@ const ABComparison = {
 
         const comparisonHTML = `
             <div id="abComparisonInner">
-                <label style="display: flex; align-items: center; gap: 6px; margin-bottom: 8px; cursor: pointer;">
-                    <input type="checkbox" id="enableABComparison">
-                    <span style="font-weight: 600; color: #333; font-size: 12px;">Enable</span>
-                </label>
+                <div id="abControls" style="display: flex; gap: 6px; margin-bottom: 8px;">
+                    <select id="periodASelect" style="padding: 5px 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
+                        <option value="">Period A</option>
+                    </select>
 
-                <div id="abControls" style="display: none;">
-                    <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-                        <select id="periodASelect" style="padding: 5px 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
-                            <option value="">Period A</option>
-                        </select>
+                    <select id="periodBSelect" style="padding: 5px 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
+                        <option value="">Period B</option>
+                    </select>
 
-                        <select id="periodBSelect" style="padding: 5px 6px; border: 1px solid #ddd; border-radius: 3px; font-size: 11px;">
-                            <option value="">Period B</option>
-                        </select>
-
-                        <button id="applyABButton" style="padding: 5px 10px; background: #667eea; color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px;">
-                            Compare
-                        </button>
-                    </div>
-
+                    <button id="applyABButton" style="padding: 5px 10px; background: #667eea; color: white; border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-size: 11px;">
+                        Compare
+                    </button>
                 </div>
             </div>
         `;
@@ -122,6 +114,15 @@ const ABComparison = {
                 console.warn(`Select ${index} not found in DOM`);
             }
         });
+
+        // Auto-select first two periods if available
+        if (periods.length >= 2) {
+            const periodASelect = document.getElementById('periodASelect');
+            const periodBSelect = document.getElementById('periodBSelect');
+            if (periodASelect) periodASelect.value = periods[0];
+            if (periodBSelect) periodBSelect.value = periods[1];
+            console.log(`✓ Auto-selected periods: "${periods[0]}" vs "${periods[1]}"`);
+        }
     },
 
     /**
@@ -217,23 +218,27 @@ const ABComparison = {
                 </h3>
                 <div id="rightStats" style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
             </div>
-
-            <button id="exitComparisonButton" style="
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 10px 20px;
-                background: #f44336;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                z-index: 1000;
-                font-weight: 600;
-            ">
-                ✕ Exit Comparison
-            </button>
         `;
+
+        // Create exit button above the panels
+        const exitButton = document.createElement('button');
+        exitButton.id = 'exitComparisonButton';
+        exitButton.textContent = '✕ Exit Comparison';
+        exitButton.style.cssText = `
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-weight: 600;
+        `;
+        document.body.appendChild(exitButton);
 
         // Populate statistics for both periods
         const leftStatsDiv = document.getElementById('leftStats');
@@ -254,7 +259,6 @@ const ABComparison = {
         }
 
         // Add exit button listener
-        const exitButton = document.getElementById('exitComparisonButton');
         if (exitButton) {
             exitButton.addEventListener('click', () => this.deactivateComparison());
         }
@@ -332,6 +336,12 @@ const ABComparison = {
         const container = document.getElementById('abComparisonContainer');
         if (container) {
             container.style.display = 'none';
+        }
+
+        // Remove exit button
+        const exitButton = document.getElementById('exitComparisonButton');
+        if (exitButton) {
+            exitButton.remove();
         }
 
         // Uncheck checkbox

@@ -434,17 +434,21 @@ const UploadManager = {
             }
 
             const buttonHTML = `
-                <button id="clearDatasetsBtn" style="padding: 8px 16px; background-color: #d32f2f; color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; font-weight: 500;">
+                <button id="clearDatasetsBtn" style="padding: 8px 16px; background-color: #d32f2f; color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; font-weight: 500; width: 100%; margin-bottom: 8px;">
                     🗑️ Clear All Datasets
                 </button>
-                <p style="font-size: 11px; color: #999; margin-top: 8px;">Remove all uploaded datasets</p>
+                <button id="uploadDatasetsBtn" style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; font-weight: 500; width: 100%;">
+                    📤 Upload Dataset
+                </button>
             `;
 
             BottomPanelManager.addFeatureSection('📋 Dataset Management', buttonHTML, 'dataset-management-feature');
 
-            // Attach click handler
+            // Attach click handlers
             setTimeout(() => {
                 const clearBtn = document.getElementById('clearDatasetsBtn');
+                const uploadBtn = document.getElementById('uploadDatasetsBtn');
+
                 if (clearBtn) {
                     clearBtn.addEventListener('click', () => {
                         if (confirm('Are you sure you want to delete all uploaded datasets?')) {
@@ -455,6 +459,13 @@ const UploadManager = {
                         }
                     });
                     console.log('✓ Clear datasets button attached');
+                }
+
+                if (uploadBtn) {
+                    uploadBtn.addEventListener('click', () => {
+                        this.openModal();
+                    });
+                    console.log('✓ Upload datasets button attached');
                 }
             }, 100);
         }, 100);
