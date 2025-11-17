@@ -286,6 +286,14 @@ class DataPreprocessor:
                 # Get word color based on sentiment
                 color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment)
 
+                # Determine sentiment-based topic for visualization grouping
+                if avg_sentiment > 0.3:
+                    sentiment_topic = "Positive"
+                elif avg_sentiment < -0.3:
+                    sentiment_topic = "Negative"
+                else:
+                    sentiment_topic = "Neutral"
+
                 word_entry = {
                     "text": word,
                     "frequency": int(freq),
@@ -293,27 +301,27 @@ class DataPreprocessor:
                     "sentiment": float(avg_sentiment),
                     "emotion": emotion if emotion else "neutral",
                     "color": color,
+                    "topic": sentiment_topic,
                     "id": f"{word}_{primary_category}_{period.replace('-', '_')}"
                 }
 
-                period_data["words"][primary_category].append(word_entry)
+                # Group by sentiment topic for visualization
+                period_data["words"][sentiment_topic].append(word_entry)
 
             # Convert defaultdict to regular dict
             period_data["words"] = dict(period_data["words"])
             output_data.append(period_data)
 
         # Build metadata
-        # Flatten category_by_word values (which are sets) into unique categories
-        all_categories = set()
-        for cat_set in category_by_word.values():
-            all_categories.update(cat_set)
+        # For sentiment-based datasets, use sentiment categories
+        sentiment_categories = ["Positive", "Negative", "Neutral"]
 
         metadata = {
             "dataset_name": Path(filepath).stem,
             "total_documents": len(df),
             "total_periods": len(periods),
             "periods": periods,
-            "categories": list(all_categories),
+            "categories": sentiment_categories,
             "total_unique_words": len(words_by_period[periods[-1]]) if periods else 0,
             "created": datetime.now().isoformat(),
             "sentiment_model": "happiness" if self.use_happiness else "emotion"
