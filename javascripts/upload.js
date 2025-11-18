@@ -60,13 +60,6 @@ const UploadManager = {
                             </div>
 
                             <div class="form-group">
-                                <label for="categoryColumnSelect">Category Column (optional):</label>
-                                <select id="categoryColumnSelect" class="form-control">
-                                    <option value="">None (use default)</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="sentimentModelSelect">Sentiment Model:</label>
                                 <select id="sentimentModelSelect" class="form-control">
                                     <option value="emotion">Emotion Detection (recommended)</option>
@@ -221,10 +214,9 @@ const UploadManager = {
     populateColumnSelectors: function(columns) {
         const dateSelect = document.getElementById('dateColumnSelect');
         const textSelect = document.getElementById('textColumnSelect');
-        const categorySelect = document.getElementById('categoryColumnSelect');
 
         // Clear previous options
-        [dateSelect, textSelect, categorySelect].forEach(select => {
+        [dateSelect, textSelect].forEach(select => {
             const firstOption = select.querySelector('option:first-child');
             select.innerHTML = firstOption.outerHTML;
         });
@@ -237,17 +229,16 @@ const UploadManager = {
 
             dateSelect.appendChild(option.cloneNode(true));
             textSelect.appendChild(option.cloneNode(true));
-            categorySelect.appendChild(option.cloneNode(true));
         });
 
         // Auto-select common column names
-        this.autoSelectColumns(columns, dateSelect, textSelect, categorySelect);
+        this.autoSelectColumns(columns, dateSelect, textSelect);
     },
 
     /**
      * Auto-select columns based on common naming patterns
      */
-    autoSelectColumns: function(columns, dateSelect, textSelect, categorySelect) {
+    autoSelectColumns: function(columns, dateSelect, textSelect) {
         // Date column detection
         const datePatterns = ['date', 'time', 'timestamp', 'published', 'created', 'year', 'month'];
         for (let col of columns) {
@@ -262,15 +253,6 @@ const UploadManager = {
         for (let col of columns) {
             if (textPatterns.some(p => col.toLowerCase().includes(p))) {
                 textSelect.value = col;
-                break;
-            }
-        }
-
-        // Category column detection
-        const categoryPatterns = ['category', 'topic', 'type', 'class', 'author', 'source', 'tag'];
-        for (let col of columns) {
-            if (categoryPatterns.some(p => col.toLowerCase().includes(p))) {
-                categorySelect.value = col;
                 break;
             }
         }
@@ -292,7 +274,6 @@ const UploadManager = {
 
         const dateColumn = document.getElementById('dateColumnSelect').value;
         const textColumn = document.getElementById('textColumnSelect').value;
-        const categoryColumn = document.getElementById('categoryColumnSelect').value;
         const sentimentModel = document.getElementById('sentimentModelSelect').value;
 
         if (!dateColumn || !textColumn) {
@@ -314,9 +295,6 @@ const UploadManager = {
             formData.append('file', file);
             formData.append('date_column', dateColumn);
             formData.append('text_column', textColumn);
-            if (categoryColumn) {
-                formData.append('category_column', categoryColumn);
-            }
             formData.append('sentiment_model', sentimentModel);
 
             // Upload

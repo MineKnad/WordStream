@@ -177,7 +177,6 @@ class DataPreprocessor:
         filepath: str,
         date_column: str = 'date',
         text_column: str = 'text',
-        category_column: Optional[str] = None,
         output_format: str = 'emotion'  # 'emotion', 'sentiment', or 'happiness'
     ) -> Dict:
         """
@@ -187,7 +186,6 @@ class DataPreprocessor:
             filepath: Path to input file
             date_column: Name of date column
             text_column: Name of text column
-            category_column: Name of category/topic column (optional)
             output_format: Type of sentiment output
 
         Returns:
@@ -227,7 +225,6 @@ class DataPreprocessor:
         # Group data by period and category
         words_by_period = defaultdict(Counter)
         sentiment_by_word_period = defaultdict(lambda: defaultdict(list))
-        category_by_word = defaultdict(set)
 
         print("Processing documents...")
         for idx, row in df.iterrows():
@@ -239,7 +236,6 @@ class DataPreprocessor:
                 continue
 
             year, period = self.parse_date(row[date_column])
-            category = row[category_column] if category_column and category_column in df.columns else "general"
 
             # Extract words
             words = self.extract_words(text)
@@ -257,7 +253,6 @@ class DataPreprocessor:
             for word in words:
                 words_by_period[period][word] += 1
                 sentiment_by_word_period[period][word].append(sentiment_score)
-                category_by_word[word].add(category)
 
         # Compute sudden attention
         print("Computing sudden attention...")
@@ -279,10 +274,6 @@ class DataPreprocessor:
                 sentiment_scores = sentiment_by_word_period[period][word]
                 avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
 
-                # Get primary category (most common)
-                categories = category_by_word[word]
-                primary_category = list(categories)[0] if categories else "general"
-
                 # Get word color based on sentiment
                 color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment)
 
@@ -302,7 +293,7 @@ class DataPreprocessor:
                     "emotion": emotion if emotion else "neutral",
                     "color": color,
                     "topic": sentiment_topic,
-                    "id": f"{word}_{primary_category}_{period.replace('-', '_')}"
+                    "id": f"{word}_{period.replace('-', '_')}"
                 }
 
                 # Group by sentiment topic for visualization
