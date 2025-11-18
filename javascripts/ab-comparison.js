@@ -204,6 +204,7 @@ const ABComparison = {
         container.style.marginTop = '60px';
         container.style.marginLeft = '360px';
         container.style.marginRight = '20px';
+        container.style.position = 'relative';
         container.innerHTML = `
             <div id="leftPanel" style="border: 2px solid #667eea; border-radius: 8px; padding: 15px;">
                 <h3 style="margin: 0 0 15px 0; color: #667eea;">
@@ -220,13 +221,18 @@ const ABComparison = {
             </div>
         `;
 
-        // Create exit button above the panels
+        // Create exit button above the panels (remove existing one first)
+        const existingExitButton = document.getElementById('exitComparisonButton');
+        if (existingExitButton) {
+            existingExitButton.remove();
+        }
+
         const exitButton = document.createElement('button');
         exitButton.id = 'exitComparisonButton';
         exitButton.textContent = '✕ Exit Comparison';
         exitButton.style.cssText = `
-            position: fixed;
-            top: 80px;
+            position: absolute;
+            top: -45px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
@@ -238,7 +244,7 @@ const ABComparison = {
             z-index: 1000;
             font-weight: 600;
         `;
-        document.body.appendChild(exitButton);
+        container.appendChild(exitButton);
 
         // Populate statistics for both periods
         const leftStatsDiv = document.getElementById('leftStats');
@@ -342,17 +348,6 @@ const ABComparison = {
         const exitButton = document.getElementById('exitComparisonButton');
         if (exitButton) {
             exitButton.remove();
-        }
-
-        // Uncheck checkbox
-        const checkbox = document.getElementById('enableABComparison');
-        if (checkbox) {
-            checkbox.checked = false;
-        }
-
-        const controls = document.getElementById('abControls');
-        if (controls) {
-            controls.style.display = 'none';
         }
 
         console.log('✓ A/B Comparison deactivated');
