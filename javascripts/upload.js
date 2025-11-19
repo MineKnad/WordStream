@@ -60,10 +60,11 @@ const UploadManager = {
                             </div>
 
                             <div class="form-group">
-                                <label for="sentimentModelSelect">Sentiment Model:</label>
+                                <label for="sentimentModelSelect">Analysis Model:</label>
                                 <select id="sentimentModelSelect" class="form-control">
                                     <option value="emotion">Emotion Detection (recommended)</option>
                                     <option value="sentiment">Sentiment Analysis</option>
+                                    <option value="topic">Topic Detection</option>
                                     <option value="happiness">Happiness Score</option>
                                 </select>
                             </div>

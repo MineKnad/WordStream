@@ -17,7 +17,20 @@ const SentimentVisualization = {
             sadness: "#1565C0",       // Dark Blue
             anger: "#F57C00",         // Orange
             disgust: "#F57C00",       // Orange
-            negative: "#F57C00"       // Orange
+            negative: "#F57C00",      // Orange
+            // Topic colors
+            "Business": "#1F77B4",        // Blue
+            "Technology": "#FF7F0E",      // Orange
+            "Health": "#2CA02C",          // Green
+            "Politics": "#D62728",        // Red
+            "Sports": "#9467BD",          // Purple
+            "Entertainment": "#8C564B",   // Brown
+            "Science": "#E377C2",         // Pink
+            "Education": "#7F7F7F",       // Gray
+            "Finance": "#BCBD22",         // Yellow-green
+            "Travel": "#17BECF",          // Cyan
+            "Food": "#FFB6C1",            // Light pink
+            "Lifestyle": "#98D8C8"        // Mint
         },
         colorBlindProtan: {
             // For protanopia (red-blind)
@@ -29,7 +42,20 @@ const SentimentVisualization = {
             sadness: "#CC78BC",       // Purple
             anger: "#F0E442",         // Yellow
             disgust: "#F0E442",        // Yellow
-            negative: "#F0E442"       // Yellow
+            negative: "#F0E442",       // Yellow
+            // Topic colors
+            "Business": "#0173B2",
+            "Technology": "#29B09D",
+            "Health": "#CC78BC",
+            "Politics": "#F0E442",
+            "Sports": "#DE8F05",
+            "Entertainment": "#999999",
+            "Science": "#56B4E9",
+            "Education": "#E1BE6A",
+            "Finance": "#B35806",
+            "Travel": "#005F73",
+            "Food": "#CA9161",
+            "Lifestyle": "#AE2012"
         },
         colorBlindDeutan: {
             // For deuteranopia (green-blind)
@@ -41,7 +67,20 @@ const SentimentVisualization = {
             sadness: "#CC78BC",       // Purple
             anger: "#F0E442",         // Yellow
             disgust: "#F0E442",       // Yellow
-            negative: "#F0E442"       // Yellow
+            negative: "#F0E442",      // Yellow
+            // Topic colors
+            "Business": "#0173B2",
+            "Technology": "#D55E00",
+            "Health": "#CC78BC",
+            "Politics": "#F0E442",
+            "Sports": "#E08214",
+            "Entertainment": "#999999",
+            "Science": "#56B4E9",
+            "Education": "#B35806",
+            "Finance": "#8F2D56",
+            "Travel": "#457B9D",
+            "Food": "#E76F51",
+            "Lifestyle": "#2A9D8F"
         },
         colorBlindTritan: {
             // For tritanopia (blue-yellow-blind)
@@ -53,7 +92,20 @@ const SentimentVisualization = {
             sadness: "#56B4E9",       // Light Blue
             anger: "#D55E00",         // Red-orange
             disgust: "#D55E00",       // Red-orange
-            negative: "#D55E00"       // Red-orange
+            negative: "#D55E00",      // Red-orange
+            // Topic colors
+            "Business": "#0173B2",
+            "Technology": "#E69F00",
+            "Health": "#56B4E9",
+            "Politics": "#D55E00",
+            "Sports": "#CC79A7",
+            "Entertainment": "#999999",
+            "Science": "#F0E442",
+            "Education": "#A6761D",
+            "Finance": "#E1BE6A",
+            "Travel": "#40B0D0",
+            "Food": "#BA3C3C",
+            "Lifestyle": "#6C757D"
         },
         grayscale: {
             // Grayscale palette for accessibility
@@ -65,7 +117,20 @@ const SentimentVisualization = {
             sadness: "#AAAAAA",
             anger: "#CCCCCC",         // Light gray
             disgust: "#CCCCCC",
-            negative: "#CCCCCC"
+            negative: "#CCCCCC",
+            // Topic colors (grayscale variants)
+            "Business": "#1F1F1F",
+            "Technology": "#2D2D2D",
+            "Health": "#3A3A3A",
+            "Politics": "#474747",
+            "Sports": "#545454",
+            "Entertainment": "#616161",
+            "Science": "#6E6E6E",
+            "Education": "#7B7B7B",
+            "Finance": "#888888",
+            "Travel": "#959595",
+            "Food": "#A2A2A2",
+            "Lifestyle": "#AFAFAF"
         }
     },
 
@@ -157,13 +222,22 @@ const SentimentVisualization = {
     },
 
     /**
-     * Get color for a word based on sentiment
-     * @param {Object} wordData - Word object with sentiment properties
+     * Get color for a word based on sentiment or topic
+     * @param {Object} wordData - Word object with sentiment/topic properties
      * @param {number} topicIndex - Index of topic in categories array
      * @returns {string} Hex color code
      */
     getWordColor: function(wordData, topicIndex) {
         const palette = this.colorPalettes[this.currentPalette];
+
+        // Check if this is topic-based data (topic field indicates the category)
+        if (wordData.topic) {
+            const topic = wordData.topic;
+            // Try to get color directly from palette using topic name
+            if (palette[topic]) {
+                return palette[topic];
+            }
+        }
 
         // If word has sentiment data, use sentiment score to determine color
         // This ensures words with different sentiments get different colors

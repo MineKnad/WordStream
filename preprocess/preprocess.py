@@ -15,7 +15,7 @@ from pathlib import Path
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from sentiment_analyzer import SentimentAnalyzer, HappinessScorer
+from sentiment_analyzer import SentimentAnalyzer, HappinessScorer, TopicDetector
 
 # Download required NLTK data
 try:
@@ -37,12 +37,15 @@ class DataPreprocessor:
         Initialize preprocessor.
 
         Args:
-            sentiment_model: "emotion" or "sentiment"
+            sentiment_model: "emotion", "sentiment", "topic", or "happiness"
             use_happiness: If True, use happiness scoring instead of sentiment
         """
-        self.sentiment_analyzer = SentimentAnalyzer(model_type=sentiment_model)
+        self.model_type = sentiment_model
+        self.sentiment_analyzer = SentimentAnalyzer(model_type=sentiment_model) if sentiment_model != "topic" else None
+        self.topic_detector = TopicDetector() if sentiment_model == "topic" else None
         self.happiness_scorer = HappinessScorer() if use_happiness else None
         self.use_happiness = use_happiness
+        self.use_topics = sentiment_model == "topic"
         self.stopwords = set(stopwords.words('english'))
 
         # Expand stopwords with custom words
@@ -225,6 +228,7 @@ class DataPreprocessor:
         # Group data by period and category
         words_by_period = defaultdict(Counter)
         sentiment_by_word_period = defaultdict(lambda: defaultdict(list))
+        topic_by_word_period = defaultdict(lambda: defaultdict(list))
 
         print("Processing documents...")
         for idx, row in df.iterrows():
@@ -240,19 +244,28 @@ class DataPreprocessor:
             # Extract words
             words = self.extract_words(text)
 
-            # Sentiment analysis on full text
-            if self.use_happiness:
+            # Topic detection or sentiment analysis on full text
+            if self.use_topics:
+                topic_result = self.topic_detector.detect_topic(text)
+                primary_topic = topic_result["topic"]
+                sentiment_score = 0.0  # Topics don't have sentiment
+                emotion = "neutral"
+            elif self.use_happiness:
                 sentiment_score = self.happiness_scorer.score(text) / 100.0 * 2 - 1  # Scale to [-1, 1]
                 emotion = "neutral"
+                primary_topic = None
             else:
                 analysis = self.sentiment_analyzer.analyze_text(text)
                 sentiment_score = analysis["sentiment_score"]
                 emotion = analysis["emotion"]
+                primary_topic = None
 
             # Add words
             for word in words:
                 words_by_period[period][word] += 1
                 sentiment_by_word_period[period][word].append(sentiment_score)
+                if self.use_topics:
+                    topic_by_word_period[period][word].append(primary_topic)
 
         # Compute sudden attention
         print("Computing sudden attention...")
@@ -270,20 +283,33 @@ class DataPreprocessor:
             }
 
             for word, freq in words_by_period[period].items():
-                # Get word sentiment (average across documents)
-                sentiment_scores = sentiment_by_word_period[period][word]
-                avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
+                if self.use_topics:
+                    # Get primary topic for this word
+                    word_topics = topic_by_word_period[period][word]
+                    # Count most common topic
+                    from collections import Counter as CollCounter
+                    topic_counter = CollCounter(word_topics)
+                    primary_topic = topic_counter.most_common(1)[0][0] if topic_counter else "Uncategorized"
 
-                # Get word color based on sentiment
-                color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment)
-
-                # Determine sentiment-based topic for visualization grouping
-                if avg_sentiment > 0.3:
-                    sentiment_topic = "Positive"
-                elif avg_sentiment < -0.3:
-                    sentiment_topic = "Negative"
+                    avg_sentiment = 0.0
+                    color = self.topic_detector.get_color_for_topic(primary_topic)
+                    grouping_category = primary_topic
                 else:
-                    sentiment_topic = "Neutral"
+                    # Get word sentiment (average across documents)
+                    sentiment_scores = sentiment_by_word_period[period][word]
+                    avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
+                    primary_topic = "neutral"
+
+                    # Get word color based on sentiment
+                    color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment)
+
+                    # Determine sentiment-based topic for visualization grouping
+                    if avg_sentiment > 0.3:
+                        grouping_category = "Positive"
+                    elif avg_sentiment < -0.3:
+                        grouping_category = "Negative"
+                    else:
+                        grouping_category = "Neutral"
 
                 word_entry = {
                     "text": word,
@@ -292,30 +318,35 @@ class DataPreprocessor:
                     "sentiment": float(avg_sentiment),
                     "emotion": emotion if emotion else "neutral",
                     "color": color,
-                    "topic": sentiment_topic,
+                    "topic": grouping_category,
                     "id": f"{word}_{period.replace('-', '_')}"
                 }
 
-                # Group by sentiment topic for visualization
-                period_data["words"][sentiment_topic].append(word_entry)
+                # Group by topic (either detected topic or sentiment topic)
+                period_data["words"][grouping_category].append(word_entry)
 
             # Convert defaultdict to regular dict
             period_data["words"] = dict(period_data["words"])
             output_data.append(period_data)
 
         # Build metadata
-        # For sentiment-based datasets, use sentiment categories
-        sentiment_categories = ["Positive", "Negative", "Neutral"]
+        if self.use_topics:
+            categories = self.topic_detector.TOPICS
+            model_name = "topic"
+        else:
+            # For sentiment-based datasets, use sentiment categories
+            categories = ["Positive", "Negative", "Neutral"]
+            model_name = "happiness" if self.use_happiness else self.model_type
 
         metadata = {
             "dataset_name": Path(filepath).stem,
             "total_documents": len(df),
             "total_periods": len(periods),
             "periods": periods,
-            "categories": sentiment_categories,
+            "categories": categories,
             "total_unique_words": len(words_by_period[periods[-1]]) if periods else 0,
             "created": datetime.now().isoformat(),
-            "sentiment_model": "happiness" if self.use_happiness else "emotion"
+            "sentiment_model": model_name
         }
 
         return {

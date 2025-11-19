@@ -191,6 +191,109 @@ class SentimentAnalyzer:
             return "#F57C00"  # Orange (negative)
 
 
+class TopicDetector:
+    """
+    Zero-shot topic classification.
+    Automatically categorizes text into predefined topics.
+    """
+
+    def __init__(self):
+        """Initialize zero-shot classification model"""
+        try:
+            self.model = pipeline(
+                "zero-shot-classification",
+                model="facebook/bart-large-mnli",
+                device=0 if torch.cuda.is_available() else -1
+            )
+            self.device = "cuda" if torch.cuda.is_available() else "cpu"
+            print(f"✓ Loaded Topic Detector on {self.device}")
+        except Exception as e:
+            print(f"Warning: Could not load topic model: {e}")
+            self.model = None
+
+    # Predefined topics for classification
+    TOPICS = [
+        "Business", "Technology", "Health", "Politics",
+        "Sports", "Entertainment", "Science", "Education",
+        "Finance", "Travel", "Food", "Lifestyle"
+    ]
+
+    def detect_topic(self, text: str) -> Dict:
+        """
+        Detect the primary topic of a text.
+
+        Returns:
+            Dict with topic information:
+            {
+                "topic": str,  # primary topic
+                "topics_scores": {topic: score},  # all topics with scores
+                "confidence": float  # [0, 1]
+            }
+        """
+        if not text or len(text.strip()) < 3:
+            return {
+                "topic": "Uncategorized",
+                "topics_scores": {"Uncategorized": 1.0},
+                "confidence": 0.5
+            }
+
+        if self.model is None:
+            return {
+                "topic": "Uncategorized",
+                "topics_scores": {"Uncategorized": 1.0},
+                "confidence": 0.5
+            }
+
+        try:
+            # Truncate very long texts
+            text = text[:512] if len(text) > 512 else text
+
+            result = self.model(text, self.TOPICS, multi_class=False)
+
+            # result has: labels (sorted by score) and scores
+            topics_scores = {label: score for label, score in zip(result["labels"], result["scores"])}
+            primary_topic = result["labels"][0]
+            confidence = result["scores"][0]
+
+            return {
+                "topic": primary_topic,
+                "topics_scores": topics_scores,
+                "confidence": float(confidence)
+            }
+
+        except Exception as e:
+            print(f"Error detecting topic: {e}")
+            return {
+                "topic": "Uncategorized",
+                "topics_scores": {"Uncategorized": 1.0},
+                "confidence": 0.5
+            }
+
+    def get_color_for_topic(self, topic: str) -> str:
+        """
+        Map topic to color for visualization.
+
+        Returns:
+            Hex color string
+        """
+        topic_colors = {
+            "Business": "#1F77B4",        # Blue
+            "Technology": "#FF7F0E",      # Orange
+            "Health": "#2CA02C",          # Green
+            "Politics": "#D62728",        # Red
+            "Sports": "#9467BD",          # Purple
+            "Entertainment": "#8C564B",   # Brown
+            "Science": "#E377C2",         # Pink
+            "Education": "#7F7F7F",       # Gray
+            "Finance": "#BCBD22",         # Yellow-green
+            "Travel": "#17BECF",          # Cyan
+            "Food": "#FFB6C1",            # Light pink
+            "Lifestyle": "#98D8C8",       # Mint
+            "Uncategorized": "#757575"    # Gray
+        }
+        return topic_colors.get(topic, "#757575")
+
+
 class HappinessScorer:
     """
     Alternative to sentiment: score text on a "happiness" scale (0-100).

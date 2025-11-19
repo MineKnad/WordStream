@@ -60,10 +60,9 @@ def upload_file():
 
     Expected form data:
     - file: file to upload
-    - sentiment_model: "emotion" or "sentiment" (optional, default: "emotion")
+    - sentiment_model: "emotion", "sentiment", "topic", or "happiness" (optional, default: "emotion")
     - date_column: name of date column
     - text_column: name of text column
-    - category_column: name of category column (optional)
 
     Returns:
         JSON with processed data
@@ -86,7 +85,6 @@ def upload_file():
         sentiment_model = request.form.get('sentiment_model', 'emotion')
         date_column = request.form.get('date_column', 'date')
         text_column = request.form.get('text_column', 'text')
-        category_column = request.form.get('category_column', None)
 
         # Save uploaded file temporarily
         filename = secure_filename(file.filename)
@@ -102,7 +100,6 @@ def upload_file():
                 temp_path,
                 date_column=date_column,
                 text_column=text_column,
-                category_column=category_column,
                 output_format=sentiment_model
             )
 
@@ -136,8 +133,7 @@ def preprocess_dataset():
         "file_path": "path/to/file",
         "date_column": "date",
         "text_column": "text",
-        "category_column": "category",
-        "sentiment_model": "emotion"
+        "sentiment_model": "emotion" or "sentiment" or "topic" or "happiness"
     }
     """
     try:
@@ -153,7 +149,6 @@ def preprocess_dataset():
         # Get parameters
         date_column = data.get('date_column', 'date')
         text_column = data.get('text_column', 'text')
-        category_column = data.get('category_column', None)
         sentiment_model = data.get('sentiment_model', 'emotion')
 
         # Process
@@ -162,7 +157,6 @@ def preprocess_dataset():
             file_path,
             date_column=date_column,
             text_column=text_column,
-            category_column=category_column,
             output_format=sentiment_model
         )
 
@@ -184,12 +178,12 @@ def preprocess_dataset():
 @app.route('/api/analyze-text', methods=['POST'])
 def analyze_text():
     """
-    Analyze sentiment of a single text.
+    Analyze sentiment or topic of a single text.
 
     Expected JSON:
     {
         "text": "text to analyze",
-        "sentiment_model": "emotion"
+        "sentiment_model": "emotion", "sentiment", "topic", or "happiness"
     }
     """
     try:
@@ -202,7 +196,14 @@ def analyze_text():
         sentiment_model = data.get('sentiment_model', 'emotion')
 
         processor = get_preprocessor(sentiment_model)
-        result = processor.sentiment_analyzer.analyze_text(text)
+
+        # Handle topic detection vs sentiment analysis
+        if sentiment_model == "topic":
+            result = processor.topic_detector.detect_topic(text)
+        elif processor.sentiment_analyzer:
+            result = processor.sentiment_analyzer.analyze_text(text)
+        else:
+            return jsonify({"error": "Analyzer not available"}), 400
 
         return jsonify({
             "success": True,

@@ -750,21 +750,34 @@ function draw(data) {
         //Build the legends
         legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top + legendOffset) + ')');
 
-        // Check if we have sentiment data
-        var hasSentimentData = false;
-        if (currentDrawData && currentDrawData.length > 0) {
-            var firstPeriod = currentDrawData[0];
-            if (firstPeriod.words) {
-                var firstCategory = Object.keys(firstPeriod.words)[0];
-                if (firstCategory && firstPeriod.words[firstCategory].length > 0) {
-                    var firstWord = firstPeriod.words[firstCategory][0];
-                    hasSentimentData = firstWord.sentiment !== undefined;
-                }
-            }
+        // Determine if we're using sentiment categories or topics
+        var sentimentCategories = ['Positive', 'Negative', 'Neutral'];
+        var isTopicBased = false;
+        var legendData;
+
+        // Check what categories we actually have
+        if (boxes.topics && boxes.topics.length > 0) {
+            // Check if the first topic is a known sentiment category
+            isTopicBased = !sentimentCategories.includes(boxes.topics[0]);
         }
 
-        var legendData;
-        if (hasSentimentData) {
+        if (isTopicBased) {
+            // Use topic-based legend with topic colors
+            var palette = (typeof SentimentVisualization !== 'undefined')
+                ? SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette]
+                : {};
+
+            legendData = boxes.topics.map(function(topic) {
+                // Get color for topic from palette
+                var topicColor = palette[topic];
+                if (!topicColor) {
+                    // Fallback to D3 color scale if not in palette
+                    var topicIndex = boxes.topics.indexOf(topic);
+                    topicColor = color(topicIndex);
+                }
+                return { label: topic, color: topicColor };
+            });
+        } else {
             // Use sentiment-based legend with colors from current palette
             var sentimentPalette = (typeof SentimentVisualization !== 'undefined')
                 ? SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette]
@@ -775,11 +788,6 @@ function draw(data) {
                 { label: 'Neutral', color: sentimentPalette.neutral || '#757575' },
                 { label: 'Negative', color: sentimentPalette.negative || '#F57C00' }
             ];
-        } else {
-            // Use category-based legend
-            legendData = boxes.topics.map(function(topic, i) {
-                return { label: topic, color: color(i) };
-            });
         }
 
         var legendNodes = legendGroup.selectAll('g').data(legendData).enter().append('g')
