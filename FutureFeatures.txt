@@ -1,0 +1,18 @@
+Future Features:
+
+word of the year -> Irgendwo 1 wort anzeigen dass am häufigsten verwendet wurde
+
+animation???
+durch scrollen 12 monate auf einmal
+
+
+
+emotion detection -> so ähnlich wie topic detection nur für echte emotionen
+sentiment analysis -> emotion detection
+happiness score -> very unhappy
+
+
+Additionally:
+? Hover dass dir anzeigt was was macht bei den analysis model
+
+
