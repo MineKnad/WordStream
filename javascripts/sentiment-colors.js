@@ -18,6 +18,12 @@ const SentimentVisualization = {
             anger: "#F57C00",         // Orange
             disgust: "#D32F2F",       // Red
             negative: "#F57C00",      // Orange
+            // Happiness categories (5-level scale)
+            very_happy: "#2E7D32",    // Dark Green
+            happy: "#66BB6A",         // Light Green
+            fine: "#FBC02D",          // Yellow
+            unhappy: "#F57C00",       // Orange
+            very_unhappy: "#D32F2F",  // Red
             // Topic colors
             "Business": "#1F77B4",        // Blue
             "Technology": "#FF7F0E",      // Orange
@@ -43,6 +49,12 @@ const SentimentVisualization = {
             anger: "#F0E442",         // Yellow
             disgust: "#DE8F05",       // Dark Orange
             negative: "#F0E442",      // Yellow
+            // Happiness categories (5-level scale)
+            very_happy: "#0173B2",    // Blue
+            happy: "#29B09D",         // Teal
+            fine: "#E1BE6A",          // Light Yellow
+            unhappy: "#F0E442",       // Yellow
+            very_unhappy: "#DE8F05",  // Dark Orange
             // Topic colors
             "Business": "#0173B2",
             "Technology": "#29B09D",
@@ -68,6 +80,12 @@ const SentimentVisualization = {
             anger: "#F0E442",         // Yellow
             disgust: "#8F2D56",       // Purple-Red
             negative: "#F0E442",      // Yellow
+            // Happiness categories (5-level scale)
+            very_happy: "#0173B2",    // Blue
+            happy: "#D55E00",         // Orange
+            fine: "#E1BE6A",          // Light Yellow
+            unhappy: "#F0E442",       // Yellow
+            very_unhappy: "#8F2D56",  // Purple-Red
             // Topic colors
             "Business": "#0173B2",
             "Technology": "#D55E00",
@@ -93,6 +111,12 @@ const SentimentVisualization = {
             anger: "#D55E00",         // Red-orange
             disgust: "#CC79A7",       // Pink
             negative: "#D55E00",      // Red-orange
+            // Happiness categories (5-level scale)
+            very_happy: "#0173B2",    // Blue
+            happy: "#56B4E9",         // Light Blue
+            fine: "#E69F00",          // Orange
+            unhappy: "#D55E00",       // Red-orange
+            very_unhappy: "#CC79A7",  // Pink
             // Topic colors
             "Business": "#0173B2",
             "Technology": "#E69F00",
@@ -118,6 +142,12 @@ const SentimentVisualization = {
             anger: "#CCCCCC",         // Light gray
             disgust: "#999999",       // Medium-light gray
             negative: "#CCCCCC",
+            // Happiness categories (5-level scale - grayscale)
+            very_happy: "#2A2A2A",    // Very dark gray
+            happy: "#555555",         // Dark gray
+            fine: "#888888",          // Medium gray
+            unhappy: "#BBBBBB",       // Light gray
+            very_unhappy: "#EEEEEE",  // Very light gray
             // Topic colors (grayscale variants)
             "Business": "#1F1F1F",
             "Technology": "#2D2D2D",
@@ -235,6 +265,13 @@ const SentimentVisualization = {
         if (wordData.topic && emotions.includes(wordData.topic)) {
             const emotion = wordData.topic;
             return palette[emotion] || palette.neutral;
+        }
+
+        // Check if this is happiness-based data (topic field contains a happiness category)
+        const happiness_categories = ['very_happy', 'happy', 'fine', 'unhappy', 'very_unhappy'];
+        if (wordData.topic && happiness_categories.includes(wordData.topic)) {
+            const happiness = wordData.topic;
+            return palette[happiness] || palette.neutral;
         }
 
         // Check if this is topic-based data (topic field indicates the category)

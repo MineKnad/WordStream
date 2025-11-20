@@ -41,10 +41,15 @@ class DataPreprocessor:
             use_happiness: If True, use happiness scoring instead of sentiment
         """
         self.model_type = sentiment_model
-        self.sentiment_analyzer = SentimentAnalyzer(model_type=sentiment_model) if sentiment_model != "topic" else None
+
+        # Auto-enable happiness if model_type is "happiness"
+        if sentiment_model == "happiness":
+            use_happiness = True
+
+        self.sentiment_analyzer = SentimentAnalyzer(model_type=sentiment_model) if sentiment_model not in ["topic", "happiness"] else None
         self.topic_detector = TopicDetector() if sentiment_model == "topic" else None
-        self.happiness_scorer = HappinessScorer() if use_happiness else None
-        self.use_happiness = use_happiness
+        self.happiness_scorer = HappinessScorer() if use_happiness or sentiment_model == "happiness" else None
+        self.use_happiness = use_happiness or sentiment_model == "happiness"
         self.use_topics = sentiment_model == "topic"
         self.stopwords = set(stopwords.words('english'))
 
@@ -123,6 +128,25 @@ class DataPreprocessor:
         ]
 
         return list(set(words))  # Return unique words
+
+    def get_happiness_color(self, happiness_category: str) -> str:
+        """
+        Get color for happiness category.
+
+        Args:
+            happiness_category: One of "very_happy", "happy", "fine", "unhappy", "very_unhappy"
+
+        Returns:
+            Hex color string
+        """
+        happiness_colors = {
+            "very_happy": "#2E7D32",      # Dark Green
+            "happy": "#66BB6A",           # Light Green
+            "fine": "#FBC02D",            # Yellow
+            "unhappy": "#F57C00",         # Orange
+            "very_unhappy": "#D32F2F"     # Red
+        }
+        return happiness_colors.get(happiness_category, "#757575")  # Default to gray
 
     def parse_date(self, date_str) -> Tuple[int, str]:
         """
@@ -230,9 +254,11 @@ class DataPreprocessor:
         sentiment_by_word_period = defaultdict(lambda: defaultdict(list))
         topic_by_word_period = defaultdict(lambda: defaultdict(list))
         emotion_by_word_period = defaultdict(lambda: defaultdict(list))
+        happiness_by_word_period = defaultdict(lambda: defaultdict(list))
 
         print(f"Processing documents with model type: {self.model_type}...")
         emotion_counts = defaultdict(int)
+        happiness_counts = defaultdict(int)
 
         for idx, row in df.iterrows():
             if idx % 100 == 0:
@@ -247,16 +273,18 @@ class DataPreprocessor:
             # Extract words
             words = self.extract_words(text)
 
-            # Topic detection or sentiment analysis on full text
+            # Topic detection, happiness, or sentiment analysis on full text
             if self.use_topics:
                 topic_result = self.topic_detector.detect_topic(text)
                 primary_topic = topic_result["topic"]
                 sentiment_score = 0.0  # Topics don't have sentiment
                 emotion = "neutral"
             elif self.use_happiness:
-                sentiment_score = self.happiness_scorer.score(text) / 100.0 * 2 - 1  # Scale to [-1, 1]
-                emotion = "neutral"
+                happiness_category = self.happiness_scorer.categorize(text)
+                sentiment_score = self.happiness_scorer.score(text) / 100.0 * 2 - 1  # Scale to [-1, 1] for color mapping
+                emotion = happiness_category
                 primary_topic = None
+                happiness_counts[happiness_category] += 1
             else:
                 analysis = self.sentiment_analyzer.analyze_text(text)
                 sentiment_score = analysis["sentiment_score"]
@@ -271,8 +299,10 @@ class DataPreprocessor:
                 sentiment_by_word_period[period][word].append(sentiment_score)
                 if self.use_topics:
                     topic_by_word_period[period][word].append(primary_topic)
+                elif self.use_happiness:
+                    happiness_by_word_period[period][word].append(emotion)
                 else:
-                    # For non-topic models, store emotion for grouping
+                    # For emotion/sentiment models, store emotion for grouping
                     emotion_by_word_period[period][word].append(emotion)
 
         # Log emotion distribution if emotion model
@@ -280,6 +310,13 @@ class DataPreprocessor:
             print("\nEmotion Distribution in Dataset:")
             for emotion, count in sorted(emotion_counts.items(), key=lambda x: x[1], reverse=True):
                 print(f"  {emotion}: {count}")
+            print()
+
+        # Log happiness distribution if happiness model
+        if self.use_happiness and happiness_counts:
+            print("\nHappiness Distribution in Dataset:")
+            for happiness, count in sorted(happiness_counts.items(), key=lambda x: x[1], reverse=True):
+                print(f"  {happiness}: {count}")
             print()
 
         # Compute sudden attention
@@ -309,6 +346,20 @@ class DataPreprocessor:
                     avg_sentiment = 0.0
                     color = self.topic_detector.get_color_for_topic(primary_topic)
                     grouping_category = primary_topic
+                elif self.use_happiness:
+                    # For happiness model: group by happiness category
+                    word_happiness = happiness_by_word_period[period][word]
+                    from collections import Counter as CollCounter
+                    happiness_counter = CollCounter(word_happiness)
+                    primary_happiness = happiness_counter.most_common(1)[0][0] if happiness_counter else "fine"
+
+                    # Get word sentiment for averaging and coloring
+                    sentiment_scores = sentiment_by_word_period[period][word]
+                    avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
+
+                    # Get color based on happiness category
+                    color = self.get_happiness_color(primary_happiness)
+                    grouping_category = primary_happiness
                 elif self.model_type == "emotion":
                     # For emotion model: group by individual emotion
                     word_emotions = emotion_by_word_period[period][word]
@@ -355,22 +406,49 @@ class DataPreprocessor:
                 # Group by topic (either detected topic or sentiment topic)
                 period_data["words"][grouping_category].append(word_entry)
 
-            # Convert defaultdict to regular dict
-            period_data["words"] = dict(period_data["words"])
+            # Convert defaultdict to regular dict and sort by category order
+            words_dict = dict(period_data["words"])
+
+            # Sort categories in the correct order based on model type
+            if self.use_happiness:
+                # Sort happiness categories from happiest to saddest
+                happiness_order = ["very_happy", "happy", "fine", "unhappy", "very_unhappy"]
+                sorted_words = {cat: words_dict[cat] for cat in happiness_order if cat in words_dict}
+                period_data["words"] = sorted_words
+            elif self.model_type == "emotion":
+                # Sort emotions in a logical order
+                emotion_order = ["joy", "surprise", "neutral", "fear", "sadness", "disgust", "anger"]
+                sorted_words = {cat: words_dict[cat] for cat in emotion_order if cat in words_dict}
+                period_data["words"] = sorted_words
+            elif self.use_topics:
+                # Sort topics by the predefined TOPICS list order
+                topic_order = self.topic_detector.TOPICS
+                sorted_words = {cat: words_dict[cat] for cat in topic_order if cat in words_dict}
+                period_data["words"] = sorted_words
+            else:
+                # Sentiment model: Positive, Neutral, Negative
+                sentiment_order = ["Positive", "Neutral", "Negative"]
+                sorted_words = {cat: words_dict[cat] for cat in sentiment_order if cat in words_dict}
+                period_data["words"] = sorted_words
+
             output_data.append(period_data)
 
         # Build metadata
         if self.use_topics:
             categories = self.topic_detector.TOPICS
             model_name = "topic"
+        elif self.use_happiness:
+            # For happiness model, use 5 happiness categories
+            categories = ["very_happy", "happy", "fine", "unhappy", "very_unhappy"]
+            model_name = "happiness"
         elif self.model_type == "emotion":
             # For emotion model, use individual emotions (all 7 from the model)
             categories = ["joy", "surprise", "neutral", "fear", "sadness", "disgust", "anger"]
             model_name = "emotion"
         else:
-            # For sentiment model or happiness, use sentiment categories
+            # For sentiment model, use sentiment categories
             categories = ["Positive", "Negative", "Neutral"]
-            model_name = "happiness" if self.use_happiness else "sentiment"
+            model_name = "sentiment"
 
         metadata = {
             "dataset_name": Path(filepath).stem,

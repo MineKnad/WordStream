@@ -332,6 +332,26 @@ class HappinessScorer:
 
         return max(0, min(100, int(final_score)))
 
+    def categorize(self, text: str) -> str:
+        """
+        Categorize text into 5 happiness levels.
+
+        Returns:
+            One of: "very_unhappy", "unhappy", "fine", "happy", "very_happy"
+        """
+        happiness_score = self.score(text)
+
+        if happiness_score >= 81:
+            return "very_happy"
+        elif happiness_score >= 61:
+            return "happy"
+        elif happiness_score >= 41:
+            return "fine"
+        elif happiness_score >= 21:
+            return "unhappy"
+        else:
+            return "very_unhappy"
+
 
 if __name__ == "__main__":
     # Test the analyzers

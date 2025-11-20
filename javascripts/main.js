@@ -303,6 +303,27 @@ function draw(data) {
     const margins = {left: 20, top: 20, right: 10, bottom: 30};
     var width = globalWidth - (margins.left + margins.top);
     var height = globalHeight - (+margins.top + margins.bottom + axisPadding + legendHeight);
+
+    // Reorder data to match the correct category order before visualization
+    var categoryOrder = categories;  // Use the categories array
+    data.forEach(function(period) {
+        if (period.words) {
+            var reorderedWords = {};
+            categoryOrder.forEach(function(cat) {
+                if (period.words[cat]) {
+                    reorderedWords[cat] = period.words[cat];
+                }
+            });
+            // Add any categories that weren't in the expected order (edge case)
+            Object.keys(period.words).forEach(function(cat) {
+                if (!reorderedWords[cat]) {
+                    reorderedWords[cat] = period.words[cat];
+                }
+            });
+            period.words = reorderedWords;
+        }
+    });
+
     var ws = d3.layout.wordStream()
             .size([width, height])
             .fontScale(d3.scale.linear())
@@ -758,11 +779,13 @@ function draw(data) {
         //Build the legends
         legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top + legendOffset) + ')');
 
-        // Determine what type of categories we're using: sentiment, emotions, or topics
+        // Determine what type of categories we're using: sentiment, emotions, happiness, or topics
         var sentimentCategories = ['Positive', 'Negative', 'Neutral'];
         var emotionCategories = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'disgust', 'anger'];
+        var happinessCategories = ['very_happy', 'happy', 'fine', 'unhappy', 'very_unhappy'];
         var isTopicBased = false;
         var isEmotionBased = false;
+        var isHappinessBased = false;
         var legendData;
 
         // Check metadata first if available (more reliable than boxes.topics)
@@ -777,8 +800,11 @@ function draw(data) {
 
         // Check what categories we actually have
         if (categoriesToCheck && categoriesToCheck.length > 0) {
-            // Check if categories are emotions, topics, or sentiments
-            if (emotionCategories.some(e => categoriesToCheck.includes(e))) {
+            // Check if categories are emotions, happiness, topics, or sentiments
+            if (happinessCategories.some(h => categoriesToCheck.includes(h))) {
+                isHappinessBased = true;
+                console.log('Detected happiness-based data');
+            } else if (emotionCategories.some(e => categoriesToCheck.includes(e))) {
                 isEmotionBased = true;
                 console.log('Detected emotion-based data');
             } else if (!sentimentCategories.includes(categoriesToCheck[0])) {
@@ -826,6 +852,42 @@ function draw(data) {
             });
 
             console.log('Emotion legend data:', legendData);
+        } else if (isHappinessBased) {
+            // Use happiness-based legend with happiness colors
+            var happinessPalette = (typeof SentimentVisualization !== 'undefined')
+                ? SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette]
+                : { very_happy: '#2E7D32', happy: '#66BB6A', fine: '#FBC02D', unhappy: '#F57C00', very_unhappy: '#D32F2F' };
+
+            // For happiness-based data, only display happiness categories that actually exist in the data (boxes.topics)
+            var happinessToDisplay = boxes.topics || [];
+            if (!happinessToDisplay || happinessToDisplay.length === 0) {
+                happinessToDisplay = categoriesToCheck;
+            }
+
+            // Define the proper order for happiness categories (most happy to least happy)
+            var happinessOrder = ['very_happy', 'happy', 'fine', 'unhappy', 'very_unhappy'];
+
+            // Map happiness categories to colors, with readable labels
+            var happinessLabels = {
+                'very_happy': 'Very Happy',
+                'happy': 'Happy',
+                'fine': 'Fine',
+                'unhappy': 'Unhappy',
+                'very_unhappy': 'Very Unhappy'
+            };
+
+            // Sort happiness categories in the proper order
+            var sortedHappiness = happinessToDisplay.sort(function(a, b) {
+                return happinessOrder.indexOf(a) - happinessOrder.indexOf(b);
+            });
+
+            legendData = sortedHappiness.map(function(happiness) {
+                var happinessColor = happinessPalette[happiness];
+                var displayLabel = happinessLabels[happiness] || happiness;
+                return { label: displayLabel, color: happinessColor };
+            });
+
+            console.log('Happiness legend data:', legendData);
         } else {
             // Use sentiment-based legend with colors from current palette
             var sentimentPalette = (typeof SentimentVisualization !== 'undefined')
