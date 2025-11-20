@@ -229,8 +229,11 @@ class DataPreprocessor:
         words_by_period = defaultdict(Counter)
         sentiment_by_word_period = defaultdict(lambda: defaultdict(list))
         topic_by_word_period = defaultdict(lambda: defaultdict(list))
+        emotion_by_word_period = defaultdict(lambda: defaultdict(list))
 
-        print("Processing documents...")
+        print(f"Processing documents with model type: {self.model_type}...")
+        emotion_counts = defaultdict(int)
+
         for idx, row in df.iterrows():
             if idx % 100 == 0:
                 print(f"  Processed {idx}/{len(df)} documents")
@@ -259,6 +262,8 @@ class DataPreprocessor:
                 sentiment_score = analysis["sentiment_score"]
                 emotion = analysis["emotion"]
                 primary_topic = None
+                if self.model_type == "emotion":
+                    emotion_counts[emotion] += 1
 
             # Add words
             for word in words:
@@ -266,6 +271,16 @@ class DataPreprocessor:
                 sentiment_by_word_period[period][word].append(sentiment_score)
                 if self.use_topics:
                     topic_by_word_period[period][word].append(primary_topic)
+                else:
+                    # For non-topic models, store emotion for grouping
+                    emotion_by_word_period[period][word].append(emotion)
+
+        # Log emotion distribution if emotion model
+        if self.model_type == "emotion" and emotion_counts:
+            print("\nEmotion Distribution in Dataset:")
+            for emotion, count in sorted(emotion_counts.items(), key=lambda x: x[1], reverse=True):
+                print(f"  {emotion}: {count}")
+            print()
 
         # Compute sudden attention
         print("Computing sudden attention...")
@@ -294,16 +309,31 @@ class DataPreprocessor:
                     avg_sentiment = 0.0
                     color = self.topic_detector.get_color_for_topic(primary_topic)
                     grouping_category = primary_topic
+                elif self.model_type == "emotion":
+                    # For emotion model: group by individual emotion
+                    word_emotions = emotion_by_word_period[period][word]
+                    from collections import Counter as CollCounter
+                    emotion_counter = CollCounter(word_emotions)
+                    primary_emotion = emotion_counter.most_common(1)[0][0] if emotion_counter else "neutral"
+
+                    # Get word sentiment for averaging
+                    sentiment_scores = sentiment_by_word_period[period][word]
+                    avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
+
+                    # Get color based on emotion
+                    color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment, primary_emotion)
+                    grouping_category = primary_emotion
                 else:
+                    # For sentiment model: group by sentiment category (Positive/Negative/Neutral)
                     # Get word sentiment (average across documents)
                     sentiment_scores = sentiment_by_word_period[period][word]
                     avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
-                    primary_topic = "neutral"
+                    primary_emotion = "neutral"
 
                     # Get word color based on sentiment
                     color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment)
 
-                    # Determine sentiment-based topic for visualization grouping
+                    # Determine sentiment-based category for visualization grouping
                     if avg_sentiment > 0.3:
                         grouping_category = "Positive"
                     elif avg_sentiment < -0.3:
@@ -333,10 +363,14 @@ class DataPreprocessor:
         if self.use_topics:
             categories = self.topic_detector.TOPICS
             model_name = "topic"
+        elif self.model_type == "emotion":
+            # For emotion model, use individual emotions (all 7 from the model)
+            categories = ["joy", "surprise", "neutral", "fear", "sadness", "disgust", "anger"]
+            model_name = "emotion"
         else:
-            # For sentiment-based datasets, use sentiment categories
+            # For sentiment model or happiness, use sentiment categories
             categories = ["Positive", "Negative", "Neutral"]
-            model_name = "happiness" if self.use_happiness else self.model_type
+            model_name = "happiness" if self.use_happiness else "sentiment"
 
         metadata = {
             "dataset_name": Path(filepath).stem,

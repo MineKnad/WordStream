@@ -16,7 +16,7 @@ const SentimentVisualization = {
             fear: "#1565C0",          // Dark Blue
             sadness: "#1565C0",       // Dark Blue
             anger: "#F57C00",         // Orange
-            disgust: "#F57C00",       // Orange
+            disgust: "#D32F2F",       // Red
             negative: "#F57C00",      // Orange
             // Topic colors
             "Business": "#1F77B4",        // Blue
@@ -41,8 +41,8 @@ const SentimentVisualization = {
             fear: "#CC78BC",          // Purple
             sadness: "#CC78BC",       // Purple
             anger: "#F0E442",         // Yellow
-            disgust: "#F0E442",        // Yellow
-            negative: "#F0E442",       // Yellow
+            disgust: "#DE8F05",       // Dark Orange
+            negative: "#F0E442",      // Yellow
             // Topic colors
             "Business": "#0173B2",
             "Technology": "#29B09D",
@@ -66,7 +66,7 @@ const SentimentVisualization = {
             fear: "#CC78BC",          // Purple
             sadness: "#CC78BC",       // Purple
             anger: "#F0E442",         // Yellow
-            disgust: "#F0E442",       // Yellow
+            disgust: "#8F2D56",       // Purple-Red
             negative: "#F0E442",      // Yellow
             // Topic colors
             "Business": "#0173B2",
@@ -91,7 +91,7 @@ const SentimentVisualization = {
             fear: "#56B4E9",          // Light Blue
             sadness: "#56B4E9",       // Light Blue
             anger: "#D55E00",         // Red-orange
-            disgust: "#D55E00",       // Red-orange
+            disgust: "#CC79A7",       // Pink
             negative: "#D55E00",      // Red-orange
             // Topic colors
             "Business": "#0173B2",
@@ -116,7 +116,7 @@ const SentimentVisualization = {
             fear: "#AAAAAA",
             sadness: "#AAAAAA",
             anger: "#CCCCCC",         // Light gray
-            disgust: "#CCCCCC",
+            disgust: "#999999",       // Medium-light gray
             negative: "#CCCCCC",
             // Topic colors (grayscale variants)
             "Business": "#1F1F1F",
@@ -222,13 +222,20 @@ const SentimentVisualization = {
     },
 
     /**
-     * Get color for a word based on sentiment or topic
-     * @param {Object} wordData - Word object with sentiment/topic properties
+     * Get color for a word based on emotion, sentiment, or topic
+     * @param {Object} wordData - Word object with emotion/sentiment/topic properties
      * @param {number} topicIndex - Index of topic in categories array
      * @returns {string} Hex color code
      */
     getWordColor: function(wordData, topicIndex) {
         const palette = this.colorPalettes[this.currentPalette];
+
+        // Check if this is emotion-based data (topic field contains an emotion)
+        const emotions = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'disgust', 'anger'];
+        if (wordData.topic && emotions.includes(wordData.topic)) {
+            const emotion = wordData.topic;
+            return palette[emotion] || palette.neutral;
+        }
 
         // Check if this is topic-based data (topic field indicates the category)
         if (wordData.topic) {
@@ -395,7 +402,7 @@ const SentimentVisualization = {
      */
     createSentimentLegend: function() {
         const palette = this.colorPalettes[this.currentPalette];
-        const emotions = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'anger'];
+        const emotions = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'disgust', 'anger'];
 
         let legend = '<div style="margin-top: 10px;"><strong>Sentiment Legend:</strong><br>';
         emotions.forEach(emotion => {

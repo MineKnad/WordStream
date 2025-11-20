@@ -18,6 +18,9 @@ var opacity, layerPath, maxFreq;
 // Store current data for redraw on palette change
 var currentDrawData = null;
 
+// Store metadata from uploaded datasets (for legend detection)
+var uploadedMetadata = null;
+
 var axisGroup = svg.append('g').attr("id", "axisGroup");
 var xGridlinesGroup = svg.append('g').attr("id", "xGridlinesGroup");
 var mainGroup = svg.append('g').attr("id", "main");
@@ -174,11 +177,12 @@ function loadData() {
             if (datasetData.data) {
                 let uploadedData = datasetData.data;
 
-                // Extract the actual categories from the first period's words
+                // Store metadata for legend detection
+                uploadedMetadata = datasetData.metadata;
+                console.log('Stored metadata:', uploadedMetadata);
+
+                // First period date field for debugging
                 if (uploadedData.length > 0 && uploadedData[0].words) {
-                    const actualCategories = Object.keys(uploadedData[0].words);
-                    categories = actualCategories;
-                    console.log('Extracted actual categories from data:', categories);
                     console.log('First period date field:', uploadedData[0].date);
                 }
 
@@ -213,6 +217,10 @@ function loadData() {
         }
         return;
     }
+
+    // Clear uploaded metadata when switching to built-in dataset
+    uploadedMetadata = null;
+    console.log('Cleared uploadedMetadata for built-in dataset');
 
     fileName = "data/" + fileName + ".tsv"; // Add data folder path
     if (fileName.indexOf("Cards_Fries") >= 0) {
@@ -750,15 +758,35 @@ function draw(data) {
         //Build the legends
         legendGroup.attr('transform', 'translate(' + margins.left + ',' + (height + margins.top + legendOffset) + ')');
 
-        // Determine if we're using sentiment categories or topics
+        // Determine what type of categories we're using: sentiment, emotions, or topics
         var sentimentCategories = ['Positive', 'Negative', 'Neutral'];
+        var emotionCategories = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'disgust', 'anger'];
         var isTopicBased = false;
+        var isEmotionBased = false;
         var legendData;
 
+        // Check metadata first if available (more reliable than boxes.topics)
+        var categoriesToCheck = null;
+        if (typeof uploadedMetadata !== 'undefined' && uploadedMetadata && uploadedMetadata.categories) {
+            categoriesToCheck = uploadedMetadata.categories;
+            console.log('Using metadata categories:', categoriesToCheck);
+        } else {
+            categoriesToCheck = boxes.topics;
+            console.log('Using boxes.topics:', categoriesToCheck);
+        }
+
         // Check what categories we actually have
-        if (boxes.topics && boxes.topics.length > 0) {
-            // Check if the first topic is a known sentiment category
-            isTopicBased = !sentimentCategories.includes(boxes.topics[0]);
+        if (categoriesToCheck && categoriesToCheck.length > 0) {
+            // Check if categories are emotions, topics, or sentiments
+            if (emotionCategories.some(e => categoriesToCheck.includes(e))) {
+                isEmotionBased = true;
+                console.log('Detected emotion-based data');
+            } else if (!sentimentCategories.includes(categoriesToCheck[0])) {
+                isTopicBased = true;
+                console.log('Detected topic-based data');
+            } else {
+                console.log('Detected sentiment-based data');
+            }
         }
 
         if (isTopicBased) {
@@ -777,6 +805,27 @@ function draw(data) {
                 }
                 return { label: topic, color: topicColor };
             });
+        } else if (isEmotionBased) {
+            // Use emotion-based legend with emotion colors
+            var emotionPalette = (typeof SentimentVisualization !== 'undefined')
+                ? SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette]
+                : { joy: '#2E7D32', surprise: '#42A5F5', neutral: '#757575', fear: '#1565C0', sadness: '#1565C0', disgust: '#D32F2F', anger: '#F57C00' };
+
+            // For emotion-based data, only display emotions that actually exist in the data (boxes.topics)
+            // Don't use metadata.categories which contains all possible emotions
+            var emotionsToDisplay = boxes.topics || [];
+            if (!emotionsToDisplay || emotionsToDisplay.length === 0) {
+                emotionsToDisplay = categoriesToCheck;
+            }
+
+            // Map emotions to colors, capitalizing labels for display
+            legendData = emotionsToDisplay.map(function(emotion) {
+                var emotionColor = emotionPalette[emotion];
+                var displayLabel = emotion.charAt(0).toUpperCase() + emotion.slice(1);
+                return { label: displayLabel, color: emotionColor };
+            });
+
+            console.log('Emotion legend data:', legendData);
         } else {
             // Use sentiment-based legend with colors from current palette
             var sentimentPalette = (typeof SentimentVisualization !== 'undefined')

@@ -31,8 +31,8 @@ class SentimentAnalyzer:
     def _initialize_models(self):
         """Load appropriate transformer models"""
         try:
-            if self.model_type == "emotion":
-                # Emotion detection model: maps to 6 emotions
+            if self.model_type == "emotion" or self.model_type == "sentiment":
+                # Both emotion detection and sentiment analysis use emotion model
                 self.model = pipeline(
                     "text-classification",
                     model="j-hartmann/emotion-english-distilroberta-base",
@@ -41,19 +41,12 @@ class SentimentAnalyzer:
                 self.emotion_labels = {
                     "sadness": -1.0,
                     "fear": -0.75,
+                    "disgust": -0.6,
                     "anger": -0.5,
                     "neutral": 0.0,
                     "surprise": 0.25,
                     "joy": 1.0
                 }
-
-            elif self.model_type == "sentiment":
-                # Advanced sentiment: pos/neu/neg with confidence scores
-                self.model = pipeline(
-                    "text-classification",
-                    model="roberta-large-mnli",
-                    device=0 if self.device == "cuda" else -1
-                )
 
             else:  # "advanced"
                 # Fine-grained sentiment (5 classes)
@@ -100,9 +93,9 @@ class SentimentAnalyzer:
             # Truncate very long texts to avoid memory issues
             text = text[:512] if len(text) > 512 else text
 
-            results = self.model(text, top_k=None if self.model_type == "emotion" else 1)
+            results = self.model(text, top_k=None if self.model_type in ["emotion", "sentiment"] else 1)
 
-            if self.model_type == "emotion":
+            if self.model_type in ["emotion", "sentiment"]:
                 # Results: [{"label": emotion, "score": confidence}]
                 emotion_dist = {r["label"]: r["score"] for r in results}
                 dominant_emotion = max(emotion_dist, key=emotion_dist.get)
