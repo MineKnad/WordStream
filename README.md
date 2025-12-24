@@ -13,6 +13,7 @@ python api_server.py
 -> new terminal
 venv\Scripts\activate
 python -m http.server 8080
+-> visit http://localhost:8080/
 ```
  <br>
  <br> 

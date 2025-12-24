@@ -260,6 +260,48 @@ const UploadManager = {
     },
 
     /**
+     * Update progress bar
+     */
+    updateProgress: function(percent, message) {
+        const progressFill = document.getElementById('progressFill');
+        const statusText = document.getElementById('statusText');
+
+        if (progressFill) {
+            progressFill.style.width = `${percent}%`;
+        }
+        if (statusText && message) {
+            statusText.textContent = message;
+            statusText.style.color = '#4CAF50';
+        }
+    },
+
+    /**
+     * Simulate processing progress (when server is working)
+     */
+    simulateProcessingProgress: function(startPercent, endPercent, duration, statusMessage) {
+        return new Promise((resolve) => {
+            const steps = 20;
+            const stepDuration = duration / steps;
+            const percentPerStep = (endPercent - startPercent) / steps;
+            let currentPercent = startPercent;
+            let step = 0;
+
+            const interval = setInterval(() => {
+                step++;
+                currentPercent += percentPerStep;
+
+                if (step >= steps) {
+                    clearInterval(interval);
+                    this.updateProgress(endPercent, statusMessage);
+                    resolve();
+                } else {
+                    this.updateProgress(currentPercent, statusMessage);
+                }
+            }, stepDuration);
+        });
+    },
+
+    /**
      * Process and upload dataset
      */
     async processDataset() {
@@ -288,7 +330,7 @@ const UploadManager = {
         document.getElementById('columnMappingSection').style.display = 'none';
         document.getElementById('uploadActions').style.display = 'none';
         document.getElementById('processingStatus').style.display = 'block';
-        document.getElementById('statusText').textContent = 'Uploading file...';
+        this.updateProgress(0, 'Preparing upload...');
 
         try {
             // Create FormData
@@ -298,24 +340,13 @@ const UploadManager = {
             formData.append('text_column', textColumn);
             formData.append('sentiment_model', sentimentModel);
 
-            // Upload
-            const response = await fetch(`${this.apiBaseUrl}/api/upload`, {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.error || 'Upload failed');
-            }
-
-            const result = await response.json();
+            // Upload with progress tracking
+            const result = await this.uploadWithProgress(formData, file.size);
 
             // Success!
             console.log('✓ Dataset processed successfully', result);
 
-            document.getElementById('statusText').textContent =
-                `✓ Processed ${result.data.metadata.total_documents} documents!`;
+            this.updateProgress(100, `✓ Processed ${result.data.metadata.total_documents} documents!`);
 
             // Store dataset
             this.storeDataset(result.data, file.name);
@@ -325,19 +356,83 @@ const UploadManager = {
 
         } catch (error) {
             console.error('Upload error:', error);
-            document.getElementById('statusText').textContent =
-                `✗ Error: ${error.message}`;
+            document.getElementById('statusText').textContent = `✗ Error: ${error.message}`;
             document.getElementById('statusText').style.color = '#d32f2f';
 
             setTimeout(() => {
                 document.getElementById('columnMappingSection').style.display = 'block';
                 document.getElementById('uploadActions').style.display = 'flex';
                 document.getElementById('processingStatus').style.display = 'none';
+                document.getElementById('progressFill').style.width = '0%';
             }, 3000);
 
         } finally {
             this.isProcessing = false;
         }
+    },
+
+    /**
+     * Upload file with progress tracking
+     */
+    uploadWithProgress: function(formData, fileSize) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+
+            // Track upload progress (file transfer)
+            xhr.upload.addEventListener('progress', (e) => {
+                if (e.lengthComputable) {
+                    // Upload is 0-30% of total progress
+                    const uploadPercent = (e.loaded / e.total) * 30;
+                    this.updateProgress(uploadPercent, `Uploading file... ${Math.round(uploadPercent)}%`);
+                }
+            });
+
+            // When upload completes, simulate processing phases
+            xhr.upload.addEventListener('load', async () => {
+                this.updateProgress(30, 'Upload complete, processing...');
+
+                // Simulate processing phases while waiting for server response
+                // These run in background while server processes
+                setTimeout(() => this.updateProgress(40, 'Extracting text...'), 200);
+                setTimeout(() => this.updateProgress(50, 'Cleaning data...'), 600);
+                setTimeout(() => this.updateProgress(60, 'Analyzing sentiment...'), 1200);
+                setTimeout(() => this.updateProgress(75, 'Calculating metrics...'), 2000);
+                setTimeout(() => this.updateProgress(85, 'Generating visualization data...'), 2800);
+                setTimeout(() => this.updateProgress(95, 'Finalizing...'), 3500);
+            });
+
+            // Handle completion
+            xhr.addEventListener('load', () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    try {
+                        const result = JSON.parse(xhr.responseText);
+                        resolve(result);
+                    } catch (e) {
+                        reject(new Error('Invalid response from server'));
+                    }
+                } else {
+                    try {
+                        const error = JSON.parse(xhr.responseText);
+                        reject(new Error(error.error || 'Upload failed'));
+                    } catch (e) {
+                        reject(new Error(`Upload failed with status ${xhr.status}`));
+                    }
+                }
+            });
+
+            // Handle errors
+            xhr.addEventListener('error', () => {
+                reject(new Error('Network error during upload'));
+            });
+
+            xhr.addEventListener('abort', () => {
+                reject(new Error('Upload cancelled'));
+            });
+
+            // Send request
+            xhr.open('POST', `${this.apiBaseUrl}/api/upload`);
+            xhr.send(formData);
+        });
     },
 
     /**
@@ -398,6 +493,17 @@ const UploadManager = {
         document.getElementById('columnMappingSection').style.display = 'none';
         document.getElementById('processingStatus').style.display = 'none';
         document.getElementById('uploadActions').style.display = 'none';
+
+        // Reset progress bar
+        const progressFill = document.getElementById('progressFill');
+        if (progressFill) {
+            progressFill.style.width = '0%';
+        }
+        const statusText = document.getElementById('statusText');
+        if (statusText) {
+            statusText.textContent = 'Processing...';
+            statusText.style.color = '#4CAF50';
+        }
     },
 
     /**
