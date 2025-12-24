@@ -2,6 +2,18 @@
 https://github.com/iDataVisualizationLab/WordStream
  <br>
  <br>
+### Quickstart:
+```
+python -m venv venv
+venv\Scripts\activate
+cd preprocess
+pip install -r requirements.txt
+python api_server.py
+
+-> new terminal
+venv\Scripts\activate
+python -m http.server 8080
+```
  <br>
  <br> 
  <br>
