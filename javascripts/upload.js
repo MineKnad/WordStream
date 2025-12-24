@@ -279,13 +279,16 @@ const UploadManager = {
 
     /**
      * Preview file and extract column names
+     * VERSION: 2024-12-24-v2 (Full JSON read)
      */
     previewFileColumns: function(file) {
         const reader = new FileReader();
 
         reader.onload = (e) => {
             try {
+                console.log('[UPLOAD v2024-12-24-v2] Processing file:', file.name, 'Size:', file.size, 'bytes');
                 const content = e.target.result;
+                console.log('[UPLOAD] Content loaded, length:', content.length, 'bytes');
                 let columns = [];
 
                 if (file.name.endsWith('.csv') || file.name.endsWith('.tsv')) {
@@ -313,8 +316,15 @@ const UploadManager = {
             }
         };
 
-        // Read only first part for performance
-        reader.readAsText(file.slice(0, 10000));
+        // Read only first part for performance (CSV/TSV)
+        // For JSON files, read the entire file to avoid parsing errors from truncation
+        if (file.name.endsWith('.json')) {
+            console.log('[UPLOAD] Reading ENTIRE JSON file (no slicing)');
+            reader.readAsText(file);  // Read entire JSON file
+        } else {
+            console.log('[UPLOAD] Reading first 10KB for preview (CSV/TSV)');
+            reader.readAsText(file.slice(0, 10000));  // Only preview for CSV/TSV
+        }
     },
 
     /**
