@@ -1,0 +1,196 @@
+/**
+ * Comparison Overlay Styles
+ * Small floating panel for A/B period comparison
+ */
+
+.comparison-overlay {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
+    background: white;
+    border: 2px solid #667EEA;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: slideInFromRight 0.3s ease-out;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.comparison-header {
+    background: #667EEA;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    user-select: none;
+}
+
+.comparison-title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.comparison-close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.comparison-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.comparison-body {
+    padding: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.comparison-period {
+    margin-bottom: 15px;
+}
+
+.comparison-period:last-child {
+    margin-bottom: 0;
+}
+
+.period-label {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid;
+}
+
+.period-a-label {
+    color: #667EEA;
+    border-bottom-color: #667EEA;
+}
+
+.period-b-label {
+    color: #667EEA;
+    border-bottom-color: #667EEA;
+}
+
+.period-stats {
+    font-size: 11px;
+    color: #333;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    align-items: center;
+}
+
+.stat-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #333;
+}
+
+.top-words-label {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #333;
+    display: block;
+}
+
+.top-word {
+    padding: 3px 0;
+    color: #555;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.word-freq {
+    color: #999;
+    font-size: 10px;
+}
+
+.comparison-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+    margin: 15px 0;
+}
+
+/* Scrollbar styling for comparison body */
+.comparison-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.comparison-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.comparison-body::-webkit-scrollbar-thumb {
+    background: #667EEA;
+    border-radius: 3px;
+}
+
+.comparison-body::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .comparison-overlay {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+    }
+}
+
+/* Animation for closing */
+.comparison-overlay.closing {
+    animation: slideOutToRight 0.3s ease-in forwards;
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}

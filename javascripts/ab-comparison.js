@@ -180,71 +180,39 @@ const ABComparison = {
     },
 
     /**
-     * Create side-by-side comparison view
+     * Create comparison overlay panel
      */
     createComparisonView: function(dataA, dataB) {
-        // Hide original visualization
-        const mainSvg = document.getElementById('mainsvg');
-        if (mainSvg) {
-            mainSvg.style.display = 'none';
-        }
+        // Keep original visualization visible
 
-        // Create comparison container
+        // Create comparison overlay container
         let container = document.getElementById('abComparisonContainer');
         if (!container) {
             container = document.createElement('div');
             container.id = 'abComparisonContainer';
-            document.body.insertBefore(container, mainSvg?.nextSibling);
+            container.className = 'comparison-overlay';
+            document.body.appendChild(container);
         }
 
-        container.style.display = 'grid';
-        container.style.gridTemplateColumns = '1fr 1fr';
-        container.style.gap = '20px';
-        container.style.padding = '20px';
-        container.style.marginTop = '60px';
-        container.style.marginLeft = '360px';
-        container.style.marginRight = '20px';
-        container.style.position = 'relative';
         container.innerHTML = `
-            <div id="leftPanel" style="border: 2px solid #667eea; border-radius: 8px; padding: 15px;">
-                <h3 style="margin: 0 0 15px 0; color: #667eea;">
-                    Period A: <strong>${this.leftPeriod}</strong>
-                </h3>
-                <div id="leftStats" style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
+            <div class="comparison-header">
+                <span class="comparison-title">📊 Period Comparison</span>
+                <button id="closeComparisonBtn" class="comparison-close-btn">✕</button>
             </div>
-
-            <div id="rightPanel" style="border: 2px solid #764ba2; border-radius: 8px; padding: 15px;">
-                <h3 style="margin: 0 0 15px 0; color: #764ba2;">
-                    Period B: <strong>${this.rightPeriod}</strong>
-                </h3>
-                <div id="rightStats" style="padding: 10px; background: #f5f5f5; border-radius: 4px; font-size: 12px;"></div>
+            <div class="comparison-body">
+                <div class="comparison-period">
+                    <div class="period-label period-a-label">Period A: <strong>${this.leftPeriod}</strong></div>
+                    <div id="leftStats" class="period-stats"></div>
+                </div>
+                <div class="comparison-divider"></div>
+                <div class="comparison-period">
+                    <div class="period-label period-b-label">Period B: <strong>${this.rightPeriod}</strong></div>
+                    <div id="rightStats" class="period-stats"></div>
+                </div>
             </div>
         `;
 
-        // Create exit button above the panels (remove existing one first)
-        const existingExitButton = document.getElementById('exitComparisonButton');
-        if (existingExitButton) {
-            existingExitButton.remove();
-        }
-
-        const exitButton = document.createElement('button');
-        exitButton.id = 'exitComparisonButton';
-        exitButton.textContent = '✕ Exit Comparison';
-        exitButton.style.cssText = `
-            position: absolute;
-            top: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background: #f44336;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            z-index: 1000;
-            font-weight: 600;
-        `;
-        container.appendChild(exitButton);
+        container.style.display = 'block';
 
         // Populate statistics for both periods
         const leftStatsDiv = document.getElementById('leftStats');
@@ -254,32 +222,75 @@ const ABComparison = {
             const statsA = this.generateComparisonStats(dataA);
             if (leftStatsDiv) leftStatsDiv.innerHTML = statsA;
         } else {
-            if (leftStatsDiv) leftStatsDiv.innerHTML = '<p>No data available for this period</p>';
+            if (leftStatsDiv) leftStatsDiv.innerHTML = '<p style="color: #999; font-size: 11px;">No data available</p>';
         }
 
         if (dataB) {
             const statsB = this.generateComparisonStats(dataB);
             if (rightStatsDiv) rightStatsDiv.innerHTML = statsB;
         } else {
-            if (rightStatsDiv) rightStatsDiv.innerHTML = '<p>No data available for this period</p>';
+            if (rightStatsDiv) rightStatsDiv.innerHTML = '<p style="color: #999; font-size: 11px;">No data available</p>';
         }
 
-        // Add exit button listener
-        if (exitButton) {
-            exitButton.addEventListener('click', () => this.deactivateComparison());
+        // Add close button listener
+        const closeBtn = document.getElementById('closeComparisonBtn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => this.deactivateComparison());
         }
 
-        console.log('✓ A/B Comparison view created with stats');
+        // Make draggable
+        this.makeDraggable(container);
+
+        console.log('✓ Comparison overlay panel created');
     },
 
     /**
-     * Generate comparison statistics
+     * Make overlay panel draggable
+     */
+    makeDraggable: function(element) {
+        const header = element.querySelector('.comparison-header');
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+
+        header.style.cursor = 'move';
+
+        header.addEventListener('mousedown', (e) => {
+            if (e.target.id === 'closeComparisonBtn') return;
+
+            isDragging = true;
+            initialX = e.clientX - element.offsetLeft;
+            initialY = e.clientY - element.offsetTop;
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+
+                element.style.left = currentX + 'px';
+                element.style.top = currentY + 'px';
+                element.style.right = 'auto';
+                element.style.bottom = 'auto';
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+    },
+
+    /**
+     * Generate comparison statistics (compact version)
      */
     generateComparisonStats: function(periodData) {
         let stats = '';
 
         if (!periodData || !periodData.words) {
-            return '<p>No data available</p>';
+            return '<p style="color: #999; font-size: 11px;">No data available</p>';
         }
 
         // Count words and frequency
@@ -305,10 +316,9 @@ const ABComparison = {
             avgSentiment /= sentimentCount;
         }
 
-        stats += `<strong>Statistics:</strong><br>`;
-        stats += `Total Words: ${totalWords}<br>`;
-        stats += `Total Mentions: ${totalFrequency}<br>`;
-        stats += `Avg. Sentiment: ${(avgSentiment * 100).toFixed(0)}%<br>`;
+        stats += `<div class="stat-row"><span class="stat-label">Words:</span> <span class="stat-value">${totalWords}</span></div>`;
+        stats += `<div class="stat-row"><span class="stat-label">Mentions:</span> <span class="stat-value">${totalFrequency}</span></div>`;
+        stats += `<div class="stat-row"><span class="stat-label">Sentiment:</span> <span class="stat-value">${(avgSentiment * 100).toFixed(0)}%</span></div>`;
 
         // Top 3 words
         const allWords = [];
@@ -318,39 +328,27 @@ const ABComparison = {
 
         allWords.sort((a, b) => (b.frequency || 0) - (a.frequency || 0));
 
-        stats += `<br><strong>Top Words:</strong><br>`;
-        allWords.slice(0, 3).forEach(word => {
-            stats += `• ${word.text} (${word.frequency || 0})<br>`;
+        stats += `<div class="stat-row top-words-label"><strong>Top Words:</strong></div>`;
+        allWords.slice(0, 3).forEach((word, index) => {
+            stats += `<div class="stat-row top-word">${index + 1}. ${word.text} <span class="word-freq">(${word.frequency || 0})</span></div>`;
         });
 
         return stats;
     },
 
     /**
-     * Deactivate comparison and show original view
+     * Deactivate comparison and hide overlay
      */
     deactivateComparison: function() {
         this.isActive = false;
 
-        // Show original visualization
-        const mainSvg = document.getElementById('mainsvg');
-        if (mainSvg) {
-            mainSvg.style.display = 'block';
-        }
-
-        // Hide comparison container
+        // Hide comparison overlay
         const container = document.getElementById('abComparisonContainer');
         if (container) {
             container.style.display = 'none';
         }
 
-        // Remove exit button
-        const exitButton = document.getElementById('exitComparisonButton');
-        if (exitButton) {
-            exitButton.remove();
-        }
-
-        console.log('✓ A/B Comparison deactivated');
+        console.log('✓ Comparison overlay closed');
     },
 
     /**
