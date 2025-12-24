@@ -60,7 +60,39 @@ const UploadManager = {
                             </div>
 
                             <div class="form-group">
-                                <label for="sentimentModelSelect">Analysis Model:</label>
+                                <label for="sentimentModelSelect" style="position: relative;">
+                                    Analysis Model:
+                                    <span class="help-icon" id="analysisModelHelp">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                                            <text x="8" y="11.5" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor">?</text>
+                                        </svg>
+                                    </span>
+
+                                    <!-- Tooltip for Analysis Models -->
+                                    <div id="analysisModelTooltip" class="model-tooltip" style="display:none;">
+                                        <div class="tooltip-header">Analysis Models Explained</div>
+                                        <div class="tooltip-content">
+                                            <div class="model-explanation">
+                                                <strong>Emotion Detection</strong> (recommended)
+                                                <p>Identifies 6 core emotions in your text: joy, sadness, anger, fear, surprise, and disgust. Best for understanding emotional content.</p>
+                                            </div>
+                                            <div class="model-explanation">
+                                                <strong>Sentiment Analysis</strong>
+                                                <p>Classifies text as positive, negative, or neutral. Simpler than emotion detection, good for overall mood tracking.</p>
+                                            </div>
+                                            <div class="model-explanation">
+                                                <strong>Topic Detection</strong>
+                                                <p>Categorizes text into 12 topics: Business, Technology, Health, Politics, Sports, Entertainment, Science, Education, Finance, Travel, Food, and Lifestyle.</p>
+                                            </div>
+                                            <div class="model-explanation">
+                                                <strong>Happiness Score</strong>
+                                                <p>Rates text on a 5-level happiness scale from very happy to very unhappy. Great for well-being analysis.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+
                                 <select id="sentimentModelSelect" class="form-control">
                                     <option value="emotion">Emotion Detection (recommended)</option>
                                     <option value="sentiment">Sentiment Analysis</option>
@@ -148,6 +180,82 @@ const UploadManager = {
         // Buttons
         if (processBtn) processBtn.addEventListener('click', () => this.processDataset());
         if (cancelBtn) cancelBtn.addEventListener('click', () => this.closeModal());
+
+        // Help icon tooltip - attach after modal is in DOM
+        setTimeout(() => {
+            const helpIcon = document.getElementById('analysisModelHelp');
+            const tooltip = document.getElementById('analysisModelTooltip');
+
+            console.log('Attaching tooltip listeners:', { helpIcon, tooltip });
+
+            if (helpIcon && tooltip) {
+                console.log('✓ Tooltip elements found, attaching events');
+
+                // Show tooltip on hover
+                helpIcon.addEventListener('mouseenter', () => {
+                    console.log('Help icon hovered');
+                    this.showTooltip(tooltip, helpIcon);
+                });
+
+                // Show tooltip on click (for mobile/accessibility)
+                helpIcon.addEventListener('click', (e) => {
+                    console.log('Help icon clicked');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.showTooltip(tooltip, helpIcon);
+                });
+
+                // Hide tooltip when mouse leaves the help icon
+                helpIcon.addEventListener('mouseleave', () => {
+                    console.log('Mouse left help icon');
+                    // Delay hiding to allow moving mouse to tooltip
+                    setTimeout(() => {
+                        if (!tooltip.matches(':hover') && !helpIcon.matches(':hover')) {
+                            this.hideTooltip(tooltip);
+                        }
+                    }, 100);
+                });
+
+                // Hide tooltip when mouse leaves the tooltip itself
+                tooltip.addEventListener('mouseleave', () => {
+                    console.log('Mouse left tooltip');
+                    setTimeout(() => {
+                        if (!tooltip.matches(':hover') && !helpIcon.matches(':hover')) {
+                            this.hideTooltip(tooltip);
+                        }
+                    }, 100);
+                });
+
+                // Keep tooltip visible when hovering over it
+                tooltip.addEventListener('mouseenter', () => {
+                    console.log('Mouse entered tooltip');
+                    tooltip.style.display = 'block';
+                });
+
+                console.log('✓ All tooltip event listeners attached');
+            } else {
+                console.error('✗ Tooltip elements not found:', { helpIcon, tooltip });
+            }
+        }, 100);
+    },
+
+    /**
+     * Show tooltip with proper positioning
+     */
+    showTooltip: function(tooltip, trigger) {
+        if (tooltip) {
+            tooltip.style.display = 'block';
+            console.log('Tooltip shown:', tooltip);
+        } else {
+            console.error('Tooltip element not found');
+        }
+    },
+
+    /**
+     * Hide tooltip
+     */
+    hideTooltip: function(tooltip) {
+        tooltip.style.display = 'none';
     },
 
     /**
@@ -503,6 +611,12 @@ const UploadManager = {
         if (statusText) {
             statusText.textContent = 'Processing...';
             statusText.style.color = '#4CAF50';
+        }
+
+        // Hide tooltip
+        const tooltip = document.getElementById('analysisModelTooltip');
+        if (tooltip) {
+            tooltip.style.display = 'none';
         }
     },
 
