@@ -1000,31 +1000,61 @@ function updateWordColors() {
     console.log(`✓ Word colors updated for ${updateCount} elements`);
     console.log('New palette:', SentimentVisualization.currentPalette);
 
-    // Also update legend colors if using sentiment-based legend
-    var hasSentimentData = false;
-    if (currentDrawData && currentDrawData.length > 0) {
-        var firstPeriod = currentDrawData[0];
-        if (firstPeriod.words) {
-            var firstCategory = Object.keys(firstPeriod.words)[0];
-            if (firstCategory && firstPeriod.words[firstCategory].length > 0) {
-                var firstWord = firstPeriod.words[firstCategory][0];
-                hasSentimentData = firstWord.sentiment !== undefined;
-            }
+    // Update legend colors using the data already bound to legend elements
+    if (legendGroup) {
+        var palette = SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette];
+        console.log('Updating legend with palette:', palette);
+
+        // Select legend items (the parent <g> elements that have data bound)
+        var legendItems = legendGroup.selectAll('g');
+        console.log('Found legend items:', legendItems.size());
+
+        if (legendItems.size() > 0) {
+            // Update circle fill colors using the bound data
+            legendItems.select('circle').attr('fill', function(d) {
+                console.log('Legend item data:', d);
+                if (!d || !d.label) {
+                    console.warn('No label found in legend data:', d);
+                    return palette.neutral || '#757575';
+                }
+
+                var label = d.label;
+                var labelLower = label.toLowerCase();
+
+                // Map label to palette color
+                // For sentiment labels
+                if (labelLower === 'positive') return palette.positive || '#2E7D32';
+                if (labelLower === 'neutral') return palette.neutral || '#757575';
+                if (labelLower === 'negative') return palette.negative || '#F57C00';
+
+                // For emotion labels (capitalize first letter for display, but palette uses lowercase)
+                var emotionKey = labelLower;
+                if (palette[emotionKey]) return palette[emotionKey];
+
+                // For happiness labels (with underscores)
+                var happinessMap = {
+                    'very happy': 'very_happy',
+                    'happy': 'happy',
+                    'fine': 'fine',
+                    'unhappy': 'unhappy',
+                    'very unhappy': 'very_unhappy'
+                };
+                var happinessKey = happinessMap[labelLower];
+                if (happinessKey && palette[happinessKey]) return palette[happinessKey];
+
+                // For topic-based labels - try direct lookup
+                if (palette[label]) return palette[label];
+
+                // Fallback
+                console.warn('No color found for label:', label);
+                return palette.neutral || '#757575';
+            });
+
+            console.log('✓ Legend colors updated using bound data');
+        } else {
+            console.warn('No legend items found to update');
         }
-    }
-
-    if (hasSentimentData && legendGroup) {
-        var sentimentPalette = SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette];
-        var legendCircles = legendGroup.selectAll('circle');
-
-        legendCircles.attr('fill', function(d, i) {
-            // Map legend index to sentiment color
-            if (i === 0) return sentimentPalette.positive || '#2E7D32';
-            if (i === 1) return sentimentPalette.neutral || '#757575';
-            if (i === 2) return sentimentPalette.negative || '#F57C00';
-            return sentimentPalette.neutral || '#757575';
-        });
-
-        console.log('✓ Legend colors updated');
+    } else {
+        console.warn('legendGroup not found');
     }
 }
