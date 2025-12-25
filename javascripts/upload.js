@@ -769,9 +769,6 @@ const UploadManager = {
             }
 
             const buttonHTML = `
-                <button id="clearDatasetsBtn" style="padding: 8px 16px; background-color: #d32f2f; color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; font-weight: 500; width: 100%; margin-bottom: 8px;">
-                    🗑️ Clear All Datasets
-                </button>
                 <button id="uploadDatasetsBtn" style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 3px; font-size: 12px; cursor: pointer; font-weight: 500; width: 100%;">
                     📤 Upload Dataset
                 </button>
@@ -779,22 +776,9 @@ const UploadManager = {
 
             BottomPanelManager.addFeatureSection('📋 Dataset Management', buttonHTML, 'dataset-management-feature');
 
-            // Attach click handlers
+            // Attach click handler
             setTimeout(() => {
-                const clearBtn = document.getElementById('clearDatasetsBtn');
                 const uploadBtn = document.getElementById('uploadDatasetsBtn');
-
-                if (clearBtn) {
-                    clearBtn.addEventListener('click', () => {
-                        if (confirm('Are you sure you want to delete all uploaded datasets?')) {
-                            if (typeof window.clearAllDatasets === 'function') {
-                                window.clearAllDatasets();
-                                alert('All uploaded datasets have been cleared.');
-                            }
-                        }
-                    });
-                    console.log('✓ Clear datasets button attached');
-                }
 
                 if (uploadBtn) {
                     uploadBtn.addEventListener('click', () => {
