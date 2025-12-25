@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Generate 3 large sample datasets for WordStream visualization
-Each dataset covers 2000-2025 with different themes and data types
+Each dataset covers 2000-2025 with RAW INPUT format (date + text)
+The preprocessing API will analyze the text and create the visualization data
 Target size: ~50MB each
 """
 
@@ -13,501 +14,403 @@ from collections import defaultdict
 # Seed for reproducibility
 random.seed(42)
 
-def generate_date_range(start_year=2000, end_year=2025, freq='Q'):
-    """Generate quarterly date strings from start_year to end_year"""
+def generate_dates(start_year=2000, end_year=2025, docs_per_quarter=200):
+    """Generate dates with multiple documents per quarter"""
     dates = []
     for year in range(start_year, end_year + 1):
-        if freq == 'Q':
-            for quarter in range(1, 5):
-                dates.append(f"{year}-Q{quarter}")
-        elif freq == 'M':
-            for month in range(1, 13):
-                dates.append(f"{year}-{month:02d}")
+        for quarter in range(1, 5):
+            # Generate dates within this quarter
+            quarter_start_month = (quarter - 1) * 3 + 1
+            for _ in range(docs_per_quarter):
+                month = quarter_start_month + random.randint(0, 2)
+                day = random.randint(1, 28)  # Safe for all months
+                dates.append(f"{year}-{month:02d}-{day:02d}")
     return dates
 
 
-# ============ DATASET 1: Technology Evolution with Emotions ============
+# ============ DATASET 1: Technology Evolution ============
 
 TECH_TERMS = {
     # Early 2000s
     'early': [
-        "dial-up internet", "MP3 players", "DVD technology", "Windows XP", "Napster",
-        "peer-to-peer sharing", "flip phones", "AOL Instant Messenger", "Palm Pilot",
-        "broadband adoption", "dot-com bubble", "Y2K solutions", "USB flash drives",
-        "WiFi networks", "blogging platforms", "digital cameras", "Java applications",
-        "search engines", "online auctions", "web portals", "Flash animations",
-        "instant messaging", "email spam", "firewall security", "antivirus software"
+        ("dial-up internet", "neutral"), ("MP3 players", "joy"), ("DVD technology", "joy"),
+        ("Windows XP", "joy"), ("Napster shutdown", "sadness"), ("peer-to-peer sharing", "surprise"),
+        ("flip phones", "neutral"), ("AOL Instant Messenger", "joy"), ("Palm Pilot", "neutral"),
+        ("broadband adoption", "joy"), ("dot-com bubble burst", "fear"), ("Y2K fears", "fear"),
+        ("USB flash drives", "joy"), ("WiFi networks", "surprise"), ("blogging platforms", "joy"),
+        ("digital cameras", "joy"), ("Java vulnerabilities", "fear"), ("search engines", "neutral"),
+        ("online auctions", "neutral"), ("Flash animations", "joy"), ("spam emails", "disgust"),
+        ("instant messaging", "joy"), ("email viruses", "fear"), ("firewall security", "neutral"),
+        ("antivirus software", "neutral")
     ],
     # Mid 2000s
     'mid': [
-        "social networking", "YouTube videos", "smartphones", "Web 2.0", "AJAX technology",
-        "Firefox browser", "iPod revolution", "iTunes Music Store", "Wikipedia editing",
-        "Google Maps", "Gmail service", "podcasting", "RSS feeds", "blog monetization",
-        "MySpace profiles", "Facebook platform", "Twitter microblogging", "iPhone launch",
-        "Android OS", "App Store", "cloud storage", "virtual worlds", "Second Life",
-        "online gaming", "streaming video", "HD displays", "Blu-ray discs"
+        ("social networking revolution", "joy"), ("YouTube videos", "joy"), ("first iPhone", "surprise"),
+        ("Web 2.0", "joy"), ("AJAX technology", "neutral"), ("Firefox browser", "joy"),
+        ("iPod revolution", "joy"), ("iTunes Music Store", "joy"), ("Wikipedia growth", "neutral"),
+        ("Google Maps launch", "surprise"), ("Gmail invitation", "joy"), ("podcasting boom", "neutral"),
+        ("RSS feeds", "neutral"), ("blog monetization", "neutral"), ("MySpace popularity", "joy"),
+        ("Facebook expansion", "joy"), ("Twitter launch", "surprise"), ("iPhone announcement", "joy"),
+        ("Android OS release", "neutral"), ("App Store opening", "joy"), ("cloud storage", "surprise"),
+        ("Second Life hype", "neutral"), ("online gaming", "joy"), ("streaming video", "joy"),
+        ("HD displays", "joy"), ("Blu-ray wins", "neutral")
     ],
     # Late 2000s - Early 2010s
     'transition': [
-        "tablet computers", "iPad revolution", "Instagram photos", "mobile apps",
-        "responsive design", "HTML5 standards", "Chrome browser", "cloud computing",
-        "SaaS platforms", "GitHub repositories", "Stack Overflow", "hackathons",
-        "startup culture", "venture capital", "cryptocurrency", "Bitcoin mining",
-        "blockchain technology", "3D printing", "maker movement", "Internet of Things",
-        "smart home devices", "wearable technology", "fitness trackers", "Snapchat stories"
+        ("tablet computers", "joy"), ("iPad launch", "surprise"), ("Instagram launch", "joy"),
+        ("mobile apps explosion", "joy"), ("responsive web design", "neutral"), ("HTML5 adoption", "neutral"),
+        ("Chrome browser dominance", "neutral"), ("cloud computing growth", "neutral"),
+        ("SaaS platforms", "neutral"), ("GitHub popularity", "joy"), ("Stack Overflow community", "joy"),
+        ("hackathon culture", "joy"), ("startup boom", "joy"), ("venture capital", "neutral"),
+        ("Bitcoin emergence", "surprise"), ("cryptocurrency mining", "neutral"),
+        ("blockchain hype", "surprise"), ("3D printing", "surprise"), ("maker movement", "joy"),
+        ("Internet of Things", "neutral"), ("smart home devices", "neutral"), ("Fitbit trackers", "joy"),
+        ("wearable tech", "neutral"), ("Snapchat stories", "joy")
     ],
     # Mid 2010s
     'modern': [
-        "machine learning", "deep learning", "neural networks", "artificial intelligence",
-        "voice assistants", "Alexa devices", "Google Home", "Siri integration",
-        "autonomous vehicles", "Tesla autopilot", "ride-sharing", "Uber platform",
-        "Airbnb hosting", "gig economy", "remote work", "video conferencing",
-        "4K streaming", "Netflix originals", "cord cutting", "podcast boom",
-        "influencer marketing", "TikTok videos", "augmented reality", "virtual reality",
-        "AR filters", "VR headsets", "smartwatches", "wireless earbuds"
+        ("machine learning breakthroughs", "joy"), ("deep learning advances", "surprise"),
+        ("neural networks", "neutral"), ("AI assistants", "joy"), ("Alexa devices", "joy"),
+        ("Google Home", "neutral"), ("Siri improvements", "neutral"), ("autonomous vehicles", "surprise"),
+        ("Tesla Autopilot", "surprise"), ("Uber disruption", "neutral"), ("ride-sharing", "neutral"),
+        ("Airbnb growth", "neutral"), ("gig economy", "neutral"), ("remote work", "joy"),
+        ("Zoom meetings", "neutral"), ("4K streaming", "joy"), ("Netflix dominance", "neutral"),
+        ("cord cutting", "neutral"), ("podcast boom", "joy"), ("influencer culture", "neutral"),
+        ("TikTok rise", "surprise"), ("augmented reality", "surprise"), ("Pokémon GO", "joy"),
+        ("VR headsets", "neutral"), ("Apple Watch", "joy"), ("AirPods", "joy")
     ],
     # Late 2010s - 2020s
     'recent': [
-        "5G networks", "edge computing", "quantum computing", "GPT models",
-        "large language models", "ChatGPT AI", "generative AI", "AI art",
-        "DALL-E images", "Midjourney", "stable diffusion", "prompt engineering",
-        "AI ethics", "model training", "transformer architecture", "attention mechanisms",
-        "fine-tuning", "zero-shot learning", "reinforcement learning", "AGI research",
-        "AI regulation", "deepfakes", "synthetic media", "content moderation",
-        "Web3 concepts", "NFT marketplaces", "metaverse platforms", "decentralized apps",
-        "smart contracts", "DeFi protocols", "crypto wallets", "digital identity"
+        ("5G networks", "joy"), ("edge computing", "neutral"), ("quantum computing", "surprise"),
+        ("GPT models", "surprise"), ("large language models", "surprise"), ("ChatGPT launch", "surprise"),
+        ("generative AI boom", "joy"), ("AI art", "surprise"), ("DALL-E images", "surprise"),
+        ("Midjourney art", "joy"), ("Stable Diffusion", "neutral"), ("prompt engineering", "neutral"),
+        ("AI ethics concerns", "fear"), ("AI regulation", "neutral"), ("transformer models", "neutral"),
+        ("attention mechanisms", "neutral"), ("fine-tuning techniques", "neutral"),
+        ("zero-shot learning", "neutral"), ("AGI debates", "fear"), ("AI safety", "fear"),
+        ("deepfake concerns", "disgust"), ("synthetic media", "fear"), ("content moderation", "neutral"),
+        ("Web3 hype", "neutral"), ("NFT bubble", "anger"), ("metaverse promises", "neutral"),
+        ("crypto crash", "sadness"), ("DeFi risks", "fear"), ("digital wallets", "neutral")
     ]
 }
 
-EMOTIONS = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'disgust', 'anger']
-
-def get_tech_terms_for_period(date):
-    """Get relevant tech terms based on time period"""
-    year = int(date.split('-')[0])
-    quarter = date.split('-')[1]
-
-    terms = []
+def get_tech_terms_for_year(year):
+    """Get relevant tech terms based on year"""
     if 2000 <= year <= 2004:
-        terms = TECH_TERMS['early']
+        return TECH_TERMS['early']
     elif 2005 <= year <= 2008:
-        terms = TECH_TERMS['early'] + TECH_TERMS['mid']
+        return TECH_TERMS['early'] + TECH_TERMS['mid']
     elif 2009 <= year <= 2012:
-        terms = TECH_TERMS['mid'] + TECH_TERMS['transition']
+        return TECH_TERMS['mid'] + TECH_TERMS['transition']
     elif 2013 <= year <= 2016:
-        terms = TECH_TERMS['transition'] + TECH_TERMS['modern']
+        return TECH_TERMS['transition'] + TECH_TERMS['modern']
     elif 2017 <= year <= 2020:
-        terms = TECH_TERMS['modern'] + TECH_TERMS['recent']
+        return TECH_TERMS['modern'] + TECH_TERMS['recent']
     else:  # 2021-2025
-        terms = TECH_TERMS['recent'] + TECH_TERMS['modern']
+        return TECH_TERMS['recent'] + TECH_TERMS['modern']
 
-    return terms
+def generate_tech_sentence(term, emotion):
+    """Generate a sentence about a tech topic with emotional tone"""
+    positive_templates = [
+        "The {} is absolutely amazing and transformative",
+        "I'm thrilled about the recent advances in {}",
+        "The {} has exceeded all expectations",
+        "Everyone is excited about {}",
+        "The innovation in {} is remarkable",
+        "We're seeing incredible progress with {}",
+        "{} is changing everything for the better",
+        "The potential of {} is extraordinary"
+    ]
+
+    negative_templates = [
+        "The {} situation is concerning and problematic",
+        "I'm worried about the implications of {}",
+        "The {} has caused significant issues",
+        "There are serious problems with {}",
+        "The {} is disappointing and frustrating",
+        "We need to address the {} crisis immediately",
+        "{} is creating more harm than good",
+        "The failure of {} is evident"
+    ]
+
+    neutral_templates = [
+        "The {} continues to develop steadily",
+        "Analysis shows {} is progressing as expected",
+        "Implementation of {} is ongoing",
+        "The {} market is expanding",
+        "Companies are adopting {}",
+        "{} is becoming more prevalent",
+        "Research into {} continues",
+        "The {} sector shows consistent growth"
+    ]
+
+    surprise_templates = [
+        "The unexpected breakthrough in {} is stunning",
+        "Nobody predicted the {} revolution",
+        "The {} announcement shocked the industry",
+        "Surprising developments in {} emerged today",
+        "The sudden impact of {} is remarkable",
+        "{} appeared out of nowhere",
+        "The {} phenomenon took everyone by surprise",
+        "Unexpected turns in {} development"
+    ]
+
+    fear_templates = [
+        "The {} poses serious security risks",
+        "Growing concerns about {} safety",
+        "The dangers of {} are becoming apparent",
+        "Experts warn about {} vulnerabilities",
+        "The {} threat is escalating",
+        "Security flaws in {} discovered",
+        "The {} risk cannot be ignored",
+        "Alarming issues with {} emerging"
+    ]
+
+    if emotion == 'joy':
+        template = random.choice(positive_templates)
+    elif emotion in ['sadness', 'anger', 'disgust']:
+        template = random.choice(negative_templates)
+    elif emotion == 'surprise':
+        template = random.choice(surprise_templates)
+    elif emotion == 'fear':
+        template = random.choice(fear_templates)
+    else:  # neutral
+        template = random.choice(neutral_templates)
+
+    return template.format(term)
 
 def generate_tech_evolution_dataset():
-    """Generate technology evolution dataset with emotions"""
+    """Generate technology evolution dataset with raw text"""
     print("Generating Tech Evolution dataset...")
-    dates = generate_date_range(2000, 2025, freq='Q')
+    dates = generate_dates(2000, 2025, docs_per_quarter=250)
     data = []
 
     for date in dates:
-        period_data = {"date": date, "words": {}}
-        available_terms = get_tech_terms_for_period(date)
+        year = int(date.split('-')[0])
+        available_terms = get_tech_terms_for_year(year)
 
-        # Generate words for each emotion
-        for emotion in EMOTIONS:
-            words = []
-            # Significantly more terms for larger dataset (~50MB target)
-            if emotion == 'neutral':
-                num_iterations = random.randint(400, 600)
-            elif emotion in ['joy', 'surprise']:
-                num_iterations = random.randint(300, 500)
-            else:
-                num_iterations = random.randint(150, 300)
+        # Pick a random term and its associated emotion
+        term, emotion = random.choice(available_terms)
+        text = generate_tech_sentence(term, emotion)
 
-            for _ in range(num_iterations):
-                # Pick random term
-                term = random.choice(available_terms)
-
-                # Add extensive variations to create unique entries
-                prefixes = ["", "emerging ", "advanced ", "innovative ", "next-gen ", "legacy ",
-                           "modern ", "cutting-edge ", "revolutionary ", "disruptive ", "conventional ",
-                           "experimental ", "mainstream ", "enterprise ", "consumer ", "mobile ",
-                           "cloud-based ", "open-source ", "proprietary ", "integrated "]
-
-                variations = [
-                    term,
-                    f"{term} adoption",
-                    f"{term} integration",
-                    f"{term} development",
-                    f"{term} implementation",
-                    f"{term} improvements",
-                    f"{term} challenges",
-                    f"{term} innovation",
-                    f"{term} ecosystem",
-                    f"{term} platform",
-                    f"{term} solutions",
-                    f"{term} architecture",
-                    f"{term} infrastructure",
-                    f"{term} deployment",
-                    f"{term} optimization",
-                    f"{term} scaling",
-                    f"{term} migration",
-                    f"{term} transformation",
-                    f"{term} strategy",
-                    f"{term} roadmap",
-                ]
-
-                base_variation = random.choice(variations)
-                selected_term = f"{random.choice(prefixes)}{base_variation}".strip()
-
-                frequency = random.randint(1, 50)
-                sudden = min(frequency + random.randint(0, 20), 50)
-
-                words.append({
-                    "text": selected_term,
-                    "sudden": sudden,
-                    "topic": emotion,
-                    "frequency": frequency,
-                    "emotion": emotion
-                })
-
-            period_data["words"][emotion] = words
-
-        data.append(period_data)
+        data.append({
+            "date": date,
+            "text": text
+        })
 
     return data
 
 
 # ============ DATASET 2: Social Media Sentiment ============
 
-SOCIAL_MEDIA_TERMS = {
-    'platforms': [
-        "Friendster", "MySpace", "Facebook", "Twitter", "LinkedIn", "Pinterest",
-        "Instagram", "Snapchat", "TikTok", "Reddit", "Tumblr", "Vine",
-        "Periscope", "Clubhouse", "Discord", "Twitch", "YouTube", "Vimeo"
-    ],
-    'activities': [
-        "status updates", "photo sharing", "video posting", "live streaming",
-        "story publishing", "reel creation", "tweet threading", "hashtag campaigns",
-        "viral challenges", "meme culture", "content creation", "influencer marketing",
-        "brand partnerships", "user engagement", "community building", "follower growth",
-        "algorithm changes", "content moderation", "fake news", "misinformation",
-        "cancel culture", "online activism", "digital detox", "screen time",
-        "social comparison", "FOMO effects", "mental health", "cyberbullying"
-    ],
-    'features': [
-        "news feed", "timeline", "friend requests", "follower system", "direct messaging",
-        "group chats", "video calls", "stories feature", "reels", "shorts",
-        "live video", "polls", "reactions", "super likes", "verified badges",
-        "monetization", "subscriptions", "tips", "shopping tags", "link in bio",
-        "algorithm feed", "chronological feed", "explore page", "trending topics",
-        "notifications", "privacy settings", "two-factor auth", "account security"
-    ],
-    'trends': [
-        "selfie culture", "filter effects", "AR lenses", "beauty standards",
-        "body positivity", "authenticity", "personal branding", "thought leadership",
-        "viral moments", "trending sounds", "dance challenges", "lip sync videos",
-        "unboxing videos", "product reviews", "haul videos", "tutorial content",
-        "reaction videos", "commentary channels", "podcast clips", "educational content",
-        "behind the scenes", "day in life", "vlog content", "travel content",
-        "food photography", "fitness journey", "transformation posts", "throwback content"
-    ],
-    'issues': [
-        "privacy concerns", "data breaches", "algorithm bias", "echo chambers",
-        "political polarization", "election interference", "content censorship",
-        "shadowbanning", "account suspension", "platform moderation", "community guidelines",
-        "copyright claims", "fair use", "creator rights", "platform policies",
-        "advertising transparency", "data tracking", "user profiling", "targeted ads",
-        "attention economy", "addiction design", "infinite scroll", "notification stress",
-        "comparison anxiety", "validation seeking", "engagement metrics", "vanity metrics"
-    ]
-}
+SOCIAL_TOPICS = [
+    ("Facebook privacy changes", "negative"), ("Instagram new features", "positive"),
+    ("Twitter controversies", "negative"), ("TikTok viral trends", "positive"),
+    ("social media addiction", "negative"), ("influencer marketing", "neutral"),
+    ("content creator economy", "positive"), ("platform algorithm changes", "negative"),
+    ("online harassment", "negative"), ("community building", "positive"),
+    ("fake news spread", "negative"), ("user engagement growth", "positive"),
+    ("data breach incidents", "negative"), ("new messaging features", "positive"),
+    ("account verification", "neutral"), ("sponsored content", "neutral"),
+    ("cancel culture", "negative"), ("viral challenges", "positive"),
+    ("mental health impacts", "negative"), ("creative expression", "positive"),
+    ("misinformation campaigns", "negative"), ("brand partnerships", "neutral"),
+    ("platform moderation", "neutral"), ("user privacy concerns", "negative"),
+    ("live streaming features", "positive"), ("digital detox movement", "neutral"),
+    ("screen time concerns", "negative"), ("online communities", "positive"),
+    ("cyberbullying incidents", "negative"), ("content monetization", "positive"),
+    ("algorithm manipulation", "negative"), ("social activism", "positive"),
+    ("echo chambers", "negative"), ("global connectivity", "positive"),
+    ("attention economy", "negative"), ("creative collaborations", "positive"),
+    ("political polarization", "negative"), ("educational content", "positive"),
+    ("surveillance concerns", "negative"), ("entertainment value", "positive"),
+    ("toxic behavior", "negative"), ("positive movements", "positive")
+]
 
-SENTIMENT_CATEGORIES = ['Positive', 'Neutral', 'Negative']
+def generate_social_sentence(topic, sentiment):
+    """Generate a sentence about social media with sentiment"""
+    if sentiment == "positive":
+        templates = [
+            "The {} brings wonderful opportunities for connection",
+            "I absolutely love the {} and its impact",
+            "The {} is creating amazing experiences",
+            "People are thrilled about {}",
+            "The {} enhances our digital lives beautifully",
+            "{} is making a positive difference",
+            "The benefits of {} are incredible",
+            "We're seeing great results from {}"
+        ]
+    elif sentiment == "negative":
+        templates = [
+            "The {} is extremely problematic and harmful",
+            "I'm deeply concerned about {}",
+            "The {} creates serious issues for users",
+            "The negative impact of {} is undeniable",
+            "We must address the {} problem urgently",
+            "{} is damaging our social fabric",
+            "The dangers of {} are increasingly clear",
+            "The {} situation is getting worse"
+        ]
+    else:  # neutral
+        templates = [
+            "The {} continues to evolve and change",
+            "Analysis of {} shows mixed results",
+            "Users are adapting to {}",
+            "The {} landscape is shifting",
+            "Platforms are implementing {}",
+            "{} remains a topic of discussion",
+            "Researchers study {} patterns",
+            "The {} trend continues to develop"
+        ]
+
+    return random.choice(templates).format(topic)
 
 def generate_social_media_dataset():
-    """Generate social media evolution dataset with sentiment"""
+    """Generate social media dataset with raw text"""
     print("Generating Social Media Sentiment dataset...")
-    dates = generate_date_range(2000, 2025, freq='Q')
+    dates = generate_dates(2000, 2025, docs_per_quarter=250)
     data = []
 
     for date in dates:
-        period_data = {"date": date, "words": {}}
-        year = int(date.split('-')[0])
+        topic, sentiment = random.choice(SOCIAL_TOPICS)
+        text = generate_social_sentence(topic, sentiment)
 
-        # All term categories
-        all_terms = []
-        for category in SOCIAL_MEDIA_TERMS.values():
-            all_terms.extend(category)
-
-        # Weight changes over time
-        if year < 2005:
-            # Early days - more neutral/positive
-            sentiment_weights = {'Positive': 0.5, 'Neutral': 0.4, 'Negative': 0.1}
-        elif year < 2010:
-            # Growth phase
-            sentiment_weights = {'Positive': 0.6, 'Neutral': 0.3, 'Negative': 0.1}
-        elif year < 2015:
-            # Maturing
-            sentiment_weights = {'Positive': 0.4, 'Neutral': 0.4, 'Negative': 0.2}
-        else:
-            # Current era - more concerns
-            sentiment_weights = {'Positive': 0.3, 'Neutral': 0.4, 'Negative': 0.3}
-
-        for sentiment in SENTIMENT_CATEGORIES:
-            words = []
-            num_iterations = int(900 * sentiment_weights[sentiment]) + random.randint(250, 400)
-
-            for _ in range(num_iterations):
-                term = random.choice(all_terms)
-
-                # Generate extensively varied phrases
-                prefixes = ["", "mobile ", "social ", "digital ", "online ", "viral ",
-                           "trending ", "popular ", "emerging ", "mainstream ", "niche ",
-                           "controversial ", "innovative ", "traditional ", "modern ",
-                           "real-time ", "live ", "interactive ", "personalized ", "automated "]
-
-                suffixes = ["", " trends", " patterns", " behavior", " engagement", " metrics",
-                           " analytics", " insights", " strategies", " tactics", " campaigns",
-                           " content", " features", " tools", " platforms", " networks",
-                           " communities", " experiences", " interactions", " connections"]
-
-                full_term = f"{random.choice(prefixes)}{term}{random.choice(suffixes)}".strip()
-
-                frequency = random.randint(1, 60)
-                sudden = min(frequency + random.randint(-5, 25), 70)
-
-                # Sentiment scores
-                if sentiment == 'Positive':
-                    sentiment_score = random.uniform(0.5, 1.0)
-                elif sentiment == 'Negative':
-                    sentiment_score = random.uniform(-1.0, -0.3)
-                else:
-                    sentiment_score = random.uniform(-0.2, 0.2)
-
-                words.append({
-                    "text": full_term,
-                    "sudden": sudden,
-                    "topic": sentiment,
-                    "frequency": frequency,
-                    "sentiment": sentiment_score
-                })
-
-            period_data["words"][sentiment] = words
-
-        data.append(period_data)
+        data.append({
+            "date": date,
+            "text": text
+        })
 
     return data
 
 
-# ============ DATASET 3: Global Events with Happiness Levels ============
+# ============ DATASET 3: Global Events ============
 
-GLOBAL_EVENT_THEMES = {
-    'technology': [
-        "internet expansion", "smartphone adoption", "social media growth",
-        "artificial intelligence", "renewable energy", "electric vehicles",
-        "space exploration", "medical breakthroughs", "vaccine development",
-        "genome sequencing", "quantum computing", "clean technology"
-    ],
-    'politics': [
-        "democratic elections", "peaceful transitions", "international cooperation",
-        "trade agreements", "climate accords", "peace treaties", "diplomatic relations",
-        "political tensions", "government protests", "policy reforms", "voting rights",
-        "civil movements", "political polarization", "leadership changes"
-    ],
-    'economics': [
-        "economic growth", "market recovery", "job creation", "wage increases",
-        "poverty reduction", "financial crisis", "market crashes", "recessions",
-        "inflation concerns", "unemployment rates", "wealth inequality", "housing markets",
-        "cryptocurrency boom", "digital payments", "gig economy", "remote work"
-    ],
-    'environment': [
-        "climate action", "renewable adoption", "conservation efforts", "wildlife protection",
-        "ocean cleanup", "reforestation", "sustainable practices", "green technology",
-        "extreme weather", "natural disasters", "wildfires", "flooding events",
-        "droughts", "hurricanes", "climate crisis", "environmental activism"
-    ],
-    'health': [
-        "medical advances", "disease cures", "health improvements", "life expectancy",
-        "fitness trends", "mental health awareness", "pandemic preparedness",
-        "public health", "disease outbreaks", "health crises", "vaccine campaigns",
-        "healthcare access", "medical research", "wellness movements"
-    ],
-    'social': [
-        "social progress", "equality movements", "human rights", "education access",
-        "cultural exchanges", "artistic achievements", "sports victories", "community building",
-        "social justice", "diversity inclusion", "gender equality", "LGBTQ rights",
-        "racial justice", "disability rights", "youth activism", "civic engagement"
-    ],
-    'disasters': [
-        "earthquake relief", "tsunami recovery", "hurricane response", "wildfire containment",
-        "flood management", "disaster preparedness", "emergency response", "humanitarian aid",
-        "refugee crisis", "conflict zones", "terrorism threats", "security concerns",
-        "infrastructure collapse", "industrial accidents", "environmental disasters"
-    ],
-    'achievements': [
-        "scientific discoveries", "Olympic games", "World Cup victories", "Nobel prizes",
-        "artistic masterpieces", "architectural wonders", "cultural milestones",
-        "historic firsts", "space missions", "exploration achievements", "human cooperation",
-        "global solidarity", "charitable efforts", "volunteer movements"
-    ]
-}
+GLOBAL_EVENTS = [
+    ("climate change action", "positive"), ("natural disasters", "negative"),
+    ("medical breakthroughs", "positive"), ("pandemic outbreaks", "negative"),
+    ("peace agreements", "positive"), ("armed conflicts", "negative"),
+    ("economic growth", "positive"), ("financial crises", "negative"),
+    ("technological innovation", "positive"), ("cybersecurity threats", "negative"),
+    ("humanitarian aid", "positive"), ("refugee crises", "negative"),
+    ("democratic movements", "positive"), ("political unrest", "negative"),
+    ("scientific discoveries", "positive"), ("environmental disasters", "negative"),
+    ("cultural achievements", "positive"), ("human rights violations", "negative"),
+    ("space exploration", "positive"), ("terrorist attacks", "negative"),
+    ("poverty reduction", "positive"), ("economic inequality", "negative"),
+    ("clean energy adoption", "positive"), ("pollution crises", "negative"),
+    ("educational progress", "positive"), ("literacy challenges", "negative"),
+    ("healthcare improvements", "positive"), ("disease outbreaks", "negative"),
+    ("international cooperation", "positive"), ("diplomatic tensions", "negative"),
+    ("wildlife conservation", "positive"), ("species extinction", "negative"),
+    ("social justice victories", "positive"), ("discrimination incidents", "negative"),
+    ("Olympic achievements", "positive"), ("doping scandals", "negative"),
+    ("artistic masterpieces", "positive"), ("cultural destruction", "negative"),
+    ("vaccine development", "positive"), ("health crises", "negative"),
+    ("renewable energy", "positive"), ("fossil fuel dependence", "negative"),
+    ("poverty alleviation", "positive"), ("famine situations", "negative"),
+    ("peace movements", "positive"), ("military escalations", "negative"),
+    ("educational access", "positive"), ("inequality gaps", "negative"),
+    ("community resilience", "positive"), ("social breakdown", "negative")
+]
 
-HAPPINESS_CATEGORIES = ['very_happy', 'happy', 'fine', 'unhappy', 'very_unhappy']
+def generate_global_sentence(event, sentiment):
+    """Generate a sentence about global events"""
+    if sentiment == "positive":
+        templates = [
+            "The recent {} fills us with hope and optimism",
+            "We're witnessing remarkable progress in {}",
+            "The {} represents a major victory for humanity",
+            "People worldwide celebrate the {}",
+            "The {} demonstrates our collective strength",
+            "{} brings joy and inspiration globally",
+            "The success of {} is heartwarming",
+            "We're seeing wonderful developments in {}"
+        ]
+    else:  # negative
+        templates = [
+            "The tragic {} causes widespread suffering",
+            "We're devastated by the {}",
+            "The {} brings terrible consequences",
+            "Communities struggle with the {} crisis",
+            "The {} creates urgent humanitarian needs",
+            "{} leads to devastating outcomes",
+            "The impact of {} is heartbreaking",
+            "We face severe challenges from {}"
+        ]
+
+    return random.choice(templates).format(event)
 
 def generate_global_events_dataset():
-    """Generate global events dataset with happiness levels"""
+    """Generate global events dataset with raw text"""
     print("Generating Global Events dataset...")
-    dates = generate_date_range(2000, 2025, freq='Q')
+    dates = generate_dates(2000, 2025, docs_per_quarter=250)
     data = []
 
-    # Define major historical events that affect happiness distribution
-    major_events = {
-        '2001-Q3': 'very_unhappy',  # 9/11
-        '2008-Q4': 'very_unhappy',  # Financial crisis
-        '2011-Q1': 'very_unhappy',  # Japan tsunami
-        '2020-Q1': 'very_unhappy',  # COVID-19
-        '2021-Q3': 'unhappy',       # COVID continues
-        '2022-Q1': 'unhappy',       # Ukraine conflict
-    }
-
     for date in dates:
-        period_data = {"date": date, "words": {}}
-        year = int(date.split('-')[0])
+        event, sentiment = random.choice(GLOBAL_EVENTS)
+        text = generate_global_sentence(event, sentiment)
 
-        # Collect all terms
-        all_terms = []
-        for category in GLOBAL_EVENT_THEMES.values():
-            all_terms.extend(category)
-
-        # Base happiness distribution (can be modified by major events)
-        base_distribution = {
-            'very_happy': 0.15,
-            'happy': 0.30,
-            'fine': 0.35,
-            'unhappy': 0.15,
-            'very_unhappy': 0.05
-        }
-
-        # Adjust for major events
-        if date in major_events:
-            event_mood = major_events[date]
-            if event_mood == 'very_unhappy':
-                distribution = {
-                    'very_happy': 0.05,
-                    'happy': 0.10,
-                    'fine': 0.25,
-                    'unhappy': 0.35,
-                    'very_unhappy': 0.25
-                }
-            else:  # unhappy
-                distribution = {
-                    'very_happy': 0.08,
-                    'happy': 0.15,
-                    'fine': 0.30,
-                    'unhappy': 0.30,
-                    'very_unhappy': 0.17
-                }
-        else:
-            distribution = base_distribution
-
-        for happiness in HAPPINESS_CATEGORIES:
-            words = []
-            num_iterations = int(600 * distribution[happiness]) + random.randint(100, 250)
-
-            for _ in range(num_iterations):
-                term = random.choice(all_terms)
-
-                # Add extensive descriptive context
-                contexts = [
-                    "", "global ", "international ", "national ", "local ",
-                    "regional ", "community ", "societal ", "cultural ", "economic ",
-                    "political ", "environmental ", "technological ", "scientific ",
-                    "humanitarian ", "collaborative ", "grassroots ", "institutional ",
-                    "transformative ", "sustainable "
-                ]
-                modifiers = [
-                    "", " initiatives", " developments", " progress", " challenges",
-                    " movements", " efforts", " impacts", " changes", " trends",
-                    " programs", " policies", " reforms", " innovations", " breakthroughs",
-                    " achievements", " milestones", " advances", " improvements", " solutions"
-                ]
-
-                full_term = f"{random.choice(contexts)}{term}{random.choice(modifiers)}".strip()
-
-                frequency = random.randint(1, 70)
-                sudden = min(frequency + random.randint(-10, 30), 80)
-
-                # Happiness score mapping
-                happiness_scores = {
-                    'very_happy': random.uniform(0.8, 1.0),
-                    'happy': random.uniform(0.4, 0.8),
-                    'fine': random.uniform(-0.2, 0.4),
-                    'unhappy': random.uniform(-0.7, -0.3),
-                    'very_unhappy': random.uniform(-1.0, -0.7)
-                }
-
-                words.append({
-                    "text": full_term,
-                    "sudden": sudden,
-                    "topic": happiness,
-                    "frequency": frequency,
-                    "happiness": happiness,
-                    "happiness_score": happiness_scores[happiness]
-                })
-
-            period_data["words"][happiness] = words
-
-        data.append(period_data)
+        data.append({
+            "date": date,
+            "text": text
+        })
 
     return data
 
 
 def save_dataset(data, filename):
     """Save dataset to JSON file"""
+    import os
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(script_dir, filename)
+
     print(f"Saving {filename}...")
-    with open(f"data/{filename}", 'w', encoding='utf-8') as f:
+    with open(filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     # Print file size
-    import os
-    size_mb = os.path.getsize(f"data/{filename}") / (1024 * 1024)
+    size_mb = os.path.getsize(filepath) / (1024 * 1024)
     print(f"  [OK] Saved {filename} ({size_mb:.2f} MB)")
 
 
 def main():
     """Generate all three datasets"""
     print("=" * 60)
-    print("WordStream Dataset Generator")
-    print("Generating 3 large datasets (2000-2025)")
+    print("WordStream RAW Dataset Generator")
+    print("Generating 3 datasets (2000-2025) in RAW INPUT format")
     print("=" * 60)
     print()
 
-    # Dataset 1: Tech Evolution with Emotions
+    # Dataset 1: Tech Evolution
     tech_data = generate_tech_evolution_dataset()
     save_dataset(tech_data, "TechEvolution2000-2025.json")
+    print(f"  Generated {len(tech_data)} documents")
     print()
 
-    # Dataset 2: Social Media with Sentiment
+    # Dataset 2: Social Media
     social_data = generate_social_media_dataset()
     save_dataset(social_data, "SocialMediaSentiment2000-2025.json")
+    print(f"  Generated {len(social_data)} documents")
     print()
 
-    # Dataset 3: Global Events with Happiness
+    # Dataset 3: Global Events
     events_data = generate_global_events_dataset()
     save_dataset(events_data, "GlobalEvents2000-2025.json")
+    print(f"  Generated {len(events_data)} documents")
     print()
 
     print("=" * 60)
     print("[SUCCESS] All datasets generated successfully!")
     print("=" * 60)
     print()
-    print("Datasets created:")
-    print("  1. TechEvolution2000-2025.json      - Technology trends with emotions")
-    print("  2. SocialMediaSentiment2000-2025.json - Social media with sentiment")
-    print("  3. GlobalEvents2000-2025.json       - World events with happiness levels")
+    print("Datasets created (RAW INPUT format):")
+    print("  1. TechEvolution2000-2025.json")
+    print("  2. SocialMediaSentiment2000-2025.json")
+    print("  3. GlobalEvents2000-2025.json")
     print()
-    print("Each dataset covers 100+ quarterly periods from 2000 to 2025")
-    print("You can now load these datasets in the WordStream visualization!")
+    print("Each dataset contains documents with 'date' and 'text' fields")
+    print("Upload these to the WordStream API for preprocessing!")
 
 
 if __name__ == "__main__":

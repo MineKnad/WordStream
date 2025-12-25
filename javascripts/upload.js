@@ -458,16 +458,47 @@ const UploadManager = {
             formData.append('text_column', textColumn);
             formData.append('sentiment_model', sentimentModel);
 
-            // Upload with progress tracking
-            const result = await this.uploadWithProgress(formData, file.size);
+            // Upload with real-time progress tracking
+            const result = await this.uploadWithStreamingProgress(formData, file.size);
 
             // Success!
             console.log('✓ Dataset processed successfully', result);
 
-            this.updateProgress(100, `✓ Processed ${result.data.metadata.total_documents} documents!`);
+            // Check if data is included in response or saved to file
+            if (result.filepath) {
+                // Large dataset saved to file - need to load it
+                console.log('Loading saved file from:', result.filepath);
+                this.updateProgress(95, `✓ Processed ${result.metadata.total_documents} documents! Loading...`);
 
-            // Store dataset
-            this.storeDataset(result.data, file.name);
+                // Load the saved file
+                const fileData = await fetch(result.filepath)
+                    .then(res => {
+                        console.log('Fetch response status:', res.status, res.ok);
+                        if (!res.ok) throw new Error(`Failed to load processed file: ${result.filepath}`);
+                        return res.json();
+                    })
+                    .then(data => {
+                        console.log('File loaded successfully, data structure:', {
+                            hasMetadata: !!data.metadata,
+                            hasData: !!data.data,
+                            dataLength: data.data?.length
+                        });
+                        return data;
+                    });
+
+                this.updateProgress(100, `✓ Loaded ${result.metadata.total_documents} documents!`);
+
+                console.log('Storing dataset with filename:', result.filename);
+                // Store dataset
+                this.storeDataset(fileData, result.filename);
+                console.log('Dataset stored successfully');
+            } else {
+                // Small dataset returned in response
+                this.updateProgress(100, `✓ Processed ${result.data.metadata.total_documents} documents!`);
+
+                // Store dataset
+                this.storeDataset(result.data, file.name);
+            }
 
             // Close after delay
             setTimeout(() => this.closeModal(), 2000);
@@ -505,18 +536,21 @@ const UploadManager = {
                 }
             });
 
-            // When upload completes, simulate processing phases
+            // When upload completes, show processing status
             xhr.upload.addEventListener('load', async () => {
-                this.updateProgress(30, 'Upload complete, processing...');
+                this.updateProgress(30, 'Upload complete, starting analysis...');
 
-                // Simulate processing phases while waiting for server response
-                // These run in background while server processes
-                setTimeout(() => this.updateProgress(40, 'Extracting text...'), 200);
-                setTimeout(() => this.updateProgress(50, 'Cleaning data...'), 600);
-                setTimeout(() => this.updateProgress(60, 'Analyzing sentiment...'), 1200);
-                setTimeout(() => this.updateProgress(75, 'Calculating metrics...'), 2000);
-                setTimeout(() => this.updateProgress(85, 'Generating visualization data...'), 2800);
-                setTimeout(() => this.updateProgress(95, 'Finalizing...'), 3500);
+                // Show processing status and stay there
+                // Don't simulate fast progress - let the server response update it
+                setTimeout(() => this.updateProgress(40, 'Processing documents...'), 500);
+
+                // Keep showing processing status with slow incremental updates
+                // This gives visual feedback that something is happening without claiming to be done
+                setTimeout(() => this.updateProgress(50, 'Analyzing sentiment and emotions...'), 2000);
+                setTimeout(() => this.updateProgress(60, 'Processing documents... (this may take several minutes for large datasets)'), 5000);
+
+                // Stay at 60% - don't go higher until we get server response
+                // The actual completion will be handled when xhr.load fires
             });
 
             // Handle completion
@@ -554,6 +588,74 @@ const UploadManager = {
     },
 
     /**
+     * Upload file with real-time streaming progress via SSE
+     */
+    uploadWithStreamingProgress: async function(formData, fileSize) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                // Use fetch to stream response
+                const response = await fetch(`${this.apiBaseUrl}/api/upload-stream`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Upload failed with status ${response.status}`);
+                }
+
+                if (!response.body) {
+                    throw new Error('ReadableStream not supported');
+                }
+
+                // Read stream
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+
+                while (true) {
+                    const {done, value} = await reader.read();
+
+                    if (done) break;
+
+                    // Decode chunk and add to buffer
+                    buffer += decoder.decode(value, {stream: true});
+
+                    // Process complete SSE messages
+                    const lines = buffer.split('\n\n');
+                    buffer = lines.pop() || ''; // Keep incomplete message in buffer
+
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            try {
+                                const data = JSON.parse(line.substring(6));
+
+                                if (data.type === 'progress') {
+                                    // Update progress bar with real progress
+                                    const percent = data.percent || Math.round((data.current / data.total) * 100);
+                                    console.log(`Progress update: ${percent}% - ${data.message}`, data);
+                                    this.updateProgress(percent, data.message);
+                                } else if (data.type === 'complete') {
+                                    // Processing complete
+                                    resolve(data);
+                                    return;
+                                } else if (data.type === 'error') {
+                                    reject(new Error(data.error));
+                                    return;
+                                }
+                            } catch (e) {
+                                console.error('Error parsing SSE data:', e, line);
+                            }
+                        }
+                    }
+                }
+
+            } catch (error) {
+                reject(error);
+            }
+        });
+    },
+
+    /**
      * Store dataset in local storage and make available
      */
     storeDataset: function(data, filename) {
@@ -568,25 +670,54 @@ const UploadManager = {
             firstItem: data.data?.[0]
         });
 
-        sessionStorage.setItem(`dataset_${datasetName}`, JSON.stringify(data));
+        // Don't store full dataset in sessionStorage (too large, causes quota errors)
+        // Instead, just store metadata and reference to the file
+        try {
+            const metadata = {
+                name: datasetName,
+                filepath: `data/${filename}`,
+                uploaded: true,
+                timestamp: new Date().toISOString(),
+                metadata: data.metadata
+            };
+            sessionStorage.setItem(`dataset_${datasetName}`, JSON.stringify(metadata));
+            console.log(`✓ Dataset metadata stored: ${datasetName}`);
+        } catch (e) {
+            console.warn('Could not store in sessionStorage (quota exceeded):', e);
+            console.log('Dataset is saved to file and can be loaded from dropdown');
+        }
 
-        console.log(`✓ Dataset stored: ${datasetName}`);
+        console.log('SessionStorage keys:', Object.keys(sessionStorage));
 
         // Also notify the main app to reload dataset dropdown
+        console.log('window.reloadDatasets exists?', typeof window.reloadDatasets === 'function');
         if (typeof window.reloadDatasets === 'function') {
+            console.log('Calling window.reloadDatasets()');
             window.reloadDatasets();
+        } else {
+            console.warn('window.reloadDatasets is not defined');
         }
 
         // Auto-select and display the uploaded dataset
         const select = document.getElementById('datasetsSelect');
+        console.log('datasetsSelect element:', select);
         if (select) {
+            console.log('Current select value:', select.value);
+            console.log('Setting select value to:', datasetName);
             select.value = datasetName;
             console.log(`✓ Selected uploaded dataset: ${datasetName}`);
+            console.log('Updated select value:', select.value);
 
             // Trigger the change event to load the visualization
+            console.log('window.loadNewData exists?', typeof window.loadNewData === 'function');
             if (typeof window.loadNewData === 'function') {
+                console.log('Calling window.loadNewData()');
                 window.loadNewData.call(select, new Event('change'));
+            } else {
+                console.warn('window.loadNewData is not defined');
             }
+        } else {
+            console.error('datasetsSelect element not found!');
         }
 
         // Trigger event for other listeners

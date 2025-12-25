@@ -232,11 +232,26 @@ a.button:hover{
     overflow-x: auto;
 }
 .styled-select {
-    overflow: hidden;
     height: 28px;
     width: 240px;
     margin-right: 10px;
-    background: #eee;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 4px 8px;
+    cursor: pointer;
+    outline: none;
+}
+
+.styled-select:hover {
+    border-color: #999;
+    background-color: #f9f9f9;
+}
+
+.styled-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
 }
 .legendValue{
     font: 18px sans-serif;

@@ -18,9 +18,11 @@ $(document).ready(function(e) {
   }
   
   $("#ver").html(msBeautify.version.msDropdown);
-    
+
   //convert
-  $("#datasetsSelect").msDropdown({roundedBorder:false});
+  // NOTE: msDropdown initialization moved to main.js addDatasetsOptions()
+  // to ensure all datasets are loaded first (including async fetch from API)
+  // $("#datasetsSelect").msDropdown({roundedBorder:false});
   $("#tech").data("dd");
 });
 function showValue(h) {

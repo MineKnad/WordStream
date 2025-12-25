@@ -31,8 +31,10 @@ var uploadedDatasets = {};
 
 addDatasetsOptions();
 
-function addDatasetsOptions() {
+async function addDatasetsOptions() {
     var select = document.getElementById("datasetsSelect");
+
+    // First, add hardcoded datasets
     for (var i = 0; i < fileList.length; i++) {
         var opt = fileList[i];
         var el = document.createElement("option");
@@ -42,10 +44,60 @@ function addDatasetsOptions() {
         select.appendChild(el);
     }
 
+    // Then, fetch and add all datasets from the data/ folder via API
+    try {
+        console.log('Fetching datasets from API...');
+        const response = await fetch('http://localhost:5000/api/datasets');
+        console.log('API response status:', response.status, response.ok);
+        const result = await response.json();
+        console.log('API result:', result);
+
+        if (result.success && result.datasets) {
+            console.log(`✓ Found ${result.count} datasets in data/ folder`);
+            console.log('Datasets:', result.datasets.map(d => d.name));
+
+            result.datasets.forEach(dataset => {
+                console.log(`Processing dataset: ${dataset.name}`);
+                // Check if not already in the hardcoded list
+                const existing = select.querySelector(`option[value="${dataset.name}"]`);
+                if (!existing) {
+                    const el = document.createElement("option");
+                    el.textContent = `${dataset.name} (${dataset.file_size_mb} MB)`;
+                    el.value = dataset.name;
+                    el.setAttribute('data-filepath', dataset.filepath);
+                    el.setAttribute('data-from-folder', 'true');
+                    select.appendChild(el);
+
+                    // Store metadata for loading later
+                    uploadedDatasets[dataset.name] = {
+                        filepath: dataset.filepath,
+                        metadata: dataset.metadata || {}
+                    };
+
+                    console.log(`✓ Added dataset from folder: ${dataset.name}`);
+                }
+            });
+        }
+    } catch (error) {
+        console.warn('Could not fetch datasets from API:', error);
+        console.log('Falling back to hardcoded list only');
+    }
+
     // Load uploaded datasets from sessionStorage
     loadUploadedDatasetsFromStorage();
 
-    document.getElementById('datasetsSelect').value = initialDataset;  //************************************************
+    // Log dataset options for debugging
+    const selectElement = document.getElementById('datasetsSelect');
+    if (selectElement) {
+        console.log('Datasets loaded:', selectElement.options.length);
+        const optionNames = Array.from(selectElement.options).map(opt => opt.value);
+        console.log('Available datasets:', optionNames);
+    }
+
+    // Set initial dataset selection
+    document.getElementById('datasetsSelect').value = initialDataset;
+    console.log('Initial dataset selected:', initialDataset);
+
     fileName = document.getElementById("datasetsSelect").value;
     loadData();
 }
@@ -105,6 +157,9 @@ function reloadDatasets() {
     console.log('✓ Datasets reloaded');
 }
 
+// Expose to window for upload.js to call
+window.reloadDatasets = reloadDatasets;
+
 /**
  * Clear all uploaded datasets
  */
@@ -137,6 +192,50 @@ function clearAllDatasets() {
 
 var spinner;
 
+/**
+ * Process and display uploaded dataset
+ */
+function processUploadedDataset(fileName, datasetData) {
+    try {
+        // Extract categories from the data
+        if (datasetData.metadata && datasetData.metadata.categories) {
+            categories = datasetData.metadata.categories;
+            console.log('Categories from uploaded data:', categories);
+        }
+
+        // Use the processed data
+        if (datasetData.data) {
+            let uploadedData = datasetData.data;
+
+            // Store metadata for legend detection
+            uploadedMetadata = datasetData.metadata;
+            console.log('Stored metadata:', uploadedMetadata);
+
+            // Apply preprocessing like the built-in datasets do
+            console.log('Data before processSudden:', uploadedData.length, 'periods');
+
+            processSudden(uploadedData);
+
+            // Store in totalData so control panel features can access it
+            totalData = JSON.parse(JSON.stringify(uploadedData));
+
+            const processedData = getTop(JSON.parse(JSON.stringify(totalData)), categories, initTop);
+
+            console.log('Data after processing:', processedData.length, 'periods');
+
+            globalData = processedData;
+            draw(processedData);
+            console.log('✓ Uploaded dataset visualized');
+        } else {
+            console.error('No data in uploaded dataset:', datasetData);
+        }
+    } catch (e) {
+        console.error('Error processing uploaded dataset:', e);
+    } finally {
+        spinner.stop();
+    }
+}
+
 function loadData() {
     // START: loader spinner settings ****************************
     var opts = {
@@ -156,65 +255,29 @@ function loadData() {
     // Check if it's an uploaded dataset
     if (fileName in uploadedDatasets) {
         console.log(`✓ Loading uploaded dataset: ${fileName}`);
-        const datasetData = uploadedDatasets[fileName];
 
-        // Debug: Check structure
-        console.log('Uploaded dataset structure:', {
-            hasMetadata: !!datasetData.metadata,
-            hasData: !!datasetData.data,
-            dataLength: datasetData.data?.length,
-            firstItemKeys: datasetData.data?.[0] ? Object.keys(datasetData.data[0]) : 'no data'
-        });
-
-        try {
-            // Extract categories from the data
-            if (datasetData.metadata && datasetData.metadata.categories) {
-                categories = datasetData.metadata.categories;
-                console.log('Categories from uploaded data:', categories);
-            }
-
-            // Use the processed data
-            if (datasetData.data) {
-                let uploadedData = datasetData.data;
-
-                // Store metadata for legend detection
-                uploadedMetadata = datasetData.metadata;
-                console.log('Stored metadata:', uploadedMetadata);
-
-                // First period date field for debugging
-                if (uploadedData.length > 0 && uploadedData[0].words) {
-                    console.log('First period date field:', uploadedData[0].date);
-                }
-
-                // Apply preprocessing like the built-in datasets do
-                console.log('Data before processSudden:', uploadedData.length, 'periods');
-                console.log('First period:', uploadedData[0]);
-
-                processSudden(uploadedData);
-
-                // Store in totalData so control panel features can access it
-                totalData = JSON.parse(JSON.stringify(uploadedData));
-
-                const processedData = getTop(JSON.parse(JSON.stringify(totalData)), categories, initTop);
-
-                console.log('Data after processing:', processedData.length, 'periods');
-                console.log('First period after processing:', processedData[0]);
-                console.log('Words in first period:', {
-                    total: Object.values(processedData[0].words).reduce((a, b) => a + b.length, 0),
-                    byCategory: Object.keys(processedData[0].words).map(cat => cat + ': ' + processedData[0].words[cat].length)
+        // Check if we have full data or just metadata
+        const storedData = uploadedDatasets[fileName];
+        if (storedData.filepath && !storedData.data) {
+            // We only have metadata, need to load the actual file
+            console.log(`Loading dataset from file: ${storedData.filepath}`);
+            fetch(storedData.filepath)
+                .then(res => res.json())
+                .then(fileData => {
+                    // Cache it in memory for future use
+                    uploadedDatasets[fileName] = fileData;
+                    // Process and display
+                    processUploadedDataset(fileName, fileData);
+                })
+                .catch(err => {
+                    console.error('Error loading dataset file:', err);
+                    spinner.stop();
                 });
-
-                globalData = processedData;
-                draw(processedData);
-                console.log('✓ Uploaded dataset visualized');
-            } else {
-                console.error('No data in uploaded dataset:', datasetData);
-            }
-        } catch (e) {
-            console.error('Error loading uploaded dataset:', e);
-        } finally {
-            spinner.stop();
+            return; // Exit early, will continue in the promise
         }
+
+        // We have full data cached in memory
+        processUploadedDataset(fileName, storedData);
         return;
     }
 
@@ -271,6 +334,9 @@ function loadNewData(event) {
     document.getElementById("rel").checked = false;
     loadData();
 }
+
+// Expose to window for upload.js to call
+window.loadNewData = loadNewData;
 
 function draw(data) {
     // Store data for redraw on color palette changes
@@ -481,6 +547,11 @@ function draw(data) {
     var lineScale;
     if (fileName.indexOf("Huffington") >= 0) {
         d3.json("data/linksHuff2012.json", function (error, rawLinks) {
+            if (error) {
+                console.warn("Huffington links file not found, displaying without relationships:", error);
+                drawWords();
+                return;
+            }
             const threshold = 5;
             const links = rawLinks.filter(d => d.weight > threshold);
             var isRel = document.getElementById("rel").checked;

@@ -9,9 +9,11 @@ import tempfile
 from pathlib import Path
 from datetime import datetime
 from werkzeug.utils import secure_filename
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, send_file, Response, stream_with_context
 from flask_cors import CORS
 import traceback
+import queue
+import threading
 
 from preprocess import DataPreprocessor
 
@@ -103,10 +105,31 @@ def upload_file():
                 output_format=sentiment_model
             )
 
+            # Save result to data directory instead of sending in response
+            # This prevents timeout/memory issues with large datasets
+            data_dir = Path(__file__).parent.parent / 'data'
+            data_dir.mkdir(exist_ok=True)
+
+            # Generate output filename based on original name
+            original_name = Path(filename).stem
+            output_filename = f"{original_name}_processed_{sentiment_model}.json"
+            output_path = data_dir / output_filename
+
+            # Save to file
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(result, f, ensure_ascii=False, indent=2)
+
+            file_size_mb = output_path.stat().st_size / (1024 * 1024)
+
+            print(f"✓ Saved processed dataset to {output_path} ({file_size_mb:.2f} MB)")
+
             return jsonify({
                 "success": True,
-                "data": result,
-                "message": f"Successfully processed {result['metadata']['total_documents']} documents"
+                "filename": output_filename,
+                "filepath": f"data/{output_filename}",
+                "metadata": result['metadata'],
+                "file_size_mb": round(file_size_mb, 2),
+                "message": f"Successfully processed {result['metadata']['total_documents']} documents. File saved to data/{output_filename}"
             })
 
         finally:
@@ -121,6 +144,150 @@ def upload_file():
             "error": str(e),
             "message": "Error processing file"
         }), 500
+
+
+@app.route('/api/upload-stream', methods=['POST'])
+def upload_file_stream():
+    """
+    Upload and process a dataset file with real-time progress updates via SSE.
+
+    Returns Server-Sent Events stream with progress updates.
+    """
+    def generate():
+        temp_path = None
+        try:
+            # Validate file exists
+            if 'file' not in request.files:
+                yield f"data: {json.dumps({'error': 'No file provided'})}\n\n"
+                return
+
+            file = request.files['file']
+            if file.filename == '':
+                yield f"data: {json.dumps({'error': 'No file selected'})}\n\n"
+                return
+
+            if not allowed_file(file.filename):
+                yield f"data: {json.dumps({'error': f'File type not allowed'})}\n\n"
+                return
+
+            # Get parameters
+            sentiment_model = request.form.get('sentiment_model', 'emotion')
+            date_column = request.form.get('date_column', 'date')
+            text_column = request.form.get('text_column', 'text')
+
+            # Save uploaded file temporarily
+            filename = secure_filename(file.filename)
+            temp_path = os.path.join(app.config['UPLOAD_FOLDER'], f"upload_{datetime.now().timestamp()}_{filename}")
+            file.save(temp_path)
+
+            # Send initial progress
+            yield f"data: {json.dumps({'type': 'progress', 'current': 0, 'total': 100, 'message': 'File uploaded, starting processing...'})}\n\n"
+
+            # Get preprocessor
+            processor = get_preprocessor(sentiment_model)
+
+            # Progress callback
+            def progress_callback(current, total, message):
+                # Calculate percentage (30-90% of total progress for processing)
+                percent = 30 + int((current / total) * 60)
+                progress_data = {
+                    'type': 'progress',
+                    'current': current,
+                    'total': total,
+                    'percent': percent,
+                    'message': message
+                }
+                return f"data: {json.dumps(progress_data)}\n\n"
+
+            # Create a queue for progress updates
+            progress_queue = queue.Queue()
+
+            def queued_progress_callback(current, total, message):
+                progress_queue.put(progress_callback(current, total, message))
+
+            # Process file in a separate thread
+            result_container = {}
+            error_container = {}
+
+            def process_file():
+                try:
+                    result = processor.process_dataset(
+                        temp_path,
+                        date_column=date_column,
+                        text_column=text_column,
+                        output_format=sentiment_model,
+                        progress_callback=queued_progress_callback
+                    )
+                    result_container['data'] = result
+                except Exception as e:
+                    error_container['error'] = str(e)
+                    error_container['traceback'] = traceback.format_exc()
+
+            # Start processing thread
+            process_thread = threading.Thread(target=process_file)
+            process_thread.start()
+
+            # Yield progress updates as they come
+            while process_thread.is_alive() or not progress_queue.empty():
+                try:
+                    # Get progress update with timeout
+                    progress_msg = progress_queue.get(timeout=0.5)
+                    yield progress_msg
+                except queue.Empty:
+                    # Send keepalive
+                    yield f": keepalive\n\n"
+
+            # Wait for thread to complete
+            process_thread.join()
+
+            # Check for errors
+            if error_container:
+                yield f"data: {json.dumps({'type': 'error', 'error': error_container['error']})}\n\n"
+                return
+
+            result = result_container['data']
+
+            # Send progress: saving file
+            yield f"data: {json.dumps({'type': 'progress', 'percent': 90, 'message': 'Saving processed data...'})}\n\n"
+
+            # Save result to data directory
+            data_dir = Path(__file__).parent.parent / 'data'
+            data_dir.mkdir(exist_ok=True)
+
+            original_name = Path(filename).stem
+            output_filename = f"{original_name}_processed_{sentiment_model}.json"
+            output_path = data_dir / output_filename
+
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(result, f, ensure_ascii=False, indent=2)
+
+            file_size_mb = output_path.stat().st_size / (1024 * 1024)
+
+            print(f"✓ Saved processed dataset to {output_path} ({file_size_mb:.2f} MB)")
+
+            # Send completion
+            completion_data = {
+                'type': 'complete',
+                'percent': 100,
+                'filename': output_filename,
+                'filepath': f"data/{output_filename}",
+                'metadata': result['metadata'],
+                'file_size_mb': round(file_size_mb, 2),
+                'message': f"Successfully processed {result['metadata']['total_documents']} documents"
+            }
+            yield f"data: {json.dumps(completion_data)}\n\n"
+
+        except Exception as e:
+            print(f"Error in /api/upload-stream: {e}")
+            print(traceback.format_exc())
+            yield f"data: {json.dumps({'type': 'error', 'error': str(e)})}\n\n"
+
+        finally:
+            # Clean up temp file
+            if temp_path and os.path.exists(temp_path):
+                os.remove(temp_path)
+
+    return Response(stream_with_context(generate()), content_type='text/event-stream')
 
 
 @app.route('/api/preprocess', methods=['POST'])
@@ -221,37 +388,58 @@ def analyze_text():
 @app.route('/api/datasets', methods=['GET'])
 def list_datasets():
     """
-    List available preprocessed datasets.
-    Can be extended to list from a data directory.
+    List available preprocessed datasets from the data directory.
     """
-    datasets = [
-        {
-            "name": "VIS Publications",
-            "file": "vis_papers.json",
-            "description": "Visualization research paper metadata",
-            "years": "1994-2023",
-            "records": 10000
-        },
-        {
-            "name": "Rotten Tomatoes Reviews",
-            "file": "rotten_tomatoes.json",
-            "description": "Movie and TV reviews with ratings",
-            "years": "2000-2023",
-            "records": 50000
-        },
-        {
-            "name": "Quantum Computing",
-            "file": "quantum.json",
-            "description": "Quantum computing research papers",
-            "years": "1998-2023",
-            "records": 5000
-        }
-    ]
+    try:
+        data_dir = Path(__file__).parent.parent / 'data'
+        datasets = []
 
-    return jsonify({
-        "success": True,
-        "datasets": datasets
-    })
+        if data_dir.exists():
+            # Scan for JSON files in data directory
+            for json_file in data_dir.glob('*.json'):
+                try:
+                    # Get file info
+                    file_size = json_file.stat().st_size / (1024 * 1024)  # MB
+                    file_name = json_file.stem  # Filename without extension
+
+                    # Try to read metadata if available
+                    with open(json_file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        metadata = data.get('metadata', {})
+
+                    datasets.append({
+                        "name": file_name,
+                        "file": json_file.name,
+                        "filepath": f"data/{json_file.name}",
+                        "description": metadata.get('dataset_name', file_name),
+                        "total_documents": metadata.get('total_documents', 'Unknown'),
+                        "total_periods": metadata.get('total_periods', 'Unknown'),
+                        "sentiment_model": metadata.get('sentiment_model', 'Unknown'),
+                        "file_size_mb": round(file_size, 2)
+                    })
+                except Exception as e:
+                    print(f"Error reading dataset {json_file.name}: {e}")
+                    # Still add it to the list with basic info
+                    datasets.append({
+                        "name": json_file.stem,
+                        "file": json_file.name,
+                        "filepath": f"data/{json_file.name}",
+                        "description": "Dataset",
+                        "file_size_mb": round(json_file.stat().st_size / (1024 * 1024), 2)
+                    })
+
+        return jsonify({
+            "success": True,
+            "datasets": datasets,
+            "count": len(datasets)
+        })
+
+    except Exception as e:
+        print(f"Error in /api/datasets: {e}")
+        return jsonify({
+            "error": str(e),
+            "message": "Error listing datasets"
+        }), 500
 
 
 @app.route('/api/models', methods=['GET'])

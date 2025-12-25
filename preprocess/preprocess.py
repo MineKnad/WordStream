@@ -204,7 +204,8 @@ class DataPreprocessor:
         filepath: str,
         date_column: str = 'date',
         text_column: str = 'text',
-        output_format: str = 'emotion'  # 'emotion', 'sentiment', or 'happiness'
+        output_format: str = 'emotion',  # 'emotion', 'sentiment', or 'happiness'
+        progress_callback: callable = None
     ) -> Dict:
         """
         Process a complete dataset and return WordStream-ready data.
@@ -260,9 +261,12 @@ class DataPreprocessor:
         emotion_counts = defaultdict(int)
         happiness_counts = defaultdict(int)
 
+        total_docs = len(df)
         for idx, row in df.iterrows():
             if idx % 100 == 0:
-                print(f"  Processed {idx}/{len(df)} documents")
+                print(f"  Processed {idx}/{total_docs} documents")
+                if progress_callback:
+                    progress_callback(idx, total_docs, f"Processing documents... {idx}/{total_docs}")
 
             text = row[text_column]
             if pd.isna(text):
@@ -321,10 +325,14 @@ class DataPreprocessor:
 
         # Compute sudden attention
         print("Computing sudden attention...")
+        if progress_callback:
+            progress_callback(total_docs, total_docs, "Computing sudden attention...")
         sudden_attention = self.compute_sudden_attention(words_by_period)
 
         # Build output structure
         print("Building output structure...")
+        if progress_callback:
+            progress_callback(total_docs, total_docs, "Building output structure...")
         periods = sorted(words_by_period.keys())
         output_data = []
 
