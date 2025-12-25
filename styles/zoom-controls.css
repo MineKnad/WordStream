@@ -24,6 +24,12 @@
 
 .title .tour-btn {
     margin: 4px 2px;
+    height: 40px !important;
+    padding: 0 16px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .zoom-controls {
@@ -73,7 +79,6 @@
     color: white;
     border: 1px solid #2471a3;
     font-size: 14px;
-    padding: 10px 16px;
     font-weight: 600;
 }
 

@@ -21,10 +21,10 @@ var currentDrawData = null;
 // Store metadata from uploaded datasets (for legend detection)
 var uploadedMetadata = null;
 
-var axisGroup = svg.append('g').attr("id", "axisGroup");
 var xGridlinesGroup = svg.append('g').attr("id", "xGridlinesGroup");
 var mainGroup = svg.append('g').attr("id", "main");
 var legendGroup = svg.append('g').attr("id", "legend");
+var axisGroup = svg.append('g').attr("id", "axisGroup");
 
 // Store uploaded datasets in memory (MUST be before addDatasetsOptions)
 var uploadedDatasets = {};

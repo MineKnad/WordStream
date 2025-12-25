@@ -7,6 +7,7 @@ var zoom;
 var zoomContainer;
 var isAnimating = false;
 var animationDuration = 30000; // 30 seconds for full tour
+var originalAxisX = 0; // Store original axis X position for tour
 var originalAxisY = 0; // Store original axis Y position for tour
 
 // Selected word tracking for tour
@@ -209,6 +210,18 @@ function resetZoom() {
         .duration(750)
         .attr("transform", "translate(0,0)scale(1)");
 
+    // Reset axis to original position
+    var axisGroup = d3.select("#axisGroup");
+    if (axisGroup.node()) {
+        var originalTransform = axisGroup.attr("data-original-transform");
+        if (originalTransform) {
+            axisGroup.transition()
+                .duration(750)
+                .attr("transform", originalTransform);
+            console.log('✓ Axis reset to original position');
+        }
+    }
+
     console.log('✓ Zoom reset');
 }
 
@@ -344,6 +357,63 @@ function calculateWordAverageY(text, topic) {
 }
 
 /**
+ * Calculate the selected word's Y position at a specific X coordinate
+ * @param {number} xPosition - X coordinate in SVG space
+ * @param {object} selectedWord - {text, topic, color}
+ * @returns {number|null} - Absolute Y coordinate, or null if unavailable
+ */
+function getWordYAtX(xPosition, selectedWord) {
+    // Validate inputs
+    if (!selectedWord || !selectedWord.text || !selectedWord.topic) {
+        return null;
+    }
+
+    // Get stream layer data for this topic
+    var pathElement = d3.select("path[topic='" + selectedWord.topic + "']");
+    if (!pathElement.node()) return null;
+
+    var streamLayer = pathElement.datum();
+    if (!streamLayer || streamLayer.length === 0) return null;
+
+    // Calculate dimensions
+    var margins = {left: 20, top: 20, right: 10, bottom: 30};
+    var vizWidth = globalWidth - (margins.left + margins.right);
+    var periodsCount = currentDrawData.length;
+
+    // Map X position to time step index
+    var relativeX = xPosition - margins.left;
+    var timeStepFloat = (relativeX / vizWidth) * periodsCount;
+    timeStepFloat = Math.max(0, Math.min(periodsCount - 1, timeStepFloat));
+
+    // Get integer bounds for interpolation
+    var timeStepLow = Math.floor(timeStepFloat);
+    var timeStepHigh = Math.ceil(timeStepFloat);
+    var fraction = timeStepFloat - timeStepLow;
+
+    // Stream layer has +1 offset (first point is duplicate)
+    var layerIndexLow = timeStepLow + 1;
+    var layerIndexHigh = timeStepHigh + 1;
+
+    // Get Y positions at both time steps
+    var layerPointLow = streamLayer[layerIndexLow];
+    var layerPointHigh = streamLayer[layerIndexHigh];
+
+    if (!layerPointLow || !layerPointHigh) return null;
+
+    // Calculate center Y for each time step
+    var yLow = layerPointLow.y0 + (layerPointLow.y / 2);
+    var yHigh = layerPointHigh.y0 + (layerPointHigh.y / 2);
+
+    // Interpolate between them
+    var interpolatedY = yLow + (yHigh - yLow) * fraction;
+
+    // Convert to absolute SVG coordinates
+    var absoluteY = margins.top + interpolatedY;
+
+    return absoluteY;
+}
+
+/**
  * Set the selected word for tour and calculate its average Y position
  * Called from main.js when user clicks a word
  * @param {string} text - The word text
@@ -385,6 +455,86 @@ function clearSelectedWordForTour() {
 // Expose functions to window for cross-file access
 window.setSelectedWordForTour = setSelectedWordForTour;
 window.clearSelectedWordForTour = clearSelectedWordForTour;
+
+/**
+ * Create a custom interpolator for conservative Y tracking during pan
+ * Only adjusts Y when word would go outside visible zone (center 60% of viewport)
+ * @param {array} startTranslate - [x, y] starting translation
+ * @param {array} endTranslate - [x, y] ending translation
+ * @param {number} scale - Zoom scale
+ * @param {object} selectedWord - {text, topic, color}
+ * @param {number} svgHeight - SVG viewport height
+ * @param {number} averageY - Average Y position to prefer (for stability)
+ * @returns {function} - Interpolator function for d3 transition
+ */
+function createDynamicYInterpolator(startTranslate, endTranslate, scale, selectedWord, svgHeight, averageY) {
+    // Define visible zone: center 60% of viewport (20% margin top/bottom)
+    var visibleZoneTop = svgHeight * 0.20;
+    var visibleZoneBottom = svgHeight * 0.80;
+
+    // Anti-jitter: Add hysteresis buffer (10% of viewport = 6% of visible area)
+    var hysteresisBuffer = svgHeight * 0.10;
+    var adjustmentZoneTop = visibleZoneTop - hysteresisBuffer;
+    var adjustmentZoneBottom = visibleZoneBottom + hysteresisBuffer;
+
+    // Smooth interpolation: Track current Y for damping
+    var currentY = averageY;  // Start at average
+    var dampingFactor = 0.15;  // How quickly to approach target (0=slow, 1=instant)
+
+    return function(t) {
+        // t ranges from 0 to 1 during transition
+
+        // Interpolate X translation linearly
+        var currentTranslateX = startTranslate[0] + (endTranslate[0] - startTranslate[0]) * t;
+
+        // Calculate current focus point X in data space
+        var svgWidth = globalWidth;
+        var viewportCenterX = svgWidth / 2;
+        var focusDataX = (viewportCenterX - currentTranslateX) / scale;
+
+        // Get word's actual Y position at this X
+        var wordActualY = getWordYAtX(focusDataX, selectedWord);
+
+        // Determine ideal target Y position
+        var idealTargetY = averageY;
+
+        if (wordActualY !== null) {
+            // Calculate where word would appear in screen space with current Y
+            var currentYTranslate = (svgHeight / 2) - (currentY * scale);
+            var wordScreenY = currentYTranslate + (wordActualY * scale);
+
+            // Check if word is outside adjustment zone (with hysteresis buffer)
+            if (wordScreenY < adjustmentZoneTop) {
+                // Word is too high - adjust Y to bring it to top of visible zone
+                var adjustedTranslateY = visibleZoneTop - (wordActualY * scale);
+                idealTargetY = (svgHeight / 2 - adjustedTranslateY) / scale;
+            } else if (wordScreenY > adjustmentZoneBottom) {
+                // Word is too low - adjust Y to bring it to bottom of visible zone
+                var adjustedTranslateY = visibleZoneBottom - (wordActualY * scale);
+                idealTargetY = (svgHeight / 2 - adjustedTranslateY) / scale;
+            }
+            // else: word is within safe zone, keep idealTargetY = averageY
+        } else {
+            // Fallback to center if calculation fails
+            var center = getStreamCenterPoint();
+            idealTargetY = center.y;
+        }
+
+        // Apply smooth damping: gradually approach ideal target instead of instant snap
+        // currentY = currentY + (idealTargetY - currentY) * dampingFactor
+        currentY = currentY + (idealTargetY - currentY) * dampingFactor;
+
+        // Clamp to reasonable bounds (safety)
+        var minY = svgHeight * 0.10;
+        var maxY = svgHeight * 0.90;
+        currentY = Math.max(minY, Math.min(maxY, currentY));
+
+        // Calculate Y translation to center this target point
+        var currentTranslateY = (svgHeight / 2) - (currentY * scale);
+
+        return "translate(" + currentTranslateX + "," + currentTranslateY + ")scale(" + scale + ")";
+    };
+}
 
 /**
  * Animated tour of the timeline
@@ -461,13 +611,19 @@ function playAnimatedTour() {
     // Disable manual zoom during animation
     svg.on(".zoom", null);
 
-    // Get and store original axis Y position
+    // Get and store original axis position
     var axisGroup = d3.select("#axisGroup");
     var axisTransform = axisGroup.attr("transform") || "";
     var axisTranslateMatch = axisTransform.match(/translate\(([^,]+),([^)]+)\)/);
+    originalAxisX = axisTranslateMatch ? parseFloat(axisTranslateMatch[1]) : 0;
     originalAxisY = axisTranslateMatch ? parseFloat(axisTranslateMatch[2]) : 0;
 
-    console.log('Original axis Y position:', originalAxisY);
+    // Move axis to end of parent to ensure it renders on top during tour
+    if (axisGroup.node() && axisGroup.node().parentNode) {
+        axisGroup.node().parentNode.appendChild(axisGroup.node());
+    }
+
+    console.log('Original axis position:', {x: originalAxisX, y: originalAxisY});
 
     // Step 1: Zoom in on the left-center of the timeline
     console.log('Step 1: Zooming in on timeline start...');
@@ -526,23 +682,52 @@ function playAnimatedTour() {
             // Step 2: Pan across the entire timeline
             console.log('Step 2: Panning across timeline...');
 
-            // Pan to the right end while maintaining vertical center
+            // Pan to the right end while dynamically tracking vertical position
             // Calculate the rightmost target point
             var rightTargetX = margins.left + center.streamWidth - (vizWidth / zoomInScale / 2);
             var endX = (svgWidth / 2) - (rightTargetX * zoomInScale);
 
-            // Keep same Y as Step 1 to maintain vertical centering
-            var translate2 = [endX, translateY];
+            // Calculate end Y position for smooth finish
+            var endTargetY;
+            if (selectedWordForTour && selectedWordAverageY !== null) {
+                endTargetY = getWordYAtX(rightTargetX, selectedWordForTour);
+                if (endTargetY === null) endTargetY = targetY; // Fallback
+            } else {
+                endTargetY = targetY; // Use center Y
+            }
+            endTargetY = Math.max(minY, Math.min(maxY, endTargetY));
+
+            var translate2 = [endX, (svgHeight / 2) - (endTargetY * zoomInScale)];
+
+            // Create custom interpolator for conservative Y tracking
+            var panInterpolator = createDynamicYInterpolator(
+                [translateX, translateY],  // Start position (from Step 1)
+                translate2,                 // End position
+                zoomInScale,               // Zoom scale
+                selectedWordForTour,       // Selected word object
+                svgHeight,                 // Viewport height
+                targetY                    // Average Y position (prefer to stay here)
+            );
 
             zoomLayer.transition()
                 .duration(panDuration)
                 .ease("linear") // Constant speed pan
-                .attr("transform", "translate(" + translate2 + ")scale(" + zoomInScale + ")")
+                .attrTween("transform", function() { return panInterpolator; })
+                .tween("updateAxis", function() {
+                    // Update axis continuously during pan
+                    return function(t) {
+                        var currentTransform = zoomLayer.attr("transform");
+                        var match = currentTransform.match(/translate\(([^,]+),([^)]+)\)scale/);
+                        if (match) {
+                            var currentTranslateY = parseFloat(match[2]);
+                            adjustAxisYPosition(currentTranslateY, zoomInScale, originalAxisY);
+                        }
+                    };
+                })
                 .each("end", function() {
                     if (!isAnimating) return; // Animation was stopped
 
-                    // Axis Y position stays the same during horizontal pan
-                    // (already adjusted in Step 1)
+                    // Axis Y position is continuously updated during pan via tween
 
                     // Step 3: Zoom back out to full view
                     console.log('Step 3: Zooming out to full view...');
@@ -600,16 +785,17 @@ function stopAnimation() {
         zoomLayer.transition().duration(0);
     }
 
-    // Restore axis to original Y position
+    // Restore axis to original position
     var axisGroup = d3.select("#axisGroup");
     if (axisGroup.node()) {
         axisGroup.transition().duration(0);
+        axisGroup.attr("transform", "translate(" + originalAxisX + "," + originalAxisY + ")");
+        console.log('✓ Axis position restored to', {x: originalAxisX, y: originalAxisY});
 
-        var currentTransform = axisGroup.attr("transform") || "";
-        var translateMatch = currentTransform.match(/translate\(([^,]+),([^)]+)\)/);
-        var currentX = translateMatch ? parseFloat(translateMatch[1]) : 0;
-        axisGroup.attr("transform", "translate(" + currentX + "," + originalAxisY + ")");
-        console.log('✓ Axis Y restored to', originalAxisY);
+        // Ensure axis is still on top after stopping
+        if (axisGroup.node().parentNode) {
+            axisGroup.node().parentNode.appendChild(axisGroup.node());
+        }
     }
 
     // Update button state
