@@ -62,12 +62,7 @@ const UploadManager = {
                             <div class="form-group">
                                 <label for="sentimentModelSelect" style="position: relative;">
                                     Analysis Model:
-                                    <span class="help-icon" id="analysisModelHelp">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
-                                            <text x="8" y="11.5" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor">?</text>
-                                        </svg>
-                                    </span>
+                                    <span class="analysis-help-icon" id="analysisModelHelp">?</span>
 
                                     <!-- Tooltip for Analysis Models -->
                                     <div id="analysisModelTooltip" class="model-tooltip" style="display:none;">
