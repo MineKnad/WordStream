@@ -366,6 +366,11 @@ function loadNewData(event) {
 window.loadNewData = loadNewData;
 
 function draw(data) {
+    // Clear selected word when drawing new dataset
+    if (typeof window.clearSelectedWordForTour === 'function') {
+        window.clearSelectedWordForTour();
+    }
+
     // Store data for redraw on color palette changes
     currentDrawData = data;
 
@@ -460,8 +465,18 @@ function draw(data) {
         dates.push(row.date);
     });
 
+    // Store all dates globally for zoom-based filtering
+    allAxisDates = dates;
+
+    // Create scale with ALL dates for proper positioning
     var xAxisScale = d3.scale.ordinal().domain(dates).rangeBands([0, width]);
-    var xAxis = d3.svg.axis().orient('bottom').scale(xAxisScale);
+
+    // Initially show filtered dates (at zoom scale 1)
+    var filteredDates = getFilteredAxisDates(dates, 1.0);
+    var xAxis = d3.svg.axis()
+        .orient('bottom')
+        .scale(xAxisScale)
+        .tickValues(filteredDates); // Only show filtered dates
 
     axisGroup.attr('transform', 'translate(' + (margins.left) + ',' + (height + margins.top + axisPadding + legendHeight) + ')');
     var axisNodes = axisGroup.call(xAxis);
@@ -779,6 +794,13 @@ function draw(data) {
             var thisText = d3.select(this);
             var text = thisText.text();
             var topic = thisText.attr('topic');
+
+            // Store selected word for tour
+            var wordColor = thisText.attr('fill');
+            if (typeof window.setSelectedWordForTour === 'function') {
+                window.setSelectedWordForTour(text, topic, wordColor);
+            }
+
             var allTexts = mainGroup.selectAll('.textData').filter(t => {
                 return t && t.text === text && t.topic === topic;
             });
@@ -870,6 +892,11 @@ function draw(data) {
                 document.querySelectorAll("path[wordStream='true'][topic='" + topic + "']").forEach(node => {
                     node.parentNode.removeChild(node);
                 });
+
+                // Clear selection when clicking stream to deselect
+                if (typeof window.clearSelectedWordForTour === 'function') {
+                    window.clearSelectedWordForTour();
+                }
             });
 
         });
@@ -1054,6 +1081,157 @@ function styleGridlineNodes(gridlineNodes) {
         stroke: 'lightgray'
     });
 }
+
+/**
+ * Calculate which axis labels to show based on dataset size and zoom level
+ * @param {Array} allDates - All date labels
+ * @param {number} zoomScale - Current zoom scale (1 = no zoom, 3 = 3x zoomed)
+ * @returns {Array} Filtered array of dates to display
+ */
+function getFilteredAxisDates(allDates, zoomScale) {
+    var periodCount = allDates.length;
+    var skipInterval;
+
+    // At zoom scale 1 (no zoom), determine skip interval based on dataset size
+    if (zoomScale <= 1.5) {
+        if (periodCount >= 300) {
+            skipInterval = 25; // Show every 25th label (312 periods → ~12 labels)
+        } else if (periodCount >= 200) {
+            skipInterval = 20; // Show every 20th label
+        } else if (periodCount >= 150) {
+            skipInterval = 15; // Show every 15th label
+        } else if (periodCount >= 100) {
+            skipInterval = 10; // Show every 10th label
+        } else if (periodCount >= 50) {
+            skipInterval = 5; // Show every 5th label
+        } else {
+            skipInterval = 2; // Show every 2nd label
+        }
+    }
+    // At moderate zoom (1.5x - 2.5x), show more labels
+    else if (zoomScale <= 2.5) {
+        if (periodCount >= 300) {
+            skipInterval = 15; // Show every 15th
+        } else if (periodCount >= 200) {
+            skipInterval = 12;
+        } else if (periodCount >= 100) {
+            skipInterval = 8;
+        } else if (periodCount >= 50) {
+            skipInterval = 3;
+        } else {
+            skipInterval = 1; // Show all
+        }
+    }
+    // At high zoom (2.5x+), show most or all labels
+    else {
+        if (periodCount >= 300) {
+            skipInterval = 8; // Show every 8th
+        } else if (periodCount >= 200) {
+            skipInterval = 5;
+        } else if (periodCount >= 100) {
+            skipInterval = 3;
+        } else {
+            skipInterval = 1; // Show all
+        }
+    }
+
+    // Filter dates: always include first and last
+    var filteredDates = [];
+    for (var i = 0; i < allDates.length; i++) {
+        if (i === 0 || i === allDates.length - 1 || i % skipInterval === 0) {
+            filteredDates.push(allDates[i]);
+        }
+    }
+
+    return filteredDates;
+}
+
+/**
+ * Update axis tick labels based on current zoom level
+ * Called during zoom events and tour animation
+ * @param {number} zoomScale - Current zoom scale
+ */
+function updateAxisForZoom(zoomScale) {
+    if (!allAxisDates || allAxisDates.length === 0) {
+        return; // No axis data yet
+    }
+
+    var filteredDates = getFilteredAxisDates(allAxisDates, zoomScale);
+
+    // Get the current axis scale and update tick values
+    var width = globalWidth - 40;
+
+    var xAxisScale = d3.scale.ordinal().domain(allAxisDates).rangeBands([0, width]);
+    var xAxis = d3.svg.axis()
+        .orient('bottom')
+        .scale(xAxisScale)
+        .tickValues(filteredDates);
+
+    // Redraw axis with new tick values
+    axisGroup.call(xAxis);
+    styleAxis(axisGroup);
+}
+
+/**
+ * Update axis to show only the dates visible in the current viewport
+ * Called during tour animation to sync axis with visible portion
+ * @param {number} translateX - Current X translation
+ * @param {number} scale - Current zoom scale
+ * @param {number} viewportWidth - Width of the viewport
+ */
+function updateAxisForVisibleRange(translateX, scale, viewportWidth) {
+    if (!allAxisDates || allAxisDates.length === 0) {
+        return;
+    }
+
+    var width = globalWidth - 40;
+
+    // Calculate the visible range in data coordinates
+    // When zoomed and translated, we need to find which portion of the original data is visible
+    var visibleStartX = -translateX / scale;
+    var visibleEndX = visibleStartX + (viewportWidth / scale);
+
+    // Map the visible X range to date indices
+    var dateWidth = width / allAxisDates.length;
+    var startIndex = Math.floor(visibleStartX / dateWidth);
+    var endIndex = Math.ceil(visibleEndX / dateWidth);
+
+    // Clamp to valid range
+    startIndex = Math.max(0, startIndex);
+    endIndex = Math.min(allAxisDates.length - 1, endIndex);
+
+    // Get the visible dates
+    var visibleDates = allAxisDates.slice(startIndex, endIndex + 1);
+
+    // Apply smart filtering based on how many dates are visible
+    var filteredDates = getFilteredAxisDates(visibleDates, scale);
+
+    console.log('Visible range: indices', startIndex, 'to', endIndex,
+                '(', visibleDates.length, 'dates,', filteredDates.length, 'shown)');
+
+    // Create axis with only visible dates
+    var xAxisScale = d3.scale.ordinal()
+        .domain(allAxisDates)  // Full domain for proper positioning
+        .rangeBands([0, width]);
+
+    var xAxis = d3.svg.axis()
+        .orient('bottom')
+        .scale(xAxisScale)
+        .tickValues(filteredDates);
+
+    // Redraw axis
+    axisGroup.call(xAxis);
+    styleAxis(axisGroup);
+}
+
+/**
+ * Store all dates globally for zoom updates
+ */
+var allAxisDates = [];
+
+// Expose globally for zoom-animation.js to call
+window.updateAxisForZoom = updateAxisForZoom;
+window.updateAxisForVisibleRange = updateAxisForVisibleRange;
 
 /**
  * Update word colors based on current palette
