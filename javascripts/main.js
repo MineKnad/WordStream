@@ -197,35 +197,62 @@ var spinner;
  */
 function processUploadedDataset(fileName, datasetData) {
     try {
-        // Extract categories from the data
+        // Extract categories from metadata
+        let declaredCategories = [];
         if (datasetData.metadata && datasetData.metadata.categories) {
-            categories = datasetData.metadata.categories;
-            console.log('Categories from uploaded data:', categories);
+            declaredCategories = datasetData.metadata.categories;
+            console.log('Declared categories from metadata:', declaredCategories);
         }
 
-        // Use the processed data
         if (datasetData.data) {
             let uploadedData = datasetData.data;
 
-            // Store metadata for legend detection
+            console.log('Data before validation:', uploadedData.length, 'periods');
+
+            // VALIDATE: Check which categories actually have data
+            const validation = validateAndFilterCategories(uploadedData, declaredCategories);
+            console.log('Category validation results:', validation);
+
+            // WARN: Show missing categories
+            if (validation.missingCategories.length > 0) {
+                let message = '⚠️ Category Data Issues:\n\n';
+                validation.missingCategories.forEach(cat => {
+                    message += `• ${cat.category}: Present in ${cat.presenceCount}/${validation.totalPeriods} periods (${cat.presenceRate}%)\n`;
+                    if (cat.presenceCount === 0) {
+                        message += `  → Completely missing - excluded from visualization\n`;
+                    } else {
+                        message += `  → Too sparse - excluded from visualization\n`;
+                    }
+                });
+                message += `\nVisualization will continue with categories that have data.`;
+                console.warn(message);
+            }
+
+            // CLEANUP: Remove invalid categories from data
+            uploadedData = cleanupDataWithValidCategories(uploadedData, validation.validCategories);
+
+            // UPDATE: Set categories to only valid ones
+            categories = validation.validCategories;
+            console.log('Updated categories to valid ones:', categories);
+
+            // UPDATE METADATA: Reflect actual categories
+            if (datasetData.metadata) {
+                datasetData.metadata.categories = validation.validCategories;
+            }
+
             uploadedMetadata = datasetData.metadata;
-            console.log('Stored metadata:', uploadedMetadata);
 
-            // Apply preprocessing like the built-in datasets do
             console.log('Data before processSudden:', uploadedData.length, 'periods');
-
             processSudden(uploadedData);
 
-            // Store in totalData so control panel features can access it
             totalData = JSON.parse(JSON.stringify(uploadedData));
-
             const processedData = getTop(JSON.parse(JSON.stringify(totalData)), categories, initTop);
 
             console.log('Data after processing:', processedData.length, 'periods');
 
             globalData = processedData;
             draw(processedData);
-            console.log('✓ Uploaded dataset visualized');
+            console.log('✓ Uploaded dataset visualized with validated categories');
         } else {
             console.error('No data in uploaded dataset:', datasetData);
         }
