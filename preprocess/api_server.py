@@ -385,6 +385,46 @@ def analyze_text():
         }), 500
 
 
+@app.route('/data/<path:filename>', methods=['GET'])
+def serve_data_file(filename):
+    """
+    Serve static files from the data directory.
+    This allows the frontend to load dataset JSON files directly.
+    """
+    try:
+        data_dir = Path(__file__).parent.parent / 'data'
+        file_path = data_dir / filename
+
+        # Security check: ensure the file is within data directory
+        if not file_path.resolve().is_relative_to(data_dir.resolve()):
+            return jsonify({
+                "error": "Access denied",
+                "message": "File must be in data directory"
+            }), 403
+
+        # Check if file exists
+        if not file_path.exists():
+            return jsonify({
+                "error": "File not found",
+                "message": f"Dataset file '{filename}' not found"
+            }), 404
+
+        # Serve the file
+        return send_file(
+            file_path,
+            mimetype='application/json',
+            as_attachment=False,
+            download_name=filename
+        )
+
+    except Exception as e:
+        print(f"Error serving data file {filename}: {e}")
+        return jsonify({
+            "error": str(e),
+            "message": "Error serving file"
+        }), 500
+
+
 @app.route('/api/datasets', methods=['GET'])
 def list_datasets():
     """
@@ -415,7 +455,8 @@ def list_datasets():
                         "total_documents": metadata.get('total_documents', 'Unknown'),
                         "total_periods": metadata.get('total_periods', 'Unknown'),
                         "sentiment_model": metadata.get('sentiment_model', 'Unknown'),
-                        "file_size_mb": round(file_size, 2)
+                        "file_size_mb": round(file_size, 2),
+                        "metadata": metadata
                     })
                 except Exception as e:
                     print(f"Error reading dataset {json_file.name}: {e}")

@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="styles/trajectory.css"/>
     <link rel="stylesheet" type="text/css" href="styles/timeline-slider.css"/>
     <link rel="stylesheet" type="text/css" href="styles/comparison-overlay.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/zoom-controls.css"/>
 
 </head>
 <body>
@@ -106,6 +107,21 @@
     <input class="submit" onclick="submitInput(draw)" type="button" value="Submit"><br>
     <input class="computeMetric" onclick="computeMetric()" type="button" value="Update measurements"><br>
 </div>
+
+<!-- Zoom and Animation Controls -->
+<div id="zoomControls" class="zoom-controls">
+    <button onclick="playAnimatedTour()" class="zoom-btn tour-btn" title="Play animated tour of timeline (Keyboard: T)">
+        <span class="btn-icon">▶</span> Tour
+    </button>
+    <div class="zoom-btn-group">
+        <button onclick="zoomIn()" class="zoom-btn" title="Zoom in (Keyboard: +)">+</button>
+        <button onclick="resetZoom()" class="zoom-btn" title="Reset zoom (Keyboard: 0)">⊙</button>
+        <button onclick="zoomOut()" class="zoom-btn" title="Zoom out (Keyboard: -)">−</button>
+    </div>
+    <div class="zoom-help" title="Keyboard shortcuts: +/- zoom, 0 reset, T tour, Esc stop">
+        <span class="help-icon">?</span>
+    </div>
+</div>
 <script src="./javascripts/metric.js"></script>
 <script src="./javascripts/init.js"></script>
 <script>
@@ -125,6 +141,7 @@
 <script src="./javascripts/main.js?v=2025122515"></script>
 <script src="./javascripts/update.js"></script>
 <script src="./javascripts/upload.js?v=2025122505"></script>
+<script src="./javascripts/zoom-animation.js?v=2025122601"></script>
 
 </body>
 </html>

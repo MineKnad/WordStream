@@ -1,0 +1,169 @@
+/**
+ * Zoom and Animation Controls Styling
+ */
+
+.zoom-controls {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zoom-btn {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+    min-width: 40px;
+    text-align: center;
+}
+
+.zoom-btn:hover {
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    border-color: #999;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.zoom-btn:active {
+    background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tour-btn {
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    color: white;
+    border: 1px solid #2471a3;
+    font-size: 14px;
+    padding: 10px 16px;
+    font-weight: 600;
+}
+
+.tour-btn:hover {
+    background: linear-gradient(to bottom, #5dade2, #3498db);
+    border-color: #1f618d;
+}
+
+.tour-btn:active {
+    background: linear-gradient(to bottom, #2980b9, #21618c);
+}
+
+.tour-btn .btn-icon {
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.zoom-btn-group {
+    display: flex;
+    gap: 6px;
+    justify-content: space-between;
+}
+
+.zoom-btn-group .zoom-btn {
+    flex: 1;
+    min-width: 35px;
+}
+
+/* Animation when tour is playing */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.tour-btn.playing {
+    animation: pulse 1.5s ease-in-out infinite;
+    background: linear-gradient(to bottom, #e74c3c, #c0392b);
+    border-color: #a93226;
+}
+
+.tour-btn.playing:hover {
+    background: linear-gradient(to bottom, #ec7063, #e74c3c);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .zoom-controls {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        padding: 8px;
+    }
+
+    .zoom-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+        min-width: 32px;
+    }
+
+    .tour-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Help icon */
+.zoom-help {
+    text-align: center;
+    padding: 4px 0;
+    cursor: help;
+}
+
+.help-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background: #95a5a6;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.zoom-help:hover .help-icon {
+    background: #7f8c8d;
+    transform: scale(1.1);
+}
+
+/* Drag cursor hint */
+.zoom-controls::after {
+    content: "🖱️ Drag to pan";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #7f8c8d;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Tooltip-like hint for first-time users */
+.zoom-controls::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #2c3e50;
+}

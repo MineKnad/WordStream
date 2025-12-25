@@ -145,9 +145,112 @@ class SentimentAnalyzer:
                 "confidence": 0.5
             }
 
-    def batch_analyze(self, texts: List[str]) -> List[Dict]:
-        """Analyze multiple texts efficiently"""
-        return [self.analyze_text(text) for text in texts]
+    def batch_analyze(self, texts: List[str], batch_size: int = 32) -> List[Dict]:
+        """
+        Analyze multiple texts efficiently using batching.
+
+        Args:
+            texts: List of text strings to analyze
+            batch_size: Number of texts to process in each batch (default: 32)
+
+        Returns:
+            List of analysis dictionaries in same format as analyze_text()
+        """
+        if not texts:
+            return []
+
+        all_results = []
+
+        # Process in batches for optimal GPU/CPU utilization
+        for i in range(0, len(texts), batch_size):
+            batch_texts = texts[i:i + batch_size]
+
+            # Truncate and preprocess batch
+            processed_batch = []
+            empty_indices = []
+
+            for idx, text in enumerate(batch_texts):
+                if not text or len(text.strip()) < 3:
+                    empty_indices.append(idx)
+                    processed_batch.append("")  # Placeholder
+                else:
+                    # Truncate to avoid memory issues
+                    processed_batch.append(text[:512] if len(text) > 512 else text)
+
+            try:
+                # Call model with batch - transformers pipeline handles batching natively
+                if self.model_type in ["emotion", "sentiment"]:
+                    # top_k=None returns all emotion scores
+                    batch_results = self.model(processed_batch, top_k=None)
+                else:
+                    # Standard sentiment returns single prediction
+                    batch_results = self.model(processed_batch)
+
+                # Process results for each text in batch
+                for idx, result in enumerate(batch_results):
+                    # Handle empty texts
+                    if idx in empty_indices:
+                        all_results.append({
+                            "sentiment_score": 0.0,
+                            "emotion": "neutral",
+                            "emotion_distribution": {"neutral": 1.0},
+                            "confidence": 0.5
+                        })
+                        continue
+
+                    # Process based on model type
+                    if self.model_type in ["emotion", "sentiment"]:
+                        # Results: [{"label": emotion, "score": confidence}]
+                        emotion_dist = {r["label"]: r["score"] for r in result}
+                        dominant_emotion = max(emotion_dist, key=emotion_dist.get)
+
+                        # Map emotion to sentiment score
+                        sentiment_score = sum(
+                            self.emotion_labels.get(emotion, 0) * score
+                            for emotion, score in emotion_dist.items()
+                        )
+
+                        all_results.append({
+                            "sentiment_score": float(sentiment_score),
+                            "emotion": dominant_emotion,
+                            "emotion_distribution": emotion_dist,
+                            "confidence": float(emotion_dist[dominant_emotion])
+                        })
+                    else:
+                        # Standard sentiment analysis
+                        label = result["label"].lower()
+                        score = result["score"]
+
+                        # Normalize to [-1, 1] range
+                        if "positive" in label or "POSITIVE" in label:
+                            sentiment_score = score
+                            emotion = "positive"
+                        elif "negative" in label or "NEGATIVE" in label:
+                            sentiment_score = -score
+                            emotion = "negative"
+                        else:
+                            sentiment_score = 0.0
+                            emotion = "neutral"
+
+                        all_results.append({
+                            "sentiment_score": float(sentiment_score),
+                            "emotion": emotion,
+                            "emotion_distribution": {emotion: score},
+                            "confidence": float(score)
+                        })
+
+            except Exception as e:
+                print(f"Error in batch analysis: {e}")
+                # Fallback to neutral for entire batch on error
+                for _ in batch_texts:
+                    all_results.append({
+                        "sentiment_score": 0.0,
+                        "emotion": "neutral",
+                        "emotion_distribution": {"neutral": 1.0},
+                        "confidence": 0.5
+                    })
+
+        return all_results
 
     def get_color_for_sentiment(self, sentiment_score: float, emotion: str = None) -> str:
         """
