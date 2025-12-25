@@ -29,12 +29,14 @@
 <div class="title ">
     <a href="index.html" class="titleText">WordStream: Interactive Tool for Topic Evolution</a>
     <!--<span>-->
-    <a href="https://diglib.eg.org/handle/10.2312/evs20191178" class="button still" target="_blank">EuroVis Entry</a>
-    <a href="https://diglib.eg.org/bitstream/handle/10.2312/evs20191178/103-107.pdf" class="button still"
-       target="_blank">PDF</a>
-    <a href="examples.html" class="button still">Examples</a>
-    <a href="video.html" class="button still">Video</a>
-    <a href="index.html" class="button active">Demo</a>
+    <div class="zoom-btn-group">
+        <button onclick="zoomOut()" class="zoom-btn" title="Zoom out (Keyboard: -)">−</button>
+        <button onclick="resetZoom()" class="zoom-btn" title="Reset zoom (Keyboard: 0)">⊙</button>
+        <button onclick="zoomIn()" class="zoom-btn" title="Zoom in (Keyboard: +)">+</button>
+    </div>
+    <button onclick="playAnimatedTour()" class="zoom-btn tour-btn" title="Play animated tour of timeline (Keyboard: T)">
+        <span class="btn-icon">▶</span> Tour
+    </button>
 
     <!--</span>-->
 </div>
@@ -106,21 +108,6 @@
     </label>
     <input class="submit" onclick="submitInput(draw)" type="button" value="Submit"><br>
     <input class="computeMetric" onclick="computeMetric()" type="button" value="Update measurements"><br>
-</div>
-
-<!-- Zoom and Animation Controls -->
-<div id="zoomControls" class="zoom-controls">
-    <button onclick="playAnimatedTour()" class="zoom-btn tour-btn" title="Play animated tour of timeline (Keyboard: T)">
-        <span class="btn-icon">▶</span> Tour
-    </button>
-    <div class="zoom-btn-group">
-        <button onclick="zoomIn()" class="zoom-btn" title="Zoom in (Keyboard: +)">+</button>
-        <button onclick="resetZoom()" class="zoom-btn" title="Reset zoom (Keyboard: 0)">⊙</button>
-        <button onclick="zoomOut()" class="zoom-btn" title="Zoom out (Keyboard: -)">−</button>
-    </div>
-    <div class="zoom-help" title="Keyboard shortcuts: +/- zoom, 0 reset, T tour, Esc stop">
-        <span class="help-icon">?</span>
-    </div>
 </div>
 <script src="./javascripts/metric.js"></script>
 <script src="./javascripts/init.js"></script>

@@ -2,6 +2,30 @@
  * Zoom and Animation Controls Styling
  */
 
+/* When zoom controls are in the title bar */
+.title .zoom-btn,
+.title .zoom-btn-group {
+    float: right;
+    display: inline-block;
+}
+
+.title .zoom-btn-group {
+    margin: 4px 2px;
+}
+
+.title .zoom-btn-group .zoom-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title .tour-btn {
+    margin: 4px 2px;
+}
+
 .zoom-controls {
     position: fixed;
     top: 80px;
@@ -139,19 +163,6 @@
 .zoom-help:hover .help-icon {
     background: #7f8c8d;
     transform: scale(1.1);
-}
-
-/* Drag cursor hint */
-.zoom-controls::after {
-    content: "🖱️ Drag to pan";
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 10px;
-    color: #7f8c8d;
-    white-space: nowrap;
-    pointer-events: none;
 }
 
 /* Tooltip-like hint for first-time users */
