@@ -352,3 +352,27 @@ footer.example{
         font-size: 10px;
     }
 }
+
+/* Scrollable legend for Emotion Detection Advanced (28 emotions) */
+.legend-scrollable {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.legend-scrollable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.legend-scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.legend-scrollable::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.legend-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

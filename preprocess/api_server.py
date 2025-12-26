@@ -494,6 +494,19 @@ def list_models():
             "output_types": ["emotion", "sentiment_score"]
         },
         {
+            "id": "goemotions",
+            "name": "Emotion Detection Advanced (28 emotions)",
+            "description": "Fine-grained emotion detection with 28 emotions based on the GoEmotions dataset",
+            "output_types": ["emotion", "sentiment_score"],
+            "emotions": [
+                "admiration", "amusement", "anger", "annoyance", "approval", "caring",
+                "confusion", "curiosity", "desire", "disappointment", "disapproval",
+                "disgust", "embarrassment", "excitement", "fear", "gratitude", "grief",
+                "joy", "love", "nervousness", "optimism", "pride", "realization",
+                "relief", "remorse", "sadness", "surprise", "neutral"
+            ]
+        },
+        {
             "id": "sentiment",
             "name": "Sentiment Analysis",
             "description": "Classifies text as positive, negative, or neutral",
@@ -520,7 +533,7 @@ def status():
         "status": "ready",
         "max_file_size_mb": MAX_FILE_SIZE / (1024 * 1024),
         "allowed_formats": list(ALLOWED_EXTENSIONS),
-        "available_models": ["emotion", "sentiment", "happiness"],
+        "available_models": ["emotion", "goemotions", "sentiment", "happiness"],
         "timestamp": datetime.now().isoformat()
     })
 

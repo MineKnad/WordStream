@@ -69,8 +69,12 @@ const UploadManager = {
                                         <div class="tooltip-header">Analysis Models Explained</div>
                                         <div class="tooltip-content">
                                             <div class="model-explanation">
-                                                <strong>Emotion Detection</strong> (recommended)
-                                                <p>Identifies 6 core emotions in your text: joy, sadness, anger, fear, surprise, and disgust. Best for understanding emotional content.</p>
+                                                <strong>Emotion Detection (recommended)</strong>
+                                                <p>Identifies 6 core emotions in your text: joy, sadness, anger, fear, surprise, and disgust. Best for understanding basic emotional content.</p>
+                                            </div>
+                                            <div class="model-explanation">
+                                                <strong>Emotion Detection Advanced</strong>
+                                                <p>Fine-grained emotion detection with 28 emotions including joy, love, amusement, excitement, gratitude, admiration, fear, anger, sadness, and 19 more. Best for nuanced emotional analysis.</p>
                                             </div>
                                             <div class="model-explanation">
                                                 <strong>Sentiment Analysis</strong>
@@ -89,7 +93,8 @@ const UploadManager = {
                                 </label>
 
                                 <select id="sentimentModelSelect" class="form-control">
-                                    <option value="emotion">Emotion Detection (recommended)</option>
+                                    <option value="emotion">Emotion Detection (6 emotions)</option>
+                                    <option value="goemotions">Emotion Detection Advanced (28 emotions)</option>
                                     <option value="sentiment">Sentiment Analysis</option>
                                     <option value="topic">Topic Detection</option>
                                     <option value="happiness">Happiness Score</option>

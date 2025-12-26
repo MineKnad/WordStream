@@ -18,6 +18,33 @@ const SentimentVisualization = {
             anger: "#F57C00",         // Orange
             disgust: "#D32F2F",       // Red
             negative: "#F57C00",      // Orange
+
+            // Emotion Detection Advanced - 28 emotions (organized by emotional valence)
+            // Positive emotions (warm hues)
+            love: "#E91E63",          // Pink
+            amusement: "#FF9800",     // Orange
+            excitement: "#FF5722",    // Deep Orange
+            gratitude: "#8BC34A",     // Light Green
+            admiration: "#00BCD4",    // Cyan
+            approval: "#4CAF50",      // Medium Green
+            caring: "#CDDC39",        // Lime
+            optimism: "#FFC107",      // Amber
+            pride: "#9C27B0",         // Purple
+            relief: "#03A9F4",        // Light Blue
+            desire: "#FF4081",        // Pink Accent
+            // Neutral emotions
+            realization: "#607D8B",   // Blue Gray
+            curiosity: "#009688",     // Teal
+            // Negative emotions (cool/dark hues)
+            confusion: "#795548",     // Brown
+            nervousness: "#9E9E9E",   // Medium Gray
+            embarrassment: "#FFAB91", // Light Red-Orange
+            annoyance: "#FFB74D",     // Light Orange
+            disappointment: "#F57C00", // Orange (reuse)
+            disapproval: "#E64A19",   // Deep Orange
+            remorse: "#6A1B9A",       // Deep Purple
+            grief: "#311B92",         // Indigo
+
             // Happiness categories (5-level scale)
             very_happy: "#2E7D32",    // Dark Green
             happy: "#66BB6A",         // Light Green
@@ -49,6 +76,30 @@ const SentimentVisualization = {
             anger: "#F0E442",         // Yellow
             disgust: "#DE8F05",       // Dark Orange
             negative: "#F0E442",      // Yellow
+
+            // Emotion Detection Advanced - 28 emotions (optimized for protanopia - avoiding red-green)
+            love: "#CC78BC",          // Purple
+            amusement: "#F0E442",     // Yellow
+            excitement: "#E69F00",    // Orange
+            gratitude: "#56B4E9",     // Light Blue
+            admiration: "#009E73",    // Blue-green
+            approval: "#0173B2",      // Blue
+            caring: "#D55E00",        // Dark Orange
+            optimism: "#F0E442",      // Yellow
+            pride: "#CC78BC",         // Purple
+            relief: "#56B4E9",        // Light Blue
+            desire: "#E08214",        // Orange
+            realization: "#B35806",   // Brown
+            curiosity: "#29B09D",     // Teal
+            confusion: "#8F2D56",     // Dark Purple
+            nervousness: "#AAAAAA",   // Gray
+            embarrassment: "#CA9161", // Tan
+            annoyance: "#DE8F05",     // Orange
+            disappointment: "#B35806",// Brown
+            disapproval: "#8F2D56",   // Dark Purple
+            remorse: "#5F3D8F",       // Deep Purple
+            grief: "#3A1F5F",         // Indigo
+
             // Happiness categories (5-level scale)
             very_happy: "#0173B2",    // Blue
             happy: "#29B09D",         // Teal
@@ -80,6 +131,30 @@ const SentimentVisualization = {
             anger: "#F0E442",         // Yellow
             disgust: "#8F2D56",       // Purple-Red
             negative: "#F0E442",      // Yellow
+
+            // Emotion Detection Advanced - 28 emotions (optimized for deuteranopia - avoiding green)
+            love: "#CC78BC",          // Purple
+            amusement: "#F0E442",     // Yellow
+            excitement: "#E69F00",    // Orange
+            gratitude: "#56B4E9",     // Light Blue
+            admiration: "#0173B2",    // Blue
+            approval: "#457B9D",      // Dark Blue
+            caring: "#D55E00",        // Dark Orange
+            optimism: "#F0E442",      // Yellow
+            pride: "#CC78BC",         // Purple
+            relief: "#56B4E9",        // Light Blue
+            desire: "#E08214",        // Orange
+            realization: "#B35806",   // Brown
+            curiosity: "#2A9D8F",     // Teal
+            confusion: "#8F2D56",     // Purple-Red
+            nervousness: "#AAAAAA",   // Gray
+            embarrassment: "#E76F51", // Coral
+            annoyance: "#E69F00",     // Orange
+            disappointment: "#B35806",// Brown
+            disapproval: "#8F2D56",   // Purple-Red
+            remorse: "#6A4C93",       // Purple
+            grief: "#3A1F5F",         // Indigo
+
             // Happiness categories (5-level scale)
             very_happy: "#0173B2",    // Blue
             happy: "#D55E00",         // Orange
@@ -111,6 +186,30 @@ const SentimentVisualization = {
             anger: "#D55E00",         // Red-orange
             disgust: "#CC79A7",       // Pink
             negative: "#D55E00",      // Red-orange
+
+            // Emotion Detection Advanced - 28 emotions (optimized for tritanopia - use red/green, avoid blue/yellow)
+            love: "#CC79A7",          // Pink
+            amusement: "#E69F00",     // Orange
+            excitement: "#D55E00",    // Red-orange
+            gratitude: "#56B4E9",     // Light Blue
+            admiration: "#0173B2",    // Blue
+            approval: "#40B0D0",      // Cyan
+            caring: "#A6761D",        // Brown
+            optimism: "#E69F00",      // Orange
+            pride: "#CC79A7",         // Pink
+            relief: "#56B4E9",        // Light Blue
+            desire: "#BA3C3C",        // Red
+            realization: "#999999",   // Gray
+            curiosity: "#40B0D0",     // Cyan
+            confusion: "#A6761D",     // Brown
+            nervousness: "#6C757D",   // Dark Gray
+            embarrassment: "#E69F00", // Orange
+            annoyance: "#D55E00",     // Red-orange
+            disappointment: "#A6761D",// Brown
+            disapproval: "#BA3C3C",   // Red
+            remorse: "#8B4789",       // Purple
+            grief: "#5E3A6E",         // Dark Purple
+
             // Happiness categories (5-level scale)
             very_happy: "#0173B2",    // Blue
             happy: "#56B4E9",         // Light Blue
@@ -142,6 +241,30 @@ const SentimentVisualization = {
             anger: "#CCCCCC",         // Light gray
             disgust: "#999999",       // Medium-light gray
             negative: "#CCCCCC",
+
+            // Emotion Detection Advanced - 28 emotions (distinct grayscale values)
+            love: "#1A1A1A",          // Very dark gray
+            amusement: "#242424",
+            excitement: "#2E2E2E",
+            gratitude: "#383838",
+            admiration: "#424242",
+            approval: "#4C4C4C",
+            caring: "#565656",
+            optimism: "#606060",
+            pride: "#6A6A6A",
+            relief: "#747474",
+            desire: "#7E7E7E",
+            realization: "#888888",   // Medium gray
+            curiosity: "#929292",
+            confusion: "#9C9C9C",
+            nervousness: "#A6A6A6",
+            embarrassment: "#B0B0B0",
+            annoyance: "#BABABA",
+            disappointment: "#C4C4C4",
+            disapproval: "#CECECE",
+            remorse: "#D8D8D8",
+            grief: "#E2E2E2",         // Very light gray
+
             // Happiness categories (5-level scale - grayscale)
             very_happy: "#2A2A2A",    // Very dark gray
             happy: "#555555",         // Dark gray
@@ -260,7 +383,20 @@ const SentimentVisualization = {
     getWordColor: function(wordData, topicIndex) {
         const palette = this.colorPalettes[this.currentPalette];
 
-        // Check if this is emotion-based data (topic field contains an emotion)
+        // Check if this is Emotion Detection Advanced data (28 emotions)
+        const goemotions = [
+            'joy', 'love', 'amusement', 'excitement', 'gratitude', 'admiration',
+            'approval', 'caring', 'optimism', 'pride', 'relief', 'desire',
+            'neutral', 'realization', 'curiosity', 'surprise',
+            'confusion', 'nervousness', 'embarrassment', 'annoyance',
+            'disappointment', 'disapproval', 'remorse', 'grief',
+            'sadness', 'fear', 'disgust', 'anger'
+        ];
+        if (wordData.topic && goemotions.includes(wordData.topic)) {
+            return palette[wordData.topic] || palette.neutral;
+        }
+
+        // Check if this is emotion-based data (6 emotions - topic field contains an emotion)
         const emotions = ['joy', 'surprise', 'neutral', 'fear', 'sadness', 'disgust', 'anger'];
         if (wordData.topic && emotions.includes(wordData.topic)) {
             const emotion = wordData.topic;

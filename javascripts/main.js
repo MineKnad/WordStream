@@ -910,6 +910,7 @@ function draw(data) {
         var happinessCategories = ['very_happy', 'happy', 'fine', 'unhappy', 'very_unhappy'];
         var isTopicBased = false;
         var isEmotionBased = false;
+        var isEmotionAdvancedBased = false;  // Emotion Detection Advanced (28 emotions)
         var isHappinessBased = false;
         var legendData;
 
@@ -929,9 +930,13 @@ function draw(data) {
             if (happinessCategories.some(h => categoriesToCheck.includes(h))) {
                 isHappinessBased = true;
                 console.log('Detected happiness-based data');
-            } else if (emotionCategories.some(e => categoriesToCheck.includes(e))) {
+            } else if (categoriesToCheck.length === 28) {
+                // Detect Emotion Detection Advanced by count (28 emotions)
+                isEmotionAdvancedBased = true;
+                console.log('Detected Emotion Detection Advanced data (28 emotions)');
+            } else if (emotionCategories.every(e => categoriesToCheck.includes(e)) && categoriesToCheck.length === 7) {
                 isEmotionBased = true;
-                console.log('Detected emotion-based data');
+                console.log('Detected emotion-based data (6 emotions)');
             } else if (!sentimentCategories.includes(categoriesToCheck[0])) {
                 isTopicBased = true;
                 console.log('Detected topic-based data');
@@ -956,6 +961,23 @@ function draw(data) {
                 }
                 return { label: topic, color: topicColor };
             });
+        } else if (isEmotionAdvancedBased) {
+            // Use Emotion Detection Advanced legend with 28 emotions
+            var emotionAdvancedPalette = (typeof SentimentVisualization !== 'undefined')
+                ? SentimentVisualization.colorPalettes[SentimentVisualization.currentPalette]
+                : {};
+
+            // Use metadata categories (already in correct order from backend)
+            var emotionsToDisplay = categoriesToCheck;
+
+            // Map emotions to colors, capitalizing labels for display
+            legendData = emotionsToDisplay.map(function(emotion) {
+                var emotionColor = emotionAdvancedPalette[emotion];
+                var displayLabel = emotion.charAt(0).toUpperCase() + emotion.slice(1);
+                return { label: displayLabel, color: emotionColor };
+            });
+
+            console.log('Emotion Detection Advanced legend data:', legendData);
         } else if (isEmotionBased) {
             // Use emotion-based legend with emotion colors
             var emotionPalette = (typeof SentimentVisualization !== 'undefined')
@@ -1046,6 +1068,15 @@ function draw(data) {
             'alignment-baseline': 'middle',
             dx: 8
         });
+
+        // Add scrolling support for Emotion Detection Advanced (28 emotions)
+        var actualLegendHeight = legendData.length * legendFontSize;
+        if (actualLegendHeight > 600 && isEmotionAdvancedBased) {
+            legendGroup.attr('class', 'legend-scrollable');
+            legendHeight = 600;  // Max height with scrolling
+        } else {
+            legendHeight = actualLegendHeight;
+        }
 
         // Update legend height calculation
         var actualLegendHeight = legendData.length * legendFontSize;

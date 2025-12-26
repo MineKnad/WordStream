@@ -79,7 +79,7 @@ class DataPreprocessor:
         Initialize preprocessor.
 
         Args:
-            sentiment_model: "emotion", "sentiment", "topic", or "happiness"
+            sentiment_model: "emotion", "goemotions" (Emotion Detection Advanced), "sentiment", "topic", or "happiness"
             use_happiness: If True, use happiness scoring instead of sentiment
         """
         self.model_type = sentiment_model
@@ -472,6 +472,20 @@ class DataPreprocessor:
                     # Get color based on emotion
                     color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment, primary_emotion)
                     grouping_category = primary_emotion
+                elif self.model_type == "goemotions":
+                    # For Emotion Detection Advanced: group by individual emotion (28 total)
+                    word_emotions = emotion_by_word_period[period][word]
+                    from collections import Counter as CollCounter
+                    emotion_counter = CollCounter(word_emotions)
+                    primary_emotion = emotion_counter.most_common(1)[0][0] if emotion_counter else "neutral"
+
+                    # Get word sentiment for averaging
+                    sentiment_scores = sentiment_by_word_period[period][word]
+                    avg_sentiment = np.mean(sentiment_scores) if sentiment_scores else 0.0
+
+                    # Get color based on emotion
+                    color = self.sentiment_analyzer.get_color_for_sentiment(avg_sentiment, primary_emotion)
+                    grouping_category = primary_emotion
                 else:
                     # For sentiment model: group by sentiment category (Positive/Negative/Neutral)
                     # Get word sentiment (average across documents)
@@ -518,6 +532,18 @@ class DataPreprocessor:
                 emotion_order = ["joy", "surprise", "neutral", "fear", "sadness", "disgust", "anger"]
                 sorted_words = {cat: words_dict[cat] for cat in emotion_order if cat in words_dict}
                 period_data["words"] = sorted_words
+            elif self.model_type == "goemotions":
+                # Emotion Detection Advanced: Sort 28 emotions organized by valence (positive → negative)
+                emotion_order = [
+                    "joy", "love", "amusement", "excitement", "gratitude", "admiration",
+                    "approval", "caring", "optimism", "pride", "relief", "desire",
+                    "neutral", "realization", "curiosity", "surprise",
+                    "confusion", "nervousness", "embarrassment", "annoyance",
+                    "disappointment", "disapproval", "remorse", "grief",
+                    "sadness", "fear", "disgust", "anger"
+                ]
+                sorted_words = {cat: words_dict[cat] for cat in emotion_order if cat in words_dict}
+                period_data["words"] = sorted_words
             elif self.use_topics:
                 # Sort topics by the predefined TOPICS list order
                 topic_order = self.topic_detector.TOPICS
@@ -543,6 +569,17 @@ class DataPreprocessor:
             # For emotion model, use individual emotions (all 7 from the model)
             categories = ["joy", "surprise", "neutral", "fear", "sadness", "disgust", "anger"]
             model_name = "emotion"
+        elif self.model_type == "goemotions":
+            # For Emotion Detection Advanced model, use 28 emotions
+            categories = [
+                "joy", "love", "amusement", "excitement", "gratitude", "admiration",
+                "approval", "caring", "optimism", "pride", "relief", "desire",
+                "neutral", "realization", "curiosity", "surprise",
+                "confusion", "nervousness", "embarrassment", "annoyance",
+                "disappointment", "disapproval", "remorse", "grief",
+                "sadness", "fear", "disgust", "anger"
+            ]
+            model_name = "goemotions"
         else:
             # For sentiment model, use sentiment categories
             categories = ["Positive", "Negative", "Neutral"]

@@ -15,8 +15,14 @@ venv\Scripts\activate
 python -m http.server 8080
 -> visit http://localhost:8080/
 ```
- <br>
- <br> 
+
+```
+\customdata 
+- contains sample datasets
+\data 
+- folder with processed datasets
+- manually delete datasets to remove them
+```
  <br>
  <br>
  <br>

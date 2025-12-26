@@ -22,7 +22,8 @@ class SentimentAnalyzer:
         Initialize sentiment analyzer.
 
         Args:
-            model_type: "emotion" (6 emotions), "sentiment" (pos/neu/neg), or "advanced" (fine-grained)
+            model_type: "emotion" (6 emotions), "goemotions" (Emotion Detection Advanced - 28 emotions),
+                       "sentiment" (pos/neu/neg), or "advanced" (fine-grained)
         """
         self.model_type = model_type
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -46,6 +47,52 @@ class SentimentAnalyzer:
                     "neutral": 0.0,
                     "surprise": 0.25,
                     "joy": 1.0
+                }
+
+            elif self.model_type == "goemotions":
+                # Emotion Detection Advanced - 28-emotion model (based on GoEmotions dataset)
+                self.model = pipeline(
+                    "text-classification",
+                    model="SamLowe/roberta-base-go_emotions",
+                    device=0 if self.device == "cuda" else -1,
+                    top_k=None  # Return all 28 emotions
+                )
+                # Map 28 emotions to sentiment scores (-1 to +1)
+                self.emotion_labels = {
+                    # Strong positive (0.8 to 1.0)
+                    "joy": 1.0,
+                    "love": 0.95,
+                    "amusement": 0.9,
+                    "excitement": 0.9,
+                    "gratitude": 0.85,
+                    "admiration": 0.8,
+                    # Moderate positive (0.4 to 0.7)
+                    "approval": 0.6,
+                    "caring": 0.6,
+                    "optimism": 0.7,
+                    "pride": 0.7,
+                    "relief": 0.5,
+                    "desire": 0.4,
+                    # Neutral to slightly positive (0 to 0.3)
+                    "neutral": 0.0,
+                    "realization": 0.1,
+                    "curiosity": 0.2,
+                    "surprise": 0.25,
+                    # Slightly negative (-0.5 to -0.1)
+                    "confusion": -0.3,
+                    "nervousness": -0.4,
+                    "embarrassment": -0.4,
+                    "annoyance": -0.5,
+                    # Moderate negative (-0.8 to -0.6)
+                    "disappointment": -0.6,
+                    "disapproval": -0.6,
+                    "remorse": -0.7,
+                    "grief": -0.8,
+                    # Strong negative (-1.0 to -0.8)
+                    "sadness": -1.0,
+                    "fear": -0.9,
+                    "disgust": -0.85,
+                    "anger": -0.9
                 }
 
             else:  # "advanced"
@@ -93,9 +140,9 @@ class SentimentAnalyzer:
             # Truncate very long texts to avoid memory issues
             text = text[:512] if len(text) > 512 else text
 
-            results = self.model(text, top_k=None if self.model_type in ["emotion", "sentiment"] else 1)
+            results = self.model(text, top_k=None if self.model_type in ["emotion", "sentiment", "goemotions"] else 1)
 
-            if self.model_type in ["emotion", "sentiment"]:
+            if self.model_type in ["emotion", "sentiment", "goemotions"]:
                 # Results: [{"label": emotion, "score": confidence}]
                 emotion_dist = {r["label"]: r["score"] for r in results}
                 dominant_emotion = max(emotion_dist, key=emotion_dist.get)
@@ -179,7 +226,7 @@ class SentimentAnalyzer:
 
             try:
                 # Call model with batch - transformers pipeline handles batching natively
-                if self.model_type in ["emotion", "sentiment"]:
+                if self.model_type in ["emotion", "sentiment", "goemotions"]:
                     # top_k=None returns all emotion scores
                     batch_results = self.model(processed_batch, top_k=None)
                 else:
@@ -199,7 +246,7 @@ class SentimentAnalyzer:
                         continue
 
                     # Process based on model type
-                    if self.model_type in ["emotion", "sentiment"]:
+                    if self.model_type in ["emotion", "sentiment", "goemotions"]:
                         # Results: [{"label": emotion, "score": confidence}]
                         emotion_dist = {r["label"]: r["score"] for r in result}
                         dominant_emotion = max(emotion_dist, key=emotion_dist.get)
