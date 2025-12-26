@@ -457,6 +457,41 @@ window.setSelectedWordForTour = setSelectedWordForTour;
 window.clearSelectedWordForTour = clearSelectedWordForTour;
 
 /**
+ * Calculate optimal static Y position for smooth panning (anti-jitter)
+ * Samples Y positions along the pan path and returns median Y position
+ * @param {object} selectedWord - {text, topic, color}
+ * @param {number} startX - Starting X position in data space
+ * @param {number} endX - Ending X position in data space
+ * @param {number} scale - Zoom scale
+ * @param {number} svgHeight - SVG viewport height
+ * @returns {number} - Optimal Y position for smooth panning
+ */
+function calculateOptimalYPosition(selectedWord, startX, endX, scale, svgHeight) {
+    // Sample Y positions at multiple points along the pan path
+    var sampleCount = 10;
+    var yPositions = [];
+
+    for (var i = 0; i <= sampleCount; i++) {
+        var sampleX = startX + (endX - startX) * (i / sampleCount);
+        var sampleY = getWordYAtX(sampleX, selectedWord);
+        if (sampleY !== null) {
+            yPositions.push(sampleY);
+        }
+    }
+
+    // If no valid Y positions found, return null
+    if (yPositions.length === 0) return null;
+
+    // Use median Y position (more robust than mean for curved paths)
+    yPositions.sort(function(a, b) { return a - b; });
+    var medianY = yPositions[Math.floor(yPositions.length / 2)];
+
+    // Return the median Y position in data-space coordinates
+    // This will be centered using: translateY = (svgHeight/2) - (medianY * scale)
+    return medianY;
+}
+
+/**
  * Create a custom interpolator for conservative Y tracking during pan
  * Only adjusts Y when word would go outside visible zone (center 60% of viewport)
  * @param {array} startTranslate - [x, y] starting translation
@@ -465,21 +500,37 @@ window.clearSelectedWordForTour = clearSelectedWordForTour;
  * @param {object} selectedWord - {text, topic, color}
  * @param {number} svgHeight - SVG viewport height
  * @param {number} averageY - Average Y position to prefer (for stability)
+ * @param {boolean} useStaticY - If true, use pre-calculated static Y (anti-jitter)
  * @returns {function} - Interpolator function for d3 transition
  */
-function createDynamicYInterpolator(startTranslate, endTranslate, scale, selectedWord, svgHeight, averageY) {
+function createDynamicYInterpolator(startTranslate, endTranslate, scale, selectedWord, svgHeight, averageY, useStaticY) {
     // Define visible zone: center 60% of viewport (20% margin top/bottom)
     var visibleZoneTop = svgHeight * 0.20;
     var visibleZoneBottom = svgHeight * 0.80;
 
-    // Anti-jitter: Add hysteresis buffer (10% of viewport = 6% of visible area)
-    var hysteresisBuffer = svgHeight * 0.10;
+    // Anti-jitter: Add hysteresis buffer (15% of viewport = 9% of visible area)
+    var hysteresisBuffer = svgHeight * 0.15;
     var adjustmentZoneTop = visibleZoneTop - hysteresisBuffer;
     var adjustmentZoneBottom = visibleZoneBottom + hysteresisBuffer;
 
     // Smooth interpolation: Track current Y for damping
     var currentY = averageY;  // Start at average
-    var dampingFactor = 0.15;  // How quickly to approach target (0=slow, 1=instant)
+    var dampingFactor = 0.05;  // Reduced for smoother, less reactive adjustments
+
+    // Anti-jitter: Pre-calculate optimal static Y position if requested
+    var optimalStaticY = null;
+    if (useStaticY && selectedWord) {
+        // Calculate start and end X positions in data space
+        var svgWidth = globalWidth;
+        var viewportCenterX = svgWidth / 2;
+        var startDataX = (viewportCenterX - startTranslate[0]) / scale;
+        var endDataX = (viewportCenterX - endTranslate[0]) / scale;
+
+        optimalStaticY = calculateOptimalYPosition(selectedWord, startDataX, endDataX, scale, svgHeight);
+        if (optimalStaticY !== null) {
+            currentY = optimalStaticY;  // Use static Y as initial position
+        }
+    }
 
     return function(t) {
         // t ranges from 0 to 1 during transition
@@ -487,6 +538,14 @@ function createDynamicYInterpolator(startTranslate, endTranslate, scale, selecte
         // Interpolate X translation linearly
         var currentTranslateX = startTranslate[0] + (endTranslate[0] - startTranslate[0]) * t;
 
+        // If using static Y (anti-jitter mode), skip dynamic tracking
+        if (optimalStaticY !== null) {
+            // Use pre-calculated static Y position (perfectly smooth, no jitter!)
+            var currentTranslateY = (svgHeight / 2) - (optimalStaticY * scale);
+            return "translate(" + currentTranslateX + "," + currentTranslateY + ")scale(" + scale + ")";
+        }
+
+        // Otherwise, use dynamic Y tracking (original behavior with improvements)
         // Calculate current focus point X in data space
         var svgWidth = globalWidth;
         var viewportCenterX = svgWidth / 2;
@@ -699,35 +758,31 @@ function playAnimatedTour() {
 
             var translate2 = [endX, (svgHeight / 2) - (endTargetY * zoomInScale)];
 
-            // Create custom interpolator for conservative Y tracking
+            // Create interpolator with static Y tracking (follows wordstream, zero jitter)
             var panInterpolator = createDynamicYInterpolator(
                 [translateX, translateY],  // Start position (from Step 1)
                 translate2,                 // End position
                 zoomInScale,               // Zoom scale
                 selectedWordForTour,       // Selected word object
                 svgHeight,                 // Viewport height
-                targetY                    // Average Y position (prefer to stay here)
+                targetY,                   // Average Y position (prefer to stay here)
+                true                       // Use static Y - pre-calculated median for smooth tracking
             );
 
             zoomLayer.transition()
                 .duration(panDuration)
                 .ease("linear") // Constant speed pan
                 .attrTween("transform", function() { return panInterpolator; })
-                .tween("updateAxis", function() {
-                    // Update axis continuously during pan
-                    return function(t) {
-                        var currentTransform = zoomLayer.attr("transform");
-                        var match = currentTransform.match(/translate\(([^,]+),([^)]+)\)scale/);
-                        if (match) {
-                            var currentTranslateY = parseFloat(match[2]);
-                            adjustAxisYPosition(currentTranslateY, zoomInScale, originalAxisY);
-                        }
-                    };
-                })
                 .each("end", function() {
                     if (!isAnimating) return; // Animation was stopped
 
-                    // Axis Y position is continuously updated during pan via tween
+                    // Update axis to final position after pan completes
+                    var currentTransform = zoomLayer.attr("transform");
+                    var match = currentTransform.match(/translate\(([^,]+),([^)]+)\)scale/);
+                    if (match) {
+                        var currentTranslateY = parseFloat(match[2]);
+                        adjustAxisYPosition(currentTranslateY, zoomInScale, originalAxisY);
+                    }
 
                     // Step 3: Zoom back out to full view
                     console.log('Step 3: Zooming out to full view...');
