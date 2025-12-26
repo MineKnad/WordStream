@@ -519,17 +519,14 @@ function createDynamicYInterpolator(startTranslate, endTranslate, scale, selecte
 
     // Anti-jitter: Pre-calculate optimal static Y position if requested
     var optimalStaticY = null;
-    if (useStaticY && selectedWord) {
-        // Calculate start and end X positions in data space
-        var svgWidth = globalWidth;
-        var viewportCenterX = svgWidth / 2;
-        var startDataX = (viewportCenterX - startTranslate[0]) / scale;
-        var endDataX = (viewportCenterX - endTranslate[0]) / scale;
+    if (useStaticY) {
+        // Extract the starting Y position from the zoom-in ending state
+        // This ensures perfect continuity (no jump) between zoom-in and pan
+        var startingDataY = (svgHeight / 2 - startTranslate[1]) / scale;
 
-        optimalStaticY = calculateOptimalYPosition(selectedWord, startDataX, endDataX, scale, svgHeight);
-        if (optimalStaticY !== null) {
-            currentY = optimalStaticY;  // Use static Y as initial position
-        }
+        // Use the starting Y position as the static Y to maintain continuity
+        optimalStaticY = startingDataY;
+        currentY = optimalStaticY;
     }
 
     return function(t) {
