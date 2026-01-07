@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WordStream++ — Interactive Topic Evolution Visualization</title>
+  <meta name="description" content="WordStream++: an extended re-implementation of the WordStream technique with dataset switching, upload pipeline, sentiment/emotion analysis, A/B comparison, export, and color-blind palettes." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="wrap">
+    <div class="badge">Hall of Fame Project Website</div>
+    <h1>WordStream++</h1>
+    <p class="subtitle">
+      Interactive visualization for topic evolution, based on the <em>WordStream</em> technique,
+      extended with dataset management, sentiment/emotion analysis, export, accessibility palettes,
+      and A/B period comparison.
+    </p>
+
+    <div class="cta">
+      <!-- TODO: replace links -->
+      <a class="btn primary" href="YOUR_DEMO_LINK_HERE" target="_blank" rel="noreferrer">Live Demo / Run Instructions</a>
+      <a class="btn" href="YOUR_GITLAB_REPO_LINK_HERE" target="_blank" rel="noreferrer">GitLab Repository</a>
+      <a class="btn" href="YOUR_README_LINK_HERE" target="_blank" rel="noreferrer">Documentation (README)</a>
+    </div>
+
+    <p class="note">
+      Tip: if you don’t have a public live demo, set “Live Demo” to a short demo video (YouTube/MP4)
+      or to your “How to run locally” section in the README.
+    </p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Demo</h2>
+      <p class="muted">Screenshot (replace with your best one). Add a GIF/video if you have it.</p>
+      <img class="shot" src="assets/screenshot-main.png" alt="WordStream++ screenshot" />
+      <div class="grid2">
+        <div>
+          <h3>What the viewer sees</h3>
+          <ul>
+            <li>Streamgraph by category/topic</li>
+            <li>Packed words per time slice (size = frequency)</li>
+            <li>Time axis + gridlines + zoom/tour</li>
+          </ul>
+        </div>
+        <div>
+          <h3>What we added</h3>
+          <ul>
+            <li>Dataset switcher + upload pipeline (optional backend)</li>
+            <li>Sentiment / emotion enrichment</li>
+            <li>A/B period comparison overlay</li>
+            <li>Export (PNG/SVG)</li>
+            <li>Color-blind palettes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Extensions (Summary)</h2>
+
+      <div class="grid2">
+        <div>
+          <h3>Generalizability</h3>
+          <p>
+            The system supports multiple datasets and an upload workflow (with column mapping and preprocessing),
+            enabling WordStream on data beyond the original examples.
+          </p>
+        </div>
+
+        <div>
+          <h3>Usability</h3>
+          <p>
+            Added export, palette switching, dataset switching, and a guided animated tour to make exploration and reporting easier.
+          </p>
+        </div>
+
+        <div>
+          <h3>Analysis</h3>
+          <p>
+            Added sentiment/emotion enrichment via an optional NLP backend and a period comparison tool (A vs B).
+          </p>
+        </div>
+
+        <div>
+          <h3>Accessibility</h3>
+          <p>
+            Implemented color-blind friendly palettes (protanopia/deuteranopia/tritanopia + grayscale).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How to run</h2>
+      <ol>
+        <li>
+          <strong>Frontend only:</strong>
+          start a local static server (because <code>fetch()</code> needs HTTP):
+          <pre><code>python -m http.server 8000</code></pre>
+          then open <code>http://localhost:8000</code>.
+        </li>
+        <li>
+          <strong>With backend (upload + NLP):</strong>
+          run the Python API server in <code>preprocess/</code>, then run the frontend server.
+        </li>
+      </ol>
+
+      <p class="muted">
+        For exact commands, dependencies, and dataset formats, see the README in the repository.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>References</h2>
+      <ul>
+        <li>
+          WordStream paper (EuroVis 2019 Short Papers):
+          <a href="https://diglib.eg.org/items/29755df9-becf-4a29-b686-db311138e5b1" target="_blank" rel="noreferrer">
+            diglib.eg.org
+          </a>
+        </li>
+        <li>
+          ResearchGate entry:
+          <a href="https://www.researchgate.net/publication/341615442_WordStream_Interactive_Visualization_for_Topic_Evolution" target="_blank" rel="noreferrer">
+            researchgate.net
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> WordStream++</div>
+      <div class="muted">Built as a course project for Interactive Visualization.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

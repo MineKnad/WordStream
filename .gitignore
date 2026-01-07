@@ -37,3 +37,5 @@ htmlcov/
 .DS_Store
 Thumbs.db
 NUL
+__pycache__/
+*.pyc
