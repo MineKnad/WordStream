@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "dataset_name": "upload_1767809925.014942_data2",
+    "dataset_name": "upload_1767810469.439688_data2",
     "total_documents": 60,
     "total_periods": 9,
     "periods": [
@@ -24,7 +24,7 @@
       "anger"
     ],
     "total_unique_words": 43,
-    "created": "2026-01-07T19:18:47.483417",
+    "created": "2026-01-07T19:27:51.788250",
     "sentiment_model": "emotion"
   },
   "data": [

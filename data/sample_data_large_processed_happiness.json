@@ -1,0 +1,3723 @@
+{
+  "metadata": {
+    "dataset_name": "upload_1767810517.072866_sample_data_large",
+    "total_documents": 96,
+    "total_periods": 4,
+    "periods": [
+      "2023-01",
+      "2023-02",
+      "2023-03",
+      "2023-04"
+    ],
+    "categories": [
+      "very_happy",
+      "happy",
+      "fine",
+      "unhappy",
+      "very_unhappy"
+    ],
+    "total_unique_words": 76,
+    "created": "2026-01-07T19:28:44.893921",
+    "sentiment_model": "happiness"
+  },
+  "data": [
+    {
+      "date": "2023-01",
+      "words": {
+        "very_happy": [
+          {
+            "text": "joy",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "joy_2023_01"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "wonderful_2023_01"
+          },
+          {
+            "text": "much",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.29,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "much_2023_01"
+          },
+          {
+            "text": "absolutely",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "absolutely_2023_01"
+          },
+          {
+            "text": "brings",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "brings_2023_01"
+          },
+          {
+            "text": "delighted",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "delighted_2023_01"
+          },
+          {
+            "text": "product",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "product_2023_01"
+          },
+          {
+            "text": "happiness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "happiness_2023_01"
+          },
+          {
+            "text": "fantastic",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2023_01"
+          },
+          {
+            "text": "ive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "ive_2023_01"
+          },
+          {
+            "text": "experience",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "experience_2023_01"
+          },
+          {
+            "text": "energized",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "energized_2023_01"
+          },
+          {
+            "text": "feel",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "feel_2023_01"
+          },
+          {
+            "text": "amazing",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "amazing_2023_01"
+          },
+          {
+            "text": "ever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "ever_2023_01"
+          },
+          {
+            "text": "beautiful",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "beautiful_2023_01"
+          },
+          {
+            "text": "full",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "full_2023_01"
+          },
+          {
+            "text": "incredible",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "incredible_2023_01"
+          },
+          {
+            "text": "life",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "life_2023_01"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "thrilled_2023_01"
+          },
+          {
+            "text": "wonder",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "wonder_2023_01"
+          },
+          {
+            "text": "opportunity",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "opportunity_2023_01"
+          },
+          {
+            "text": "happier",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "happier_2023_01"
+          },
+          {
+            "text": "couldnt",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "couldnt_2023_01"
+          },
+          {
+            "text": "everything",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.6933333333333334,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "everything_2023_01"
+          },
+          {
+            "text": "perfectly",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.52,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "perfectly_2023_01"
+          },
+          {
+            "text": "blessing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "blessing_2023_01"
+          },
+          {
+            "text": "heart",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "heart_2023_01"
+          },
+          {
+            "text": "fills",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fills_2023_01"
+          },
+          {
+            "text": "completely",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.66,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "completely_2023_01"
+          },
+          {
+            "text": "grateful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "grateful_2023_01"
+          },
+          {
+            "text": "satisfied",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "satisfied_2023_01"
+          },
+          {
+            "text": "deeply",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "deeply_2023_01"
+          },
+          {
+            "text": "splendid",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "splendid_2023_01"
+          },
+          {
+            "text": "overjoyed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "overjoyed_2023_01"
+          },
+          {
+            "text": "expectations",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "expectations_2023_01"
+          },
+          {
+            "text": "results",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "results_2023_01"
+          },
+          {
+            "text": "exceeded",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "exceeded_2023_01"
+          },
+          {
+            "text": "elation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "elation_2023_01"
+          },
+          {
+            "text": "pure",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "pure_2023_01"
+          },
+          {
+            "text": "simply",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "simply_2023_01"
+          },
+          {
+            "text": "extraordinary",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.5066666666666667,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "extraordinary_2023_01"
+          },
+          {
+            "text": "delight",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "delight_2023_01"
+          },
+          {
+            "text": "brought",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "brought_2023_01"
+          },
+          {
+            "text": "phenomenal",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "phenomenal_2023_01"
+          },
+          {
+            "text": "energy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "energy_2023_01"
+          },
+          {
+            "text": "today",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "today_2023_01"
+          },
+          {
+            "text": "positive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "positive_2023_01"
+          },
+          {
+            "text": "great",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "great_2023_01"
+          },
+          {
+            "text": "pleased",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "pleased_2023_01"
+          },
+          {
+            "text": "pride",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "pride_2023_01"
+          },
+          {
+            "text": "achievement",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "achievement_2023_01"
+          }
+        ],
+        "happy": [
+          {
+            "text": "turn",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.33000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "turn_2023_01"
+          },
+          {
+            "text": "quite",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.33000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "quite_2023_01"
+          },
+          {
+            "text": "intriguing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3400000000000001,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "intriguing_2023_01"
+          },
+          {
+            "text": "surprised",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3400000000000001,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "surprised_2023_01"
+          },
+          {
+            "text": "unexpected",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.3066666666666667,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "unexpected_2023_01"
+          },
+          {
+            "text": "events",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3400000000000001,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "events_2023_01"
+          },
+          {
+            "text": "remarkable",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "remarkable_2023_01"
+          },
+          {
+            "text": "discovery",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "discovery_2023_01"
+          },
+          {
+            "text": "expected",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "expected_2023_01"
+          },
+          {
+            "text": "shocking",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.28,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "shocking_2023_01"
+          },
+          {
+            "text": "astonishing",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.31000000000000005,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "astonishing_2023_01"
+          },
+          {
+            "text": "never",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "never_2023_01"
+          },
+          {
+            "text": "development",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "development_2023_01"
+          },
+          {
+            "text": "surprising",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "surprising_2023_01"
+          },
+          {
+            "text": "fascinating",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "fascinating_2023_01"
+          },
+          {
+            "text": "incredibly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "incredibly_2023_01"
+          },
+          {
+            "text": "caught",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "caught_2023_01"
+          },
+          {
+            "text": "guard",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "guard_2023_01"
+          },
+          {
+            "text": "truly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "truly_2023_01"
+          },
+          {
+            "text": "astounding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "astounding_2023_01"
+          },
+          {
+            "text": "revelation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "revelation_2023_01"
+          },
+          {
+            "text": "amazed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "amazed_2023_01"
+          },
+          {
+            "text": "startling",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "startling_2023_01"
+          },
+          {
+            "text": "bewildering",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "bewildering_2023_01"
+          },
+          {
+            "text": "unbelievable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "unbelievable_2023_01"
+          },
+          {
+            "text": "news",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "news_2023_01"
+          },
+          {
+            "text": "overwhelmed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "overwhelmed_2023_01"
+          },
+          {
+            "text": "left",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "left_2023_01"
+          },
+          {
+            "text": "surprise",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "surprise_2023_01"
+          },
+          {
+            "text": "astounded",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "astounded_2023_01"
+          },
+          {
+            "text": "stunning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "stunning_2023_01"
+          },
+          {
+            "text": "positively",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "positively_2023_01"
+          },
+          {
+            "text": "flabbergasted",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "flabbergasted_2023_01"
+          }
+        ],
+        "fine": [
+          {
+            "text": "situation",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.18666666666666668,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "situation_2023_01"
+          },
+          {
+            "text": "typical",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "typical_2023_01"
+          },
+          {
+            "text": "nothing",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.09333333333333334,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "nothing_2023_01"
+          },
+          {
+            "text": "ordinary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "ordinary_2023_01"
+          },
+          {
+            "text": "special",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "special_2023_01"
+          },
+          {
+            "text": "fine",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "fine_2023_01"
+          },
+          {
+            "text": "normal",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "normal_2023_01"
+          },
+          {
+            "text": "tasks",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "tasks_2023_01"
+          },
+          {
+            "text": "routine",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "routine_2023_01"
+          },
+          {
+            "text": "particularly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "particularly_2023_01"
+          },
+          {
+            "text": "exciting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "exciting_2023_01"
+          },
+          {
+            "text": "another",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "another_2023_01"
+          },
+          {
+            "text": "notable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "notable_2023_01"
+          },
+          {
+            "text": "passing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.040000000000000036,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "passing_2023_01"
+          },
+          {
+            "text": "enough",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10000000000000009,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "enough_2023_01"
+          },
+          {
+            "text": "well",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10000000000000009,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "well_2023_01"
+          },
+          {
+            "text": "adequate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10000000000000009,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "adequate_2023_01"
+          },
+          {
+            "text": "purpose",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10000000000000009,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "purpose_2023_01"
+          },
+          {
+            "text": "satisfactory",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10000000000000009,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "satisfactory_2023_01"
+          },
+          {
+            "text": "serves",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10000000000000009,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "serves_2023_01"
+          },
+          {
+            "text": "fairly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.19999999999999996,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "fairly_2023_01"
+          },
+          {
+            "text": "common",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.19999999999999996,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "common_2023_01"
+          },
+          {
+            "text": "occurrence",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.19999999999999996,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "occurrence_2023_01"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "standard",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "standard_2023_01"
+          },
+          {
+            "text": "say",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "say_2023_01"
+          },
+          {
+            "text": "unremarkable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "unremarkable_2023_01"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2023-02",
+      "words": {
+        "unhappy": [
+          {
+            "text": "utterly",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "utterly_2023_02"
+          },
+          {
+            "text": "find",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "find_2023_02"
+          },
+          {
+            "text": "revolting",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.6,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "revolting_2023_02"
+          },
+          {
+            "text": "repugnant",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "repugnant_2023_02"
+          },
+          {
+            "text": "despicable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "despicable_2023_02"
+          },
+          {
+            "text": "nauseating",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.54,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "nauseating_2023_02"
+          },
+          {
+            "text": "offensive",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "offensive_2023_02"
+          },
+          {
+            "text": "loathsome",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "loathsome_2023_02"
+          },
+          {
+            "text": "disgust",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "disgust_2023_02"
+          },
+          {
+            "text": "contempt",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "contempt_2023_02"
+          },
+          {
+            "text": "disgusted",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "disgusted_2023_02"
+          },
+          {
+            "text": "detestable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "detestable_2023_02"
+          },
+          {
+            "text": "vile",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "vile_2023_02"
+          },
+          {
+            "text": "conduct",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "conduct_2023_02"
+          },
+          {
+            "text": "contemptible",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.52,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "contemptible_2023_02"
+          },
+          {
+            "text": "sick",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "sick_2023_02"
+          },
+          {
+            "text": "repulsive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "repulsive_2023_02"
+          },
+          {
+            "text": "makes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "makes_2023_02"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "absolute",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "absolute_2023_02"
+          },
+          {
+            "text": "fear",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "fear_2023_02"
+          },
+          {
+            "text": "dread",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.7266666666666666,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "dread_2023_02"
+          },
+          {
+            "text": "horrifying",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "horrifying_2023_02"
+          },
+          {
+            "text": "feel",
+            "frequency": 6,
+            "sudden": 1.75,
+            "sentiment": -0.7666666666666666,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "feel_2023_02"
+          },
+          {
+            "text": "situation",
+            "frequency": 6,
+            "sudden": 1.75,
+            "sentiment": -0.6933333333333334,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "situation_2023_02"
+          },
+          {
+            "text": "terrified",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "terrified_2023_02"
+          },
+          {
+            "text": "frightening",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "frightening_2023_02"
+          },
+          {
+            "text": "trembling",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "trembling_2023_02"
+          },
+          {
+            "text": "completely",
+            "frequency": 2,
+            "sudden": 1.0,
+            "sentiment": -0.79,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "completely_2023_02"
+          },
+          {
+            "text": "petrified",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "petrified_2023_02"
+          },
+          {
+            "text": "unbearable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unbearable_2023_02"
+          },
+          {
+            "text": "anxious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "anxious_2023_02"
+          },
+          {
+            "text": "scared",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "scared_2023_02"
+          },
+          {
+            "text": "nightmare",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "nightmare_2023_02"
+          },
+          {
+            "text": "feels",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "feels_2023_02"
+          },
+          {
+            "text": "left",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": -0.78,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "left_2023_02"
+          },
+          {
+            "text": "terrifying",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "terrifying_2023_02"
+          },
+          {
+            "text": "experience",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "experience_2023_02"
+          },
+          {
+            "text": "fearful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "fearful_2023_02"
+          },
+          {
+            "text": "shaken",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "shaken_2023_02"
+          },
+          {
+            "text": "overwhelming",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "overwhelming_2023_02"
+          },
+          {
+            "text": "fills",
+            "frequency": 2,
+            "sudden": 1.0,
+            "sentiment": -0.69,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "fills_2023_02"
+          },
+          {
+            "text": "awful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "awful_2023_02"
+          },
+          {
+            "text": "vulnerable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "vulnerable_2023_02"
+          },
+          {
+            "text": "deeply",
+            "frequency": 4,
+            "sudden": 2.5,
+            "sentiment": -0.7849999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "deeply_2023_02"
+          },
+          {
+            "text": "frightened",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "frightened_2023_02"
+          },
+          {
+            "text": "absolutely",
+            "frequency": 4,
+            "sudden": 1.6666666666666667,
+            "sentiment": -0.615,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "absolutely_2023_02"
+          },
+          {
+            "text": "pounding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "pounding_2023_02"
+          },
+          {
+            "text": "heart",
+            "frequency": 3,
+            "sudden": 2.0,
+            "sentiment": -0.8266666666666667,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "heart_2023_02"
+          },
+          {
+            "text": "panic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "panic_2023_02"
+          },
+          {
+            "text": "nightmarish",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "nightmarish_2023_02"
+          },
+          {
+            "text": "consumed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "consumed_2023_02"
+          },
+          {
+            "text": "melancholy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.92,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "melancholy_2023_02"
+          },
+          {
+            "text": "breaks",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.92,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "breaks_2023_02"
+          },
+          {
+            "text": "sad",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.91,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sad_2023_02"
+          },
+          {
+            "text": "sorrowful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sorrowful_2023_02"
+          },
+          {
+            "text": "sadness",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sadness_2023_02"
+          },
+          {
+            "text": "eyes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "eyes_2023_02"
+          },
+          {
+            "text": "fill",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "fill_2023_02"
+          },
+          {
+            "text": "tears",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "tears_2023_02"
+          },
+          {
+            "text": "devastated",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "devastated_2023_02"
+          },
+          {
+            "text": "heartbreaking",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "heartbreaking_2023_02"
+          },
+          {
+            "text": "feeling",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "feeling_2023_02"
+          },
+          {
+            "text": "depressed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "depressed_2023_02"
+          },
+          {
+            "text": "leaves",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "leaves_2023_02"
+          },
+          {
+            "text": "profoundly",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "profoundly_2023_02"
+          },
+          {
+            "text": "spirit",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "spirit_2023_02"
+          },
+          {
+            "text": "overwhelmed",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.84,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "overwhelmed_2023_02"
+          },
+          {
+            "text": "sorrow",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sorrow_2023_02"
+          },
+          {
+            "text": "crushed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "crushed_2023_02"
+          },
+          {
+            "text": "grief",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "grief_2023_02"
+          },
+          {
+            "text": "inconsolable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "inconsolable_2023_02"
+          },
+          {
+            "text": "tragedy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "tragedy_2023_02"
+          },
+          {
+            "text": "weighs",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "weighs_2023_02"
+          },
+          {
+            "text": "heavily",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "heavily_2023_02"
+          },
+          {
+            "text": "miserable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "miserable_2023_02"
+          },
+          {
+            "text": "despair",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "despair_2023_02"
+          },
+          {
+            "text": "forlorn",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "forlorn_2023_02"
+          },
+          {
+            "text": "unbearably",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unbearably_2023_02"
+          },
+          {
+            "text": "drowning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "drowning_2023_02"
+          },
+          {
+            "text": "hopelessness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "hopelessness_2023_02"
+          },
+          {
+            "text": "painful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "painful_2023_02"
+          },
+          {
+            "text": "unhappy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unhappy_2023_02"
+          },
+          {
+            "text": "mood",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "mood_2023_02"
+          },
+          {
+            "text": "lonely",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "lonely_2023_02"
+          },
+          {
+            "text": "repulsed",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.7,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "repulsed_2023_02"
+          },
+          {
+            "text": "behavior",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.7,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "behavior_2023_02"
+          },
+          {
+            "text": "disgusting",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.62,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disgusting_2023_02"
+          },
+          {
+            "text": "abhorrent",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "abhorrent_2023_02"
+          },
+          {
+            "text": "appalled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "appalled_2023_02"
+          },
+          {
+            "text": "abominable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6799999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "abominable_2023_02"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2023-03",
+      "words": {
+        "very_happy": [
+          {
+            "text": "exciting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "exciting_2023_03"
+          },
+          {
+            "text": "news",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "news_2023_03"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "thrilled_2023_03"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "wonderful_2023_03"
+          },
+          {
+            "text": "pleased",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "pleased_2023_03"
+          },
+          {
+            "text": "excellent",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "excellent_2023_03"
+          },
+          {
+            "text": "opportunity",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "opportunity_2023_03"
+          },
+          {
+            "text": "genuinely",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "genuinely_2023_03"
+          },
+          {
+            "text": "feeling",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "feeling_2023_03"
+          },
+          {
+            "text": "quite",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.6600000000000001,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "quite_2023_03"
+          },
+          {
+            "text": "happy",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "happy_2023_03"
+          },
+          {
+            "text": "delightful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "delightful_2023_03"
+          },
+          {
+            "text": "satisfied",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "satisfied_2023_03"
+          },
+          {
+            "text": "outcome",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "outcome_2023_03"
+          },
+          {
+            "text": "great",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "great_2023_03"
+          },
+          {
+            "text": "positive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "positive_2023_03"
+          },
+          {
+            "text": "contentment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "contentment_2023_03"
+          },
+          {
+            "text": "brings",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "brings_2023_03"
+          },
+          {
+            "text": "comfort",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "comfort_2023_03"
+          },
+          {
+            "text": "truly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "truly_2023_03"
+          },
+          {
+            "text": "fortunate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fortunate_2023_03"
+          },
+          {
+            "text": "blessed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "blessed_2023_03"
+          },
+          {
+            "text": "feel",
+            "frequency": 1,
+            "sudden": 0.2857142857142857,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "feel_2023_03"
+          },
+          {
+            "text": "pleasant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "pleasant_2023_03"
+          },
+          {
+            "text": "delighted",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "delighted_2023_03"
+          },
+          {
+            "text": "surprise",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "surprise_2023_03"
+          },
+          {
+            "text": "results",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "very_unhappy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "results_2023_03"
+          }
+        ],
+        "happy": [
+          {
+            "text": "events",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "events_2023_03"
+          },
+          {
+            "text": "curious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "curious_2023_03"
+          },
+          {
+            "text": "intriguing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "intriguing_2023_03"
+          },
+          {
+            "text": "turn",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "turn_2023_03"
+          },
+          {
+            "text": "happening",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21999999999999997,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "happening_2023_03"
+          },
+          {
+            "text": "guard",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21999999999999997,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "guard_2023_03"
+          },
+          {
+            "text": "remarkable",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.27,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "remarkable_2023_03"
+          },
+          {
+            "text": "surprising",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "surprising_2023_03"
+          },
+          {
+            "text": "extraordinary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "extraordinary_2023_03"
+          },
+          {
+            "text": "occurrence",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3999999999999999,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "occurrence_2023_03"
+          },
+          {
+            "text": "interesting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3999999999999999,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "interesting_2023_03"
+          },
+          {
+            "text": "event",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "event_2023_03"
+          },
+          {
+            "text": "bewildering",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "bewildering_2023_03"
+          },
+          {
+            "text": "astonished",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "astonished_2023_03"
+          },
+          {
+            "text": "revelation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "revelation_2023_03"
+          },
+          {
+            "text": "astounding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "astounding_2023_03"
+          },
+          {
+            "text": "expected",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "expected_2023_03"
+          },
+          {
+            "text": "everything",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "everything_2023_03"
+          },
+          {
+            "text": "normal",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "normal_2023_03"
+          },
+          {
+            "text": "really",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.32000000000000006,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "really_2023_03"
+          }
+        ],
+        "fine": [
+          {
+            "text": "development",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.20000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "development_2023_03"
+          },
+          {
+            "text": "caught",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.15000000000000002,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "caught_2023_03"
+          },
+          {
+            "text": "fascinating",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "fascinating_2023_03"
+          },
+          {
+            "text": "unexpected",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.24,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "unexpected_2023_03"
+          },
+          {
+            "text": "fine",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.12,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "fine_2023_03"
+          },
+          {
+            "text": "special",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.12,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "special_2023_03"
+          },
+          {
+            "text": "nothing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.12,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "nothing_2023_03"
+          },
+          {
+            "text": "report",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.12,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "report_2023_03"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "outrageous",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "outrageous_2023_03"
+          },
+          {
+            "text": "furious",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "furious_2023_03"
+          },
+          {
+            "text": "absolutely",
+            "frequency": 3,
+            "sudden": 0.8,
+            "sentiment": -0.16666666666666666,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "absolutely_2023_03"
+          },
+          {
+            "text": "injustice",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "injustice_2023_03"
+          },
+          {
+            "text": "livid",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "livid_2023_03"
+          },
+          {
+            "text": "makes",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "makes_2023_03"
+          },
+          {
+            "text": "infuriating",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "infuriating_2023_03"
+          },
+          {
+            "text": "anger",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.4466666666666667,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "anger_2023_03"
+          },
+          {
+            "text": "rage",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "rage_2023_03"
+          },
+          {
+            "text": "seething",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "seething_2023_03"
+          },
+          {
+            "text": "enrages",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "enrages_2023_03"
+          },
+          {
+            "text": "completely",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "completely_2023_03"
+          },
+          {
+            "text": "resentment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "resentment_2023_03"
+          },
+          {
+            "text": "burning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "burning_2023_03"
+          },
+          {
+            "text": "enraged",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "enraged_2023_03"
+          },
+          {
+            "text": "unacceptable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "unacceptable_2023_03"
+          },
+          {
+            "text": "behavior",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.4,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "behavior_2023_03"
+          },
+          {
+            "text": "fury",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "fury_2023_03"
+          },
+          {
+            "text": "wrath",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "wrath_2023_03"
+          },
+          {
+            "text": "intense",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "intense_2023_03"
+          },
+          {
+            "text": "fills",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "fills_2023_03"
+          },
+          {
+            "text": "situation",
+            "frequency": 2,
+            "sudden": 0.42857142857142855,
+            "sentiment": -0.04999999999999999,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "situation_2023_03"
+          },
+          {
+            "text": "violently",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "violently_2023_03"
+          },
+          {
+            "text": "angry",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "angry_2023_03"
+          },
+          {
+            "text": "infuriates",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "infuriates_2023_03"
+          },
+          {
+            "text": "core",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "core_2023_03"
+          },
+          {
+            "text": "maddening",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "maddening_2023_03"
+          },
+          {
+            "text": "boiling",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "boiling_2023_03"
+          },
+          {
+            "text": "indignation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "indignation_2023_03"
+          },
+          {
+            "text": "beyond",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "beyond_2023_03"
+          },
+          {
+            "text": "outrage",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "outrage_2023_03"
+          },
+          {
+            "text": "blood",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "blood_2023_03"
+          },
+          {
+            "text": "words",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "words_2023_03"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2023-04",
+      "words": {
+        "happy": [
+          {
+            "text": "typical",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "typical_2023_04"
+          },
+          {
+            "text": "whatsoever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "whatsoever_2023_04"
+          },
+          {
+            "text": "occurrence",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "occurrence_2023_04"
+          },
+          {
+            "text": "remarkable",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.26,
+            "emotion": "very_unhappy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "remarkable_2023_04"
+          }
+        ],
+        "fine": [
+          {
+            "text": "comment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "comment_2023_04"
+          },
+          {
+            "text": "much",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "much_2023_04"
+          },
+          {
+            "text": "doesnt",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "doesnt_2023_04"
+          },
+          {
+            "text": "warrant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "warrant_2023_04"
+          },
+          {
+            "text": "routine",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "routine_2023_04"
+          },
+          {
+            "text": "standard",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "standard_2023_04"
+          },
+          {
+            "text": "nothing",
+            "frequency": 3,
+            "sudden": 2.0,
+            "sentiment": 0.07333333333333336,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "nothing_2023_04"
+          },
+          {
+            "text": "noteworthy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "noteworthy_2023_04"
+          },
+          {
+            "text": "procedure",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.09999999999999998,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "procedure_2023_04"
+          },
+          {
+            "text": "usual",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.06000000000000005,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "usual_2023_04"
+          },
+          {
+            "text": "excited",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.06000000000000005,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "excited_2023_04"
+          },
+          {
+            "text": "adequate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "adequate_2023_04"
+          },
+          {
+            "text": "thats",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "thats_2023_04"
+          },
+          {
+            "text": "sufficient",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.08000000000000007,
+            "emotion": "very_unhappy",
+            "color": "#FBC02D",
+            "topic": "fine",
+            "id": "sufficient_2023_04"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "ordinary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "ordinary_2023_04"
+          },
+          {
+            "text": "special",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "special_2023_04"
+          },
+          {
+            "text": "significance",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "significance_2023_04"
+          },
+          {
+            "text": "unremarkable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.42000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "unremarkable_2023_04"
+          },
+          {
+            "text": "grief",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "grief_2023_04"
+          },
+          {
+            "text": "suffering",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "suffering_2023_04"
+          },
+          {
+            "text": "overwhelmed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.30000000000000004,
+            "emotion": "very_unhappy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "overwhelmed_2023_04"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "situation",
+            "frequency": 4,
+            "sudden": 1.6666666666666667,
+            "sentiment": -0.58,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "situation_2023_04"
+          },
+          {
+            "text": "extremely",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "extremely_2023_04"
+          },
+          {
+            "text": "anxious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "anxious_2023_04"
+          },
+          {
+            "text": "troubling",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "troubling_2023_04"
+          },
+          {
+            "text": "fills",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": -0.78,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "fills_2023_04"
+          },
+          {
+            "text": "development",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "development_2023_04"
+          },
+          {
+            "text": "apprehension",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "apprehension_2023_04"
+          },
+          {
+            "text": "worrying",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "worrying_2023_04"
+          },
+          {
+            "text": "nervous",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "nervous_2023_04"
+          },
+          {
+            "text": "happen",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "happen_2023_04"
+          },
+          {
+            "text": "scared",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "scared_2023_04"
+          },
+          {
+            "text": "deeply",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.6499999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "deeply_2023_04"
+          },
+          {
+            "text": "concerning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "concerning_2023_04"
+          },
+          {
+            "text": "threatening",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "threatening_2023_04"
+          },
+          {
+            "text": "future",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "future_2023_04"
+          },
+          {
+            "text": "feel",
+            "frequency": 3,
+            "sudden": 2.0,
+            "sentiment": -0.82,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "feel_2023_04"
+          },
+          {
+            "text": "vulnerable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "vulnerable_2023_04"
+          },
+          {
+            "text": "frightened",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "frightened_2023_04"
+          },
+          {
+            "text": "heart",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.82,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "heart_2023_04"
+          },
+          {
+            "text": "fear",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "fear_2023_04"
+          },
+          {
+            "text": "races",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "races_2023_04"
+          },
+          {
+            "text": "panic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "panic_2023_04"
+          },
+          {
+            "text": "alarming",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.64,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "alarming_2023_04"
+          },
+          {
+            "text": "unsettling",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.64,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unsettling_2023_04"
+          },
+          {
+            "text": "dread",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "dread_2023_04"
+          },
+          {
+            "text": "filled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "filled_2023_04"
+          },
+          {
+            "text": "outcome",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "outcome_2023_04"
+          },
+          {
+            "text": "unbearable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unbearable_2023_04"
+          },
+          {
+            "text": "sadness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sadness_2023_04"
+          },
+          {
+            "text": "loss",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "loss_2023_04"
+          },
+          {
+            "text": "sorrowful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sorrowful_2023_04"
+          },
+          {
+            "text": "profoundly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "profoundly_2023_04"
+          },
+          {
+            "text": "devastated",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "devastated_2023_04"
+          },
+          {
+            "text": "feeling",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "feeling_2023_04"
+          },
+          {
+            "text": "depressed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "depressed_2023_04"
+          },
+          {
+            "text": "empty",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "empty_2023_04"
+          },
+          {
+            "text": "leaves",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "leaves_2023_04"
+          },
+          {
+            "text": "news",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "news_2023_04"
+          },
+          {
+            "text": "tragic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "tragic_2023_04"
+          },
+          {
+            "text": "broken",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "broken_2023_04"
+          },
+          {
+            "text": "deep",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "deep_2023_04"
+          },
+          {
+            "text": "despair",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "despair_2023_04"
+          },
+          {
+            "text": "inconsolable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "inconsolable_2023_04"
+          },
+          {
+            "text": "painful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "painful_2023_04"
+          },
+          {
+            "text": "miserable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "miserable_2023_04"
+          },
+          {
+            "text": "hopeless",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "hopeless_2023_04"
+          },
+          {
+            "text": "utterly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "utterly_2023_04"
+          },
+          {
+            "text": "profound",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "profound_2023_04"
+          },
+          {
+            "text": "sorrow",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "sorrow_2023_04"
+          },
+          {
+            "text": "spirit",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "spirit_2023_04"
+          },
+          {
+            "text": "crushed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9,
+            "emotion": "very_unhappy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "crushed_2023_04"
+          }
+        ]
+      }
+    }
+  ]
+}
