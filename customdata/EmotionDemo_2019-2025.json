@@ -1,0 +1,702 @@
+[
+  {
+    "date": "2019-01-01",
+    "text": "I feel so happy and excited about the new policy announcement!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2019-01-19",
+    "text": "I'm deeply sad about the heatwave and flooding. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2019-02-06",
+    "text": "I'm furious about the ceasefire talks. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2019-02-25",
+    "text": "I'm scared about the community fundraiser. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2019-03-15",
+    "text": "I'm shocked by the medical breakthrough. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2019-04-02",
+    "text": "I'm disgusted by the product recall. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2019-04-21",
+    "text": "Update regarding the wildfire situation: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2019-05-09",
+    "text": "I feel so happy and excited about the service outage!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2019-05-28",
+    "text": "I'm deeply sad about the election result. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2019-06-15",
+    "text": "I'm furious about the stock market volatility. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2019-07-03",
+    "text": "I'm scared about the new policy announcement. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2019-07-22",
+    "text": "I'm shocked by the heatwave and flooding. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2019-08-09",
+    "text": "I'm disgusted by the ceasefire talks. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2019-08-28",
+    "text": "Update regarding the community fundraiser: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2019-09-15",
+    "text": "I feel so happy and excited about the medical breakthrough!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2019-10-03",
+    "text": "I'm deeply sad about the product recall. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2019-10-22",
+    "text": "I'm furious about the wildfire situation. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2019-11-09",
+    "text": "I'm scared about the service outage. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2019-11-27",
+    "text": "I'm shocked by the election result. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2019-12-16",
+    "text": "I'm disgusted by the stock market volatility. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2020-01-03",
+    "text": "Update regarding the new policy announcement: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2020-01-22",
+    "text": "I feel so happy and excited about the heatwave and flooding!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2020-02-09",
+    "text": "I'm deeply sad about the ceasefire talks. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2020-02-27",
+    "text": "I'm furious about the community fundraiser. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2020-03-17",
+    "text": "I'm scared about the medical breakthrough. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2020-04-04",
+    "text": "I'm shocked by the product recall. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2020-04-23",
+    "text": "I'm disgusted by the wildfire situation. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2020-05-11",
+    "text": "Update regarding the service outage: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2020-05-29",
+    "text": "I feel so happy and excited about the election result!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2020-06-17",
+    "text": "I'm deeply sad about the stock market volatility. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2020-07-05",
+    "text": "I'm furious about the new policy announcement. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2020-07-24",
+    "text": "I'm scared about the heatwave and flooding. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2020-08-11",
+    "text": "I'm shocked by the ceasefire talks. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2020-08-29",
+    "text": "I'm disgusted by the community fundraiser. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2020-09-17",
+    "text": "Update regarding the medical breakthrough: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2020-10-05",
+    "text": "I feel so happy and excited about the product recall!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2020-10-23",
+    "text": "I'm deeply sad about the wildfire situation. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2020-11-11",
+    "text": "I'm furious about the service outage. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2020-11-29",
+    "text": "I'm scared about the election result. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2020-12-18",
+    "text": "I'm shocked by the stock market volatility. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2021-01-05",
+    "text": "I'm disgusted by the new policy announcement. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2021-01-23",
+    "text": "Update regarding the heatwave and flooding: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2021-02-11",
+    "text": "I feel so happy and excited about the ceasefire talks!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2021-03-01",
+    "text": "I'm deeply sad about the community fundraiser. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2021-03-20",
+    "text": "I'm furious about the medical breakthrough. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2021-04-07",
+    "text": "I'm scared about the product recall. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2021-04-25",
+    "text": "I'm shocked by the wildfire situation. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2021-05-14",
+    "text": "I'm disgusted by the service outage. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2021-06-01",
+    "text": "Update regarding the election result: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2021-06-20",
+    "text": "I feel so happy and excited about the stock market volatility!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2021-07-08",
+    "text": "I'm deeply sad about the new policy announcement. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2021-07-26",
+    "text": "I'm furious about the heatwave and flooding. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2021-08-14",
+    "text": "I'm scared about the ceasefire talks. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2021-09-01",
+    "text": "I'm shocked by the community fundraiser. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2021-09-19",
+    "text": "I'm disgusted by the medical breakthrough. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2021-10-08",
+    "text": "Update regarding the product recall: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2021-10-26",
+    "text": "I feel so happy and excited about the wildfire situation!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2021-11-14",
+    "text": "I'm deeply sad about the service outage. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2021-12-02",
+    "text": "I'm furious about the election result. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2021-12-20",
+    "text": "I'm scared about the stock market volatility. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2022-01-08",
+    "text": "I'm shocked by the new policy announcement. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2022-01-26",
+    "text": "I'm disgusted by the heatwave and flooding. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2022-02-14",
+    "text": "Update regarding the ceasefire talks: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2022-03-04",
+    "text": "I feel so happy and excited about the community fundraiser!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2022-03-22",
+    "text": "I'm deeply sad about the medical breakthrough. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2022-04-10",
+    "text": "I'm furious about the product recall. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2022-04-28",
+    "text": "I'm scared about the wildfire situation. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2022-05-17",
+    "text": "I'm shocked by the service outage. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2022-06-04",
+    "text": "I'm disgusted by the election result. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2022-06-22",
+    "text": "Update regarding the stock market volatility: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2022-07-11",
+    "text": "I feel so happy and excited about the new policy announcement!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2022-07-29",
+    "text": "I'm deeply sad about the heatwave and flooding. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2022-08-16",
+    "text": "I'm furious about the ceasefire talks. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2022-09-04",
+    "text": "I'm scared about the community fundraiser. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2022-09-22",
+    "text": "I'm shocked by the medical breakthrough. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2022-10-11",
+    "text": "I'm disgusted by the product recall. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2022-10-29",
+    "text": "Update regarding the wildfire situation: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2022-11-16",
+    "text": "I feel so happy and excited about the service outage!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2022-12-05",
+    "text": "I'm deeply sad about the election result. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2022-12-23",
+    "text": "I'm furious about the stock market volatility. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2023-01-11",
+    "text": "I'm scared about the new policy announcement. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2023-01-29",
+    "text": "I'm shocked by the heatwave and flooding. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2023-02-16",
+    "text": "I'm disgusted by the ceasefire talks. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2023-03-07",
+    "text": "Update regarding the community fundraiser: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2023-03-25",
+    "text": "I feel so happy and excited about the medical breakthrough!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2023-04-13",
+    "text": "I'm deeply sad about the product recall. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2023-05-01",
+    "text": "I'm furious about the wildfire situation. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2023-05-19",
+    "text": "I'm scared about the service outage. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2023-06-07",
+    "text": "I'm shocked by the election result. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2023-06-25",
+    "text": "I'm disgusted by the stock market volatility. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2023-07-13",
+    "text": "Update regarding the new policy announcement: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2023-08-01",
+    "text": "I feel so happy and excited about the heatwave and flooding!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2023-08-19",
+    "text": "I'm deeply sad about the ceasefire talks. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2023-09-07",
+    "text": "I'm furious about the community fundraiser. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2023-09-25",
+    "text": "I'm scared about the medical breakthrough. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2023-10-13",
+    "text": "I'm shocked by the product recall. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2023-11-01",
+    "text": "I'm disgusted by the wildfire situation. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2023-11-19",
+    "text": "Update regarding the service outage: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2023-12-08",
+    "text": "I feel so happy and excited about the election result!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2023-12-26",
+    "text": "I'm deeply sad about the stock market volatility. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2024-01-13",
+    "text": "I'm furious about the new policy announcement. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2024-02-01",
+    "text": "I'm scared about the heatwave and flooding. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2024-02-19",
+    "text": "I'm shocked by the ceasefire talks. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2024-03-09",
+    "text": "I'm disgusted by the community fundraiser. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2024-03-27",
+    "text": "Update regarding the medical breakthrough: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2024-04-14",
+    "text": "I feel so happy and excited about the product recall!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2024-05-03",
+    "text": "I'm deeply sad about the wildfire situation. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2024-05-21",
+    "text": "I'm furious about the service outage. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2024-06-08",
+    "text": "I'm scared about the election result. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2024-06-27",
+    "text": "I'm shocked by the stock market volatility. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2024-07-15",
+    "text": "I'm disgusted by the new policy announcement. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2024-08-03",
+    "text": "Update regarding the heatwave and flooding: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2024-08-21",
+    "text": "I feel so happy and excited about the ceasefire talks!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2024-09-08",
+    "text": "I'm deeply sad about the community fundraiser. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2024-09-27",
+    "text": "I'm furious about the medical breakthrough. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2024-10-15",
+    "text": "I'm scared about the product recall. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2024-11-03",
+    "text": "I'm shocked by the wildfire situation. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2024-11-21",
+    "text": "I'm disgusted by the service outage. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2024-12-09",
+    "text": "Update regarding the election result: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2024-12-28",
+    "text": "I feel so happy and excited about the stock market volatility!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2025-01-15",
+    "text": "I'm deeply sad about the new policy announcement. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2025-02-03",
+    "text": "I'm furious about the heatwave and flooding. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2025-02-21",
+    "text": "I'm scared about the ceasefire talks. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2025-03-11",
+    "text": "I'm shocked by the community fundraiser. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2025-03-30",
+    "text": "I'm disgusted by the medical breakthrough. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2025-04-17",
+    "text": "Update regarding the product recall: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2025-05-05",
+    "text": "I feel so happy and excited about the wildfire situation!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2025-05-24",
+    "text": "I'm deeply sad about the service outage. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2025-06-11",
+    "text": "I'm furious about the election result. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2025-06-30",
+    "text": "I'm scared about the stock market volatility. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2025-07-18",
+    "text": "I'm shocked by the new policy announcement. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2025-08-05",
+    "text": "I'm disgusted by the heatwave and flooding. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2025-08-24",
+    "text": "Update regarding the ceasefire talks: no major changes reported.",
+    "expected_emotion": "neutral"
+  },
+  {
+    "date": "2025-09-11",
+    "text": "I feel so happy and excited about the community fundraiser!",
+    "expected_emotion": "joy"
+  },
+  {
+    "date": "2025-09-30",
+    "text": "I'm deeply sad about the medical breakthrough. It hurts to see this happen.",
+    "expected_emotion": "sadness"
+  },
+  {
+    "date": "2025-10-18",
+    "text": "I'm furious about the product recall. This is unacceptable.",
+    "expected_emotion": "anger"
+  },
+  {
+    "date": "2025-11-05",
+    "text": "I'm scared about the wildfire situation. I'm worried what comes next.",
+    "expected_emotion": "fear"
+  },
+  {
+    "date": "2025-11-24",
+    "text": "I'm shocked by the service outage. I didn't expect this at all.",
+    "expected_emotion": "surprise"
+  },
+  {
+    "date": "2025-12-12",
+    "text": "I'm disgusted by the election result. This is revolting.",
+    "expected_emotion": "disgust"
+  },
+  {
+    "date": "2025-12-31",
+    "text": "Update regarding the stock market volatility: no major changes reported.",
+    "expected_emotion": "neutral"
+  }
+]
