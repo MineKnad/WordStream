@@ -1,0 +1,6143 @@
+{
+  "metadata": {
+    "dataset_name": "upload_1767809636.299543_emotion_advanced_sample",
+    "total_documents": 138,
+    "total_periods": 2,
+    "periods": [
+      "2024-01",
+      "2024-02"
+    ],
+    "categories": [
+      "Positive",
+      "Negative",
+      "Neutral"
+    ],
+    "total_unique_words": 206,
+    "created": "2026-01-07T19:14:04.554938",
+    "sentiment_model": "sentiment"
+  },
+  "data": [
+    {
+      "date": "2024-01",
+      "words": {
+        "Positive": [
+          {
+            "text": "ever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8654788931482471,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "ever_2024_01"
+          },
+          {
+            "text": "incredible",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.9204847484477796,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "incredible_2024_01"
+          },
+          {
+            "text": "best",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8654788931482471,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "best_2024_01"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.8999397125851829,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "thrilled_2024_01"
+          },
+          {
+            "text": "achievement",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8654788931482471,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "achievement_2024_01"
+          },
+          {
+            "text": "mean",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9643407999130431,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "mean_2024_01"
+          },
+          {
+            "text": "spending",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9643407999130431,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "spending_2024_01"
+          },
+          {
+            "text": "love",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.9752105276227667,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "love_2024_01"
+          },
+          {
+            "text": "everything",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9643407999130431,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "everything_2024_01"
+          },
+          {
+            "text": "holidays",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9643407999130431,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "holidays_2024_01"
+          },
+          {
+            "text": "family",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9643407999130431,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "family_2024_01"
+          },
+          {
+            "text": "night",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9505580330995145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "night_2024_01"
+          },
+          {
+            "text": "hilarious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9505580330995145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "hilarious_2024_01"
+          },
+          {
+            "text": "show",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.5562320195225766,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "show_2024_01"
+          },
+          {
+            "text": "laughing",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.7748508651517719,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "laughing_2024_01"
+          },
+          {
+            "text": "comedy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9505580330995145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "comedy_2024_01"
+          },
+          {
+            "text": "possibilities",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771408512606286,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "possibilities_2024_01"
+          },
+          {
+            "text": "excited",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.9615769520421358,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "excited_2024_01"
+          },
+          {
+            "text": "endless",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771408512606286,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "endless_2024_01"
+          },
+          {
+            "text": "project",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771408512606286,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "project_2024_01"
+          },
+          {
+            "text": "starting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771408512606286,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "starting_2024_01"
+          },
+          {
+            "text": "thank",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.866228643679642,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "thank_2024_01"
+          },
+          {
+            "text": "kindness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8841756243433337,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "kindness_2024_01"
+          },
+          {
+            "text": "truly",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.6724732062565938,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "truly_2024_01"
+          },
+          {
+            "text": "help",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8841756243433337,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "help_2024_01"
+          },
+          {
+            "text": "support",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8841756243433337,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "support_2024_01"
+          },
+          {
+            "text": "grateful",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.8277592828249908,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "grateful_2024_01"
+          },
+          {
+            "text": "difficult",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.38050161936456184,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "difficult_2024_01"
+          },
+          {
+            "text": "well",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.4683577071991749,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "well_2024_01"
+          },
+          {
+            "text": "policy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3949089525733143,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "policy_2024_01"
+          },
+          {
+            "text": "thought",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3949089525733143,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "thought_2024_01"
+          },
+          {
+            "text": "approve",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.5237421982223168,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "approve_2024_01"
+          },
+          {
+            "text": "things",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.961099015630316,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "things_2024_01"
+          },
+          {
+            "text": "good",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.961099015630316,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "good_2024_01"
+          },
+          {
+            "text": "optimistic",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.9410099209140753,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "optimistic_2024_01"
+          },
+          {
+            "text": "work",
+            "frequency": 6,
+            "sudden": 7.0,
+            "sentiment": 0.43105640881500823,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "work_2024_01"
+          },
+          {
+            "text": "proud",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.7688425391068449,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "proud_2024_01"
+          },
+          {
+            "text": "years",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9060510381939821,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "years_2024_01"
+          },
+          {
+            "text": "completing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9060510381939821,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "completing_2024_01"
+          },
+          {
+            "text": "degree",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9060510381939821,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "degree_2024_01"
+          },
+          {
+            "text": "relax",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.926444518417702,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "relax_2024_01"
+          },
+          {
+            "text": "relief",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.7219996379397343,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "relief_2024_01"
+          },
+          {
+            "text": "came",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.926444518417702,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "came_2024_01"
+          },
+          {
+            "text": "negative",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.926444518417702,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "negative_2024_01"
+          },
+          {
+            "text": "back",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.926444518417702,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "back_2024_01"
+          },
+          {
+            "text": "finally",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.9466830191551707,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "finally_2024_01"
+          },
+          {
+            "text": "someday",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.47764948406256735,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "someday_2024_01"
+          },
+          {
+            "text": "travel",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.47764948406256735,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "travel_2024_01"
+          },
+          {
+            "text": "experience",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.47764948406256735,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "experience_2024_01"
+          },
+          {
+            "text": "world",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.4733660568483174,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "world_2024_01"
+          },
+          {
+            "text": "cultures",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.47764948406256735,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "cultures_2024_01"
+          },
+          {
+            "text": "different",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.47764948406256735,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "different_2024_01"
+          },
+          {
+            "text": "desire",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.5916087357366148,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "desire_2024_01"
+          },
+          {
+            "text": "surprise",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.35052949490879354,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "surprise_2024_01"
+          },
+          {
+            "text": "wow",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.4715300187119283,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "wow_2024_01"
+          },
+          {
+            "text": "pleasant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.4715300187119283,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "pleasant_2024_01"
+          },
+          {
+            "text": "expect",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.3982871389132925,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "expect_2024_01"
+          },
+          {
+            "text": "see",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.4715300187119283,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "see_2024_01"
+          },
+          {
+            "text": "weather",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8254214941960527,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "weather_2024_01"
+          },
+          {
+            "text": "happening",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8254214941960527,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "happening_2024_01"
+          },
+          {
+            "text": "nice",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8254214941960527,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "nice_2024_01"
+          },
+          {
+            "text": "quite",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8254214941960527,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "quite_2024_01"
+          },
+          {
+            "text": "special",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8254214941960527,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "special_2024_01"
+          },
+          {
+            "text": "fails",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30686252103187145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "fails_2024_01"
+          },
+          {
+            "text": "amaze",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30686252103187145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "amaze_2024_01"
+          },
+          {
+            "text": "creativity",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30686252103187145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "creativity_2024_01"
+          },
+          {
+            "text": "design",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30686252103187145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "design_2024_01"
+          },
+          {
+            "text": "brilliant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.30686252103187145,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "brilliant_2024_01"
+          },
+          {
+            "text": "atmosphere",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.975490603747312,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "atmosphere_2024_01"
+          },
+          {
+            "text": "perfect",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.8259240702318493,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "perfect_2024_01"
+          },
+          {
+            "text": "restaurant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.975490603747312,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "restaurant_2024_01"
+          },
+          {
+            "text": "movie",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6976370256394148,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "movie_2024_01"
+          },
+          {
+            "text": "beginning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6976370256394148,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "beginning_2024_01"
+          },
+          {
+            "text": "funny",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6976370256394148,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "funny_2024_01"
+          },
+          {
+            "text": "end",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6976370256394148,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "end_2024_01"
+          },
+          {
+            "text": "months",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9344005320221186,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "months_2024_01"
+          },
+          {
+            "text": "concert",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9344005320221186,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "concert_2024_01"
+          },
+          {
+            "text": "tonight",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9344005320221186,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "tonight_2024_01"
+          },
+          {
+            "text": "friendship",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7802933198632672,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "friendship_2024_01"
+          },
+          {
+            "text": "always",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7802933198632672,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "always_2024_01"
+          },
+          {
+            "text": "needed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7802933198632672,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "needed_2024_01"
+          },
+          {
+            "text": "thing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8101996315876022,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "thing_2024_01"
+          },
+          {
+            "text": "fully",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8101996315876022,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "fully_2024_01"
+          },
+          {
+            "text": "right",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.34250508762197573,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "right_2024_01"
+          },
+          {
+            "text": "valued",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703954201148008,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "valued_2024_01"
+          },
+          {
+            "text": "community",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703954201148008,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "community_2024_01"
+          },
+          {
+            "text": "included",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703954201148008,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "included_2024_01"
+          },
+          {
+            "text": "making",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703954201148008,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "making_2024_01"
+          },
+          {
+            "text": "sure",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703954201148008,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "sure_2024_01"
+          },
+          {
+            "text": "feels",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703954201148008,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "feels_2024_01"
+          },
+          {
+            "text": "future",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9178933648392558,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "future_2024_01"
+          },
+          {
+            "text": "rapidly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9178933648392558,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "rapidly_2024_01"
+          },
+          {
+            "text": "advancing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9178933648392558,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "advancing_2024_01"
+          },
+          {
+            "text": "technology",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9178933648392558,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "technology_2024_01"
+          },
+          {
+            "text": "renewable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9178933648392558,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "renewable_2024_01"
+          },
+          {
+            "text": "energy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9178933648392558,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "energy_2024_01"
+          },
+          {
+            "text": "team",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5693295559845865,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "team_2024_01"
+          },
+          {
+            "text": "accomplished",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5693295559845865,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "accomplished_2024_01"
+          },
+          {
+            "text": "far",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5693295559845865,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "far_2024_01"
+          },
+          {
+            "text": "amazing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5693295559845865,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "amazing_2024_01"
+          },
+          {
+            "text": "task",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9669215198926395,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "task_2024_01"
+          },
+          {
+            "text": "pressure",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9669215198926395,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "pressure_2024_01"
+          },
+          {
+            "text": "finish",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9669215198926395,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "finish_2024_01"
+          },
+          {
+            "text": "fluent",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6097422435646876,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "fluent_2024_01"
+          },
+          {
+            "text": "language",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6097422435646876,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "language_2024_01"
+          },
+          {
+            "text": "become",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6097422435646876,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "become_2024_01"
+          },
+          {
+            "text": "solution",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.5730842526303604,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "solution_2024_01"
+          },
+          {
+            "text": "happens",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.43317569405771794,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "happens_2024_01"
+          },
+          {
+            "text": "know",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.43317569405771794,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "know_2024_01"
+          },
+          {
+            "text": "captivating",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.43317569405771794,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "captivating_2024_01"
+          },
+          {
+            "text": "episode",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.43317569405771794,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "episode_2024_01"
+          },
+          {
+            "text": "next",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.3148911946588972,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "next_2024_01"
+          },
+          {
+            "text": "raffle",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3250442591146566,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "raffle_2024_01"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3250442591146566,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "wonderful_2024_01"
+          },
+          {
+            "text": "win",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3250442591146566,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "win_2024_01"
+          },
+          {
+            "text": "sunset",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9838325012970017,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "sunset_2024_01"
+          },
+          {
+            "text": "beautiful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9838325012970017,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "beautiful_2024_01"
+          },
+          {
+            "text": "every",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9838325012970017,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "every_2024_01"
+          },
+          {
+            "text": "spot",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9838325012970017,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "spot_2024_01"
+          },
+          {
+            "text": "magical",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9838325012970017,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "magical_2024_01"
+          },
+          {
+            "text": "haha",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9140897903242149,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "haha_2024_01"
+          },
+          {
+            "text": "clever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9140897903242149,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "clever_2024_01"
+          },
+          {
+            "text": "amusing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9140897903242149,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "amusing_2024_01"
+          },
+          {
+            "text": "caught",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9140897903242149,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "caught_2024_01"
+          },
+          {
+            "text": "joke",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9140897903242149,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "joke_2024_01"
+          },
+          {
+            "text": "guard",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9140897903242149,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "guard_2024_01"
+          },
+          {
+            "text": "start",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.601423103173147,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "start_2024_01"
+          },
+          {
+            "text": "dream",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703154585498851,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "dream_2024_01"
+          },
+          {
+            "text": "week",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9703154585498851,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "week_2024_01"
+          },
+          {
+            "text": "thoughtful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8482816630159504,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "thoughtful_2024_01"
+          },
+          {
+            "text": "generosity",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8482816630159504,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "generosity_2024_01"
+          },
+          {
+            "text": "gift",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8482816630159504,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "gift_2024_01"
+          },
+          {
+            "text": "regulations",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.33280121004208923,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "regulations_2024_01"
+          },
+          {
+            "text": "necessary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.33280121004208923,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "necessary_2024_01"
+          },
+          {
+            "text": "safety",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.33280121004208923,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "safety_2024_01"
+          },
+          {
+            "text": "reasonable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.33280121004208923,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "reasonable_2024_01"
+          },
+          {
+            "text": "crisis",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9713072057813406,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "crisis_2024_01"
+          },
+          {
+            "text": "together",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9713072057813406,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "together_2024_01"
+          },
+          {
+            "text": "solve",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9713072057813406,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "solve_2024_01"
+          },
+          {
+            "text": "climate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9713072057813406,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "climate_2024_01"
+          },
+          {
+            "text": "goals",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8621381768956781,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "goals_2024_01"
+          },
+          {
+            "text": "marathon",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8621381768956781,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "marathon_2024_01"
+          },
+          {
+            "text": "fitness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8621381768956781,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "fitness_2024_01"
+          },
+          {
+            "text": "ran",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8621381768956781,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "ran_2024_01"
+          },
+          {
+            "text": "stuck",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8621381768956781,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "stuck_2024_01"
+          },
+          {
+            "text": "peace",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6874344795825891,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "peace_2024_01"
+          },
+          {
+            "text": "happiness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6874344795825891,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "happiness_2024_01"
+          },
+          {
+            "text": "old",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771782055337098,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "old_2024_01"
+          },
+          {
+            "text": "song",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771782055337098,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "song_2024_01"
+          },
+          {
+            "text": "happy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771782055337098,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "happy_2024_01"
+          },
+          {
+            "text": "reminds",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771782055337098,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "reminds_2024_01"
+          },
+          {
+            "text": "friends",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771782055337098,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "friends_2024_01"
+          },
+          {
+            "text": "times",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9771782055337098,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "times_2024_01"
+          },
+          {
+            "text": "audience",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6763575367163867,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "audience_2024_01"
+          },
+          {
+            "text": "whole",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6763575367163867,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "whole_2024_01"
+          },
+          {
+            "text": "comedian",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6763575367163867,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "comedian_2024_01"
+          },
+          {
+            "text": "timing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6763575367163867,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "timing_2024_01"
+          },
+          {
+            "text": "weeks",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9372745463158936,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "weeks_2024_01"
+          },
+          {
+            "text": "vacation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9372745463158936,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "vacation_2024_01"
+          },
+          {
+            "text": "planned",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9372745463158936,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "planned_2024_01"
+          },
+          {
+            "text": "modern",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7982865240774117,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "modern_2024_01"
+          },
+          {
+            "text": "medicine",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7982865240774117,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "medicine_2024_01"
+          },
+          {
+            "text": "life",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7982865240774117,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "life_2024_01"
+          },
+          {
+            "text": "saved",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7982865240774117,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "saved_2024_01"
+          },
+          {
+            "text": "doctors",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7982865240774117,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "doctors_2024_01"
+          },
+          {
+            "text": "society",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5570589986862615,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "society_2024_01"
+          },
+          {
+            "text": "investing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5570589986862615,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "investing_2024_01"
+          },
+          {
+            "text": "foundation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5570589986862615,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "foundation_2024_01"
+          },
+          {
+            "text": "smart",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.913740097405389,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "smart_2024_01"
+          },
+          {
+            "text": "finding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.913740097405389,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "finding_2024_01"
+          },
+          {
+            "text": "creative",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.913740097405389,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "creative_2024_01"
+          },
+          {
+            "text": "overcoming",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7378513853531331,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "overcoming_2024_01"
+          },
+          {
+            "text": "fears",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7378513853531331,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "fears_2024_01"
+          },
+          {
+            "text": "storm",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9455673600547015,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "storm_2024_01"
+          },
+          {
+            "text": "hear",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9455673600547015,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "hear_2024_01"
+          },
+          {
+            "text": "safe",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9455673600547015,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "safe_2024_01"
+          }
+        ],
+        "Neutral": [
+          {
+            "text": "absolutely",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.19139100887308205,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "absolutely_2024_01"
+          },
+          {
+            "text": "stop",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.2333176393658505,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "stop_2024_01"
+          },
+          {
+            "text": "last",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.01316886287386293,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "last_2024_01"
+          },
+          {
+            "text": "tomorrow",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.17160237081698146,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "tomorrow_2024_01"
+          },
+          {
+            "text": "much",
+            "frequency": 5,
+            "sudden": 6.0,
+            "sentiment": -0.15431136133120166,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "much_2024_01"
+          },
+          {
+            "text": "handled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0247896334156394,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "handled_2024_01"
+          },
+          {
+            "text": "wisdom",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0247896334156394,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "wisdom_2024_01"
+          },
+          {
+            "text": "admire",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.087291669100523,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "admire_2024_01"
+          },
+          {
+            "text": "situation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0247896334156394,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "situation_2024_01"
+          },
+          {
+            "text": "grace",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0247896334156394,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "grace_2024_01"
+          },
+          {
+            "text": "fair",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.2697496211854741,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "fair_2024_01"
+          },
+          {
+            "text": "protecting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.11277954149991273,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "protecting_2024_01"
+          },
+          {
+            "text": "conservation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.11277954149991273,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "conservation_2024_01"
+          },
+          {
+            "text": "care",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.27609025290475986,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "care_2024_01"
+          },
+          {
+            "text": "deeply",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.005312349146697662,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "deeply_2024_01"
+          },
+          {
+            "text": "planet",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.11277954149991273,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "planet_2024_01"
+          },
+          {
+            "text": "environmental",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.11277954149991273,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "environmental_2024_01"
+          },
+          {
+            "text": "feeling",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.10717298955423754,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "feeling_2024_01"
+          },
+          {
+            "text": "hard",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.04479178028511038,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "hard_2024_01"
+          },
+          {
+            "text": "test",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.09088819739263271,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "test_2024_01"
+          },
+          {
+            "text": "results",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.2392117379747409,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "results_2024_01"
+          },
+          {
+            "text": "realized",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.10061047164102395,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "realized_2024_01"
+          },
+          {
+            "text": "approaching",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.13995593348518015,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "approaching_2024_01"
+          },
+          {
+            "text": "understand",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.20630284444196148,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "understand_2024_01"
+          },
+          {
+            "text": "curious",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.2597899949527345,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "curious_2024_01"
+          },
+          {
+            "text": "quantum",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.11366354300407693,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "quantum_2024_01"
+          },
+          {
+            "text": "works",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.11366354300407693,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "works_2024_01"
+          },
+          {
+            "text": "computing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.11366354300407693,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "computing_2024_01"
+          },
+          {
+            "text": "learn",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.08186079607500385,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "learn_2024_01"
+          },
+          {
+            "text": "trying",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.23260081497719515,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "trying_2024_01"
+          },
+          {
+            "text": "everyone",
+            "frequency": 5,
+            "sudden": 6.0,
+            "sentiment": 0.28834209883032597,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "everyone_2024_01"
+          },
+          {
+            "text": "education",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.003262438275851376,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "education_2024_01"
+          },
+          {
+            "text": "decision",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.12983275472652173,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "decision_2024_01"
+          },
+          {
+            "text": "food",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.18873578872007785,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "food_2024_01"
+          },
+          {
+            "text": "completely",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.20774900472024457,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "completely_2024_01"
+          },
+          {
+            "text": "nothing",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.2962153607038393,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "nothing_2024_01"
+          },
+          {
+            "text": "today",
+            "frequency": 4,
+            "sudden": 5.0,
+            "sentiment": 0.0974731252405036,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "today_2024_01"
+          },
+          {
+            "text": "never",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.22895423041190952,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "never_2024_01"
+          },
+          {
+            "text": "waiting",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.09486620419484099,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "waiting_2024_01"
+          },
+          {
+            "text": "admirable",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.13011264696833677,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "admirable_2024_01"
+          },
+          {
+            "text": "inspiration",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2849623314104974,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "inspiration_2024_01"
+          },
+          {
+            "text": "dedication",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2849623314104974,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "dedication_2024_01"
+          },
+          {
+            "text": "something",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.2694757867294053,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "something_2024_01"
+          },
+          {
+            "text": "suddenly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2324284078553319,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "suddenly_2024_01"
+          },
+          {
+            "text": "puzzle",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2324284078553319,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "puzzle_2024_01"
+          },
+          {
+            "text": "along",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2324284078553319,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "along_2024_01"
+          },
+          {
+            "text": "introduced",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.1251894563436508,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "introduced_2024_01"
+          },
+          {
+            "text": "name",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.1251894563436508,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "name_2024_01"
+          },
+          {
+            "text": "forgot",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.1251894563436508,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "forgot_2024_01"
+          },
+          {
+            "text": "late",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.1993452257127501,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "late_2024_01"
+          },
+          {
+            "text": "people",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.2235085260574124,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "people_2024_01"
+          },
+          {
+            "text": "job",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.008444129253621202,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "job_2024_01"
+          },
+          {
+            "text": "watching",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.0010016102940426097,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "watching_2024_01"
+          },
+          {
+            "text": "noteworthy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0026757904328405854,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "noteworthy_2024_01"
+          },
+          {
+            "text": "particularly",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.031612293957732615,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "particularly_2024_01"
+          },
+          {
+            "text": "happened",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0026757904328405854,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "happened_2024_01"
+          },
+          {
+            "text": "another",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.12884499866631816,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "another_2024_01"
+          },
+          {
+            "text": "ordinary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0026757904328405854,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "ordinary_2024_01"
+          },
+          {
+            "text": "opportunity",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.011488245145301335,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "opportunity_2024_01"
+          },
+          {
+            "text": "stand",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1497937047854066,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "stand_2024_01"
+          },
+          {
+            "text": "beliefs",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1497937047854066,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "beliefs_2024_01"
+          },
+          {
+            "text": "even",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.2983597730097245,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "even_2024_01"
+          },
+          {
+            "text": "courage",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1497937047854066,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "courage_2024_01"
+          },
+          {
+            "text": "welfare",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10215484320651741,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "welfare_2024_01"
+          },
+          {
+            "text": "animal",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10215484320651741,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "animal_2024_01"
+          },
+          {
+            "text": "supporting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10215484320651741,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "supporting_2024_01"
+          },
+          {
+            "text": "organizations",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10215484320651741,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "organizations_2024_01"
+          },
+          {
+            "text": "rescue",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.10215484320651741,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "rescue_2024_01"
+          },
+          {
+            "text": "surgery",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.04906515339389443,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "surgery_2024_01"
+          },
+          {
+            "text": "went",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.04906515339389443,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "went_2024_01"
+          },
+          {
+            "text": "answer",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2093589405529201,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "answer_2024_01"
+          },
+          {
+            "text": "obvious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2093589405529201,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "obvious_2024_01"
+          },
+          {
+            "text": "piano",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.23253074779640884,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "piano_2024_01"
+          },
+          {
+            "text": "play",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.23253074779640884,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "play_2024_01"
+          },
+          {
+            "text": "wonder",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.23253074779640884,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "wonder_2024_01"
+          },
+          {
+            "text": "learning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.23253074779640884,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "learning_2024_01"
+          },
+          {
+            "text": "small",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2550142068997957,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "small_2024_01"
+          },
+          {
+            "text": "run",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2550142068997957,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "run_2024_01"
+          },
+          {
+            "text": "country",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2550142068997957,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "country_2024_01"
+          },
+          {
+            "text": "wednesday",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.06054879748262465,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "wednesday_2024_01"
+          },
+          {
+            "text": "average",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.06054879748262465,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "average_2024_01"
+          },
+          {
+            "text": "interesting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.06054879748262465,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "interesting_2024_01"
+          },
+          {
+            "text": "matter",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.024737037473823872,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "matter_2024_01"
+          },
+          {
+            "text": "perseverance",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.024737037473823872,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "perseverance_2024_01"
+          },
+          {
+            "text": "give",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.024737037473823872,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "give_2024_01"
+          },
+          {
+            "text": "ensuring",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1445902897976339,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "ensuring_2024_01"
+          },
+          {
+            "text": "background",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1445902897976339,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "background_2024_01"
+          },
+          {
+            "text": "treatment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1445902897976339,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "treatment_2024_01"
+          },
+          {
+            "text": "regardless",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1445902897976339,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "regardless_2024_01"
+          }
+        ],
+        "Negative": [
+          {
+            "text": "problem",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.34053059180732814,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "problem_2024_01"
+          },
+          {
+            "text": "wrong",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.4137409366900101,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "wrong_2024_01"
+          },
+          {
+            "text": "need",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.3418202444775185,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "need_2024_01"
+          },
+          {
+            "text": "confusing",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.4241908580530434,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "confusing_2024_01"
+          },
+          {
+            "text": "explain",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.4068775027641095,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "explain_2024_01"
+          },
+          {
+            "text": "shaking",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7467530365218409,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "shaking_2024_01"
+          },
+          {
+            "text": "hands",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7467530365218409,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "hands_2024_01"
+          },
+          {
+            "text": "nervous",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.7455386957813365,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "nervous_2024_01"
+          },
+          {
+            "text": "presentation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7467530365218409,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "presentation_2024_01"
+          },
+          {
+            "text": "big",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7467530365218409,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "big_2024_01"
+          },
+          {
+            "text": "tripped",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5870121906511485,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "tripped_2024_01"
+          },
+          {
+            "text": "embarrassing",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.3561008234973997,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "embarrassing_2024_01"
+          },
+          {
+            "text": "meeting",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.6661035589204403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "meeting_2024_01"
+          },
+          {
+            "text": "front",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5870121906511485,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "front_2024_01"
+          },
+          {
+            "text": "constant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4358680344186723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "constant_2024_01"
+          },
+          {
+            "text": "anything",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4358680344186723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "anything_2024_01"
+          },
+          {
+            "text": "noise",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4358680344186723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "noise_2024_01"
+          },
+          {
+            "text": "construction",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4358680344186723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "construction_2024_01"
+          },
+          {
+            "text": "annoying",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.5170039960027982,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "annoying_2024_01"
+          },
+          {
+            "text": "concentrate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4358680344186723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "concentrate_2024_01"
+          },
+          {
+            "text": "better",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.9233752884843853,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "better_2024_01"
+          },
+          {
+            "text": "expected",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8994116087094881,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "expected_2024_01"
+          },
+          {
+            "text": "disappointed",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.9315278593994055,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disappointed_2024_01"
+          },
+          {
+            "text": "final",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8994116087094881,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "final_2024_01"
+          },
+          {
+            "text": "cut",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5505341221345588,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "cut_2024_01"
+          },
+          {
+            "text": "funding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5505341221345588,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "funding_2024_01"
+          },
+          {
+            "text": "disapprove",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.5722720129987767,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disapprove_2024_01"
+          },
+          {
+            "text": "yesterday",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.9265158438705839,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "yesterday_2024_01"
+          },
+          {
+            "text": "feel",
+            "frequency": 5,
+            "sudden": 6.0,
+            "sentiment": -0.9530971071927343,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "feel_2024_01"
+          },
+          {
+            "text": "remorse",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.9308636216446757,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "remorse_2024_01"
+          },
+          {
+            "text": "spoken",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9465841335011647,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "spoken_2024_01"
+          },
+          {
+            "text": "anger",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9465841335011647,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "anger_2024_01"
+          },
+          {
+            "text": "overwhelming",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9870589491445572,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "overwhelming_2024_01"
+          },
+          {
+            "text": "pet",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9870589491445572,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "pet_2024_01"
+          },
+          {
+            "text": "losing",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.9810836136651536,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "losing_2024_01"
+          },
+          {
+            "text": "miss",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9870589491445572,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "miss_2024_01"
+          },
+          {
+            "text": "grief",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.9810836136651536,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "grief_2024_01"
+          },
+          {
+            "text": "ending",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9768957588472403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "ending_2024_01"
+          },
+          {
+            "text": "wish",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9768957588472403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "wish_2024_01"
+          },
+          {
+            "text": "sad",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.9836489809366564,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "sad_2024_01"
+          },
+          {
+            "text": "longer",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9768957588472403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "longer_2024_01"
+          },
+          {
+            "text": "little",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9768957588472403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "little_2024_01"
+          },
+          {
+            "text": "summer",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9768957588472403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "summer_2024_01"
+          },
+          {
+            "text": "deadline",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7464400786790065,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "deadline_2024_01"
+          },
+          {
+            "text": "left",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7464400786790065,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "left_2024_01"
+          },
+          {
+            "text": "afraid",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.7466306631162297,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "afraid_2024_01"
+          },
+          {
+            "text": "meet",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7464400786790065,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "meet_2024_01"
+          },
+          {
+            "text": "smells",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5980190263071563,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "smells_2024_01"
+          },
+          {
+            "text": "spoiled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5980190263071563,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "spoiled_2024_01"
+          },
+          {
+            "text": "away",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.7835036005504662,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "away_2024_01"
+          },
+          {
+            "text": "disgusting",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": -0.5981245102962324,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disgusting_2024_01"
+          },
+          {
+            "text": "throw",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5980190263071563,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "throw_2024_01"
+          },
+          {
+            "text": "immediately",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5980190263071563,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "immediately_2024_01"
+          },
+          {
+            "text": "angry",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.49867268101661466,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "angry_2024_01"
+          },
+          {
+            "text": "broke",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49859178088372574,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "broke_2024_01"
+          },
+          {
+            "text": "unacceptable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49859178088372574,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "unacceptable_2024_01"
+          },
+          {
+            "text": "promise",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49859178088372574,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "promise_2024_01"
+          },
+          {
+            "text": "step",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4588175686309114,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "step_2024_01"
+          },
+          {
+            "text": "comes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4588175686309114,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "comes_2024_01"
+          },
+          {
+            "text": "figure",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4588175686309114,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "figure_2024_01"
+          },
+          {
+            "text": "instructions",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4588175686309114,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "instructions_2024_01"
+          },
+          {
+            "text": "parents",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.745194927189732,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "parents_2024_01"
+          },
+          {
+            "text": "jam",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.631221199221909,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "jam_2024_01"
+          },
+          {
+            "text": "appointment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.631221199221909,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "appointment_2024_01"
+          },
+          {
+            "text": "traffic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.631221199221909,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "traffic_2024_01"
+          },
+          {
+            "text": "event",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9478330012294464,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "event_2024_01"
+          },
+          {
+            "text": "looking",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9478330012294464,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "looking_2024_01"
+          },
+          {
+            "text": "forward",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9478330012294464,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "forward_2024_01"
+          },
+          {
+            "text": "cancelled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9478330012294464,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "cancelled_2024_01"
+          },
+          {
+            "text": "really",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.7158778777986299,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "really_2024_01"
+          },
+          {
+            "text": "harm",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5916073419124587,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "harm_2024_01"
+          },
+          {
+            "text": "spreading",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5916073419124587,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "spreading_2024_01"
+          },
+          {
+            "text": "rumors",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5916073419124587,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "rumors_2024_01"
+          },
+          {
+            "text": "causes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5916073419124587,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "causes_2024_01"
+          },
+          {
+            "text": "unnecessary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5916073419124587,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "unnecessary_2024_01"
+          },
+          {
+            "text": "visiting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9395591771928593,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "visiting_2024_01"
+          },
+          {
+            "text": "terrible",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9395591771928593,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "terrible_2024_01"
+          },
+          {
+            "text": "grandmother",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9395591771928593,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "grandmother_2024_01"
+          },
+          {
+            "text": "passed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9395591771928593,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "passed_2024_01"
+          },
+          {
+            "text": "weighs",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9872037170571275,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "weighs_2024_01"
+          },
+          {
+            "text": "heavily",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9872037170571275,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "heavily_2024_01"
+          },
+          {
+            "text": "still",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.8670711884609773,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "still_2024_01"
+          },
+          {
+            "text": "mind",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9872037170571275,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "mind_2024_01"
+          },
+          {
+            "text": "heartbreaking",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.985835721885087,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "heartbreaking_2024_01"
+          },
+          {
+            "text": "documentary",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.985835721885087,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "documentary_2024_01"
+          },
+          {
+            "text": "endangered",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.985835721885087,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "endangered_2024_01"
+          },
+          {
+            "text": "species",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.985835721885087,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "species_2024_01"
+          },
+          {
+            "text": "worried",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.34893675323546636,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "worried_2024_01"
+          },
+          {
+            "text": "exam",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7469386598648271,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "exam_2024_01"
+          },
+          {
+            "text": "important",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7469386598648271,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "important_2024_01"
+          },
+          {
+            "text": "studied",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7469386598648271,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "studied_2024_01"
+          },
+          {
+            "text": "failing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7469386598648271,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "failing_2024_01"
+          },
+          {
+            "text": "anyone",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981683875608723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "anyone_2024_01"
+          },
+          {
+            "text": "behavior",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981683875608723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "behavior_2024_01"
+          },
+          {
+            "text": "believe",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981683875608723,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "believe_2024_01"
+          },
+          {
+            "text": "furious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49944614444975743,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "furious_2024_01"
+          },
+          {
+            "text": "lied",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49944614444975743,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "lied_2024_01"
+          },
+          {
+            "text": "trust",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49944614444975743,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "trust_2024_01"
+          },
+          {
+            "text": "betray",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49944614444975743,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "betray_2024_01"
+          },
+          {
+            "text": "dare",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49944614444975743,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "dare_2024_01"
+          },
+          {
+            "text": "math",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5411052501294762,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "math_2024_01"
+          },
+          {
+            "text": "someone",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5411052501294762,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "someone_2024_01"
+          },
+          {
+            "text": "unbearable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7446681236324366,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "unbearable_2024_01"
+          },
+          {
+            "text": "medical",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7446681236324366,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "medical_2024_01"
+          },
+          {
+            "text": "embarrassed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6875259398948401,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "embarrassed_2024_01"
+          },
+          {
+            "text": "classroom",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6875259398948401,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "classroom_2024_01"
+          },
+          {
+            "text": "walked",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6875259398948401,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "walked_2024_01"
+          },
+          {
+            "text": "calls",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.48392275436781346,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "calls_2024_01"
+          },
+          {
+            "text": "calling",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.48392275436781346,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "calling_2024_01"
+          },
+          {
+            "text": "spam",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.48392275436781346,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "spam_2024_01"
+          },
+          {
+            "text": "preparing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9473389682592824,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "preparing_2024_01"
+          },
+          {
+            "text": "deserves",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.574674574949313,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "deserves_2024_01"
+          },
+          {
+            "text": "respect",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.574674574949313,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "respect_2024_01"
+          },
+          {
+            "text": "waiter",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.574674574949313,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "waiter_2024_01"
+          },
+          {
+            "text": "rudeness",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.574674574949313,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "rudeness_2024_01"
+          },
+          {
+            "text": "words",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9064475542400032,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "words_2024_01"
+          },
+          {
+            "text": "harsh",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9064475542400032,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "harsh_2024_01"
+          },
+          {
+            "text": "argument",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9064475542400032,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "argument_2024_01"
+          },
+          {
+            "text": "loved",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9689881747937761,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "loved_2024_01"
+          },
+          {
+            "text": "live",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9689881747937761,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "live_2024_01"
+          },
+          {
+            "text": "goes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9689881747937761,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "goes_2024_01"
+          },
+          {
+            "text": "home",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9882154620776419,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "home_2024_01"
+          },
+          {
+            "text": "demolished",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9882154620776419,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "demolished_2024_01"
+          },
+          {
+            "text": "memories",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9882154620776419,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "memories_2024_01"
+          },
+          {
+            "text": "childhood",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9882154620776419,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "childhood_2024_01"
+          },
+          {
+            "text": "many",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9882154620776419,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "many_2024_01"
+          },
+          {
+            "text": "heights",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7465132508048555,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "heights_2024_01"
+          },
+          {
+            "text": "tall",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7465132508048555,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "tall_2024_01"
+          },
+          {
+            "text": "look",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7465132508048555,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "look_2024_01"
+          },
+          {
+            "text": "buildings",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7465132508048555,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "buildings_2024_01"
+          },
+          {
+            "text": "sick",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981861170206685,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "sick_2024_01"
+          },
+          {
+            "text": "animals",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981861170206685,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "animals_2024_01"
+          },
+          {
+            "text": "stomach",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981861170206685,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "stomach_2024_01"
+          },
+          {
+            "text": "way",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981861170206685,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "way_2024_01"
+          },
+          {
+            "text": "treat",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981861170206685,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "treat_2024_01"
+          },
+          {
+            "text": "makes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5981861170206685,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "makes_2024_01"
+          },
+          {
+            "text": "witnessed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4987535811495036,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "witnessed_2024_01"
+          },
+          {
+            "text": "injustice",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4987535811495036,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "injustice_2024_01"
+          },
+          {
+            "text": "done",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4987535811495036,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "done_2024_01"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-02",
+      "words": {
+        "Positive": [
+          {
+            "text": "small",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.7649190801894292,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "small_2024_02"
+          },
+          {
+            "text": "however",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7649190801894292,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "however_2024_02"
+          },
+          {
+            "text": "world",
+            "frequency": 1,
+            "sudden": 0.5,
+            "sentiment": 0.7649190801894292,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "world_2024_02"
+          },
+          {
+            "text": "desire",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": 0.491729688848136,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "desire_2024_02"
+          },
+          {
+            "text": "positive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7649190801894292,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "positive_2024_02"
+          },
+          {
+            "text": "difference",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.7649190801894292,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "difference_2024_02"
+          },
+          {
+            "text": "aha",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5086398460553028,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "aha_2024_02"
+          },
+          {
+            "text": "book",
+            "frequency": 3,
+            "sudden": 4.0,
+            "sentiment": 0.5901146755980639,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "book_2024_02"
+          },
+          {
+            "text": "realized",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": 0.35976323601207694,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "realized_2024_02"
+          },
+          {
+            "text": "makes",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.5086398460553028,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "makes_2024_02"
+          },
+          {
+            "text": "theme",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5086398460553028,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "theme_2024_02"
+          },
+          {
+            "text": "sense",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.5086398460553028,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "sense_2024_02"
+          },
+          {
+            "text": "joy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9733239670065814,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "joy_2024_02"
+          },
+          {
+            "text": "peace",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9733239670065814,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "peace_2024_02"
+          },
+          {
+            "text": "nature",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9733239670065814,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "nature_2024_02"
+          },
+          {
+            "text": "love",
+            "frequency": 2,
+            "sudden": 0.6,
+            "sentiment": 0.9820779510911961,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "love_2024_02"
+          },
+          {
+            "text": "brings",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9733239670065814,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "brings_2024_02"
+          },
+          {
+            "text": "watched",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9381074449571315,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "watched_2024_02"
+          },
+          {
+            "text": "hilarious",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9381074449571315,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "hilarious_2024_02"
+          },
+          {
+            "text": "still",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.9381074449571315,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "still_2024_02"
+          },
+          {
+            "text": "times",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9381074449571315,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "times_2024_02"
+          },
+          {
+            "text": "laugh",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9381074449571315,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "laugh_2024_02"
+          },
+          {
+            "text": "video",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9381074449571315,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "video_2024_02"
+          },
+          {
+            "text": "next",
+            "frequency": 1,
+            "sudden": 0.5,
+            "sentiment": 0.9772261334350333,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "next_2024_02"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.9772261334350333,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "thrilled_2024_02"
+          },
+          {
+            "text": "publishing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9772261334350333,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "publishing_2024_02"
+          },
+          {
+            "text": "month",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9772261334350333,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "month_2024_02"
+          },
+          {
+            "text": "chances",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8789814630843467,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "chances_2024_02"
+          },
+          {
+            "text": "opportunity",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.8789814630843467,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "opportunity_2024_02"
+          },
+          {
+            "text": "learn",
+            "frequency": 1,
+            "sudden": 0.5,
+            "sentiment": 0.8789814630843467,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "learn_2024_02"
+          },
+          {
+            "text": "grateful",
+            "frequency": 1,
+            "sudden": 0.4,
+            "sentiment": 0.8789814630843467,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "grateful_2024_02"
+          },
+          {
+            "text": "bring",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3154054371872917,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "bring_2024_02"
+          },
+          {
+            "text": "truly",
+            "frequency": 1,
+            "sudden": 0.5,
+            "sentiment": 0.3154054371872917,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "truly_2024_02"
+          },
+          {
+            "text": "craft",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3154054371872917,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "craft_2024_02"
+          },
+          {
+            "text": "admirable",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.3154054371872917,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "admirable_2024_02"
+          },
+          {
+            "text": "dedication",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.3154054371872917,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "dedication_2024_02"
+          },
+          {
+            "text": "skill",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3154054371872917,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "skill_2024_02"
+          },
+          {
+            "text": "help",
+            "frequency": 3,
+            "sudden": 2.0,
+            "sentiment": 0.3496177501685452,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "help_2024_02"
+          },
+          {
+            "text": "innovation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9645183672546409,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "innovation_2024_02"
+          },
+          {
+            "text": "overcome",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9645183672546409,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "overcome_2024_02"
+          },
+          {
+            "text": "optimistic",
+            "frequency": 1,
+            "sudden": 0.4,
+            "sentiment": 0.9645183672546409,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "optimistic_2024_02"
+          },
+          {
+            "text": "challenges",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9645183672546409,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "challenges_2024_02"
+          },
+          {
+            "text": "community",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.6614646458299831,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "community_2024_02"
+          },
+          {
+            "text": "together",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.6614646458299831,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "together_2024_02"
+          },
+          {
+            "text": "proud",
+            "frequency": 1,
+            "sudden": 0.4,
+            "sentiment": 0.6614646458299831,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "proud_2024_02"
+          },
+          {
+            "text": "resolved",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8670538959442637,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "resolved_2024_02"
+          },
+          {
+            "text": "conflict",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8670538959442637,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "conflict_2024_02"
+          },
+          {
+            "text": "peacefully",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8670538959442637,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "peacefully_2024_02"
+          },
+          {
+            "text": "relief",
+            "frequency": 1,
+            "sudden": 0.4,
+            "sentiment": 0.8670538959442637,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "relief_2024_02"
+          },
+          {
+            "text": "things",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9908319351758109,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "things_2024_02"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9908319351758109,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "wonderful_2024_02"
+          },
+          {
+            "text": "knowledge",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.9908319351758109,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "knowledge_2024_02"
+          },
+          {
+            "text": "gift",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9908319351758109,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "gift_2024_02"
+          },
+          {
+            "text": "every",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9908319351758109,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "every_2024_02"
+          },
+          {
+            "text": "learning",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.9908319351758109,
+            "emotion": "joy",
+            "color": "#2E7D32",
+            "topic": "Positive",
+            "id": "learning_2024_02"
+          }
+        ],
+        "Neutral": [
+          {
+            "text": "intelligence",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1715099798166193,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "intelligence_2024_02"
+          },
+          {
+            "text": "curious",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": 0.17171104483422822,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "curious_2024_02"
+          },
+          {
+            "text": "artificial",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1715099798166193,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "artificial_2024_02"
+          },
+          {
+            "text": "learns",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.1715099798166193,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "learns_2024_02"
+          },
+          {
+            "text": "understand",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.1715099798166193,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "understand_2024_02"
+          },
+          {
+            "text": "party",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2713433726457879,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "party_2024_02"
+          },
+          {
+            "text": "really",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 0.2713433726457879,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "really_2024_02"
+          },
+          {
+            "text": "idea",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2713433726457879,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "idea_2024_02"
+          },
+          {
+            "text": "surprise",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": 0.27791070997482165,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "surprise_2024_02"
+          },
+          {
+            "text": "find",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.13124229270033538,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "find_2024_02"
+          },
+          {
+            "text": "inside",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.14321505287662148,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "inside_2024_02"
+          },
+          {
+            "text": "shirt",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.14321505287662148,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "shirt_2024_02"
+          },
+          {
+            "text": "realize",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.14321505287662148,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "realize_2024_02"
+          },
+          {
+            "text": "long",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.14321505287662148,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "long_2024_02"
+          },
+          {
+            "text": "absolutely",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": 0.18741889057928351,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "absolutely_2024_02"
+          },
+          {
+            "text": "expected",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.027689757710322737,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "expected_2024_02"
+          },
+          {
+            "text": "nothing",
+            "frequency": 1,
+            "sudden": 0.5,
+            "sentiment": -0.027689757710322737,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "nothing_2024_02"
+          },
+          {
+            "text": "much",
+            "frequency": 1,
+            "sudden": 0.3333333333333333,
+            "sentiment": -0.027689757710322737,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "much_2024_02"
+          },
+          {
+            "text": "today",
+            "frequency": 2,
+            "sudden": 0.6,
+            "sentiment": -0.18241114371921865,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "today_2024_02"
+          },
+          {
+            "text": "everything",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": 0.09159843412926422,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "everything_2024_02"
+          },
+          {
+            "text": "report",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.027689757710322737,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "report_2024_02"
+          },
+          {
+            "text": "spending",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": 0.1980971022137965,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "spending_2024_02"
+          },
+          {
+            "text": "honesty",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.013482988788746306,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "honesty_2024_02"
+          },
+          {
+            "text": "builds",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.013482988788746306,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "builds_2024_02"
+          },
+          {
+            "text": "trust",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.013482988788746306,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "trust_2024_02"
+          },
+          {
+            "text": "transparent",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.013482988788746306,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "transparent_2024_02"
+          },
+          {
+            "text": "communication",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.013482988788746306,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "communication_2024_02"
+          },
+          {
+            "text": "approve",
+            "frequency": 1,
+            "sudden": 0.4,
+            "sentiment": 0.013482988788746306,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "approve_2024_02"
+          },
+          {
+            "text": "care",
+            "frequency": 1,
+            "sudden": 0.4,
+            "sentiment": 0.0481254507554695,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "care_2024_02"
+          },
+          {
+            "text": "historical",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0481254507554695,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "historical_2024_02"
+          },
+          {
+            "text": "landmarks",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0481254507554695,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "landmarks_2024_02"
+          },
+          {
+            "text": "preserving",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.0481254507554695,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "preserving_2024_02"
+          },
+          {
+            "text": "need",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": 0.04216744162549735,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "need_2024_02"
+          },
+          {
+            "text": "meaning",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21854029750684276,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "meaning_2024_02"
+          },
+          {
+            "text": "life",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.21854029750684276,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "life_2024_02"
+          },
+          {
+            "text": "purpose",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21854029750684276,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "purpose_2024_02"
+          },
+          {
+            "text": "live",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.21854029750684276,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "live_2024_02"
+          },
+          {
+            "text": "suddenly",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.21088662596885116,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "suddenly_2024_02"
+          },
+          {
+            "text": "judgment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21088662596885116,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "judgment_2024_02"
+          },
+          {
+            "text": "error",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21088662596885116,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "error_2024_02"
+          },
+          {
+            "text": "changes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.21088662596885116,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "changes_2024_02"
+          },
+          {
+            "text": "discoveries",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.17191210985183716,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "discoveries_2024_02"
+          },
+          {
+            "text": "await",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.17191210985183716,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "await_2024_02"
+          },
+          {
+            "text": "space",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.17191210985183716,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "space_2024_02"
+          },
+          {
+            "text": "lucky",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2844780473038554,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "lucky_2024_02"
+          },
+          {
+            "text": "rare",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.2844780473038554,
+            "emotion": "joy",
+            "color": "#757575",
+            "topic": "Neutral",
+            "id": "rare_2024_02"
+          }
+        ],
+        "Negative": [
+          {
+            "text": "interface",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5469626327045262,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "interface_2024_02"
+          },
+          {
+            "text": "settings",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5469626327045262,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "settings_2024_02"
+          },
+          {
+            "text": "confusing",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.5062550918548367,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "confusing_2024_02"
+          },
+          {
+            "text": "anywhere",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5469626327045262,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "anywhere_2024_02"
+          },
+          {
+            "text": "user",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5469626327045262,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "user_2024_02"
+          },
+          {
+            "text": "public",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.656267497348017,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "public_2024_02"
+          },
+          {
+            "text": "speech",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7443413917615544,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "speech_2024_02"
+          },
+          {
+            "text": "forget",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7443413917615544,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "forget_2024_02"
+          },
+          {
+            "text": "nervous",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.7451599971260294,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "nervous_2024_02"
+          },
+          {
+            "text": "giving",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7443413917615544,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "giving_2024_02"
+          },
+          {
+            "text": "embarrassing",
+            "frequency": 2,
+            "sudden": 1.0,
+            "sentiment": -0.35069155488163234,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "embarrassing_2024_02"
+          },
+          {
+            "text": "driving",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4756179956719279,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "driving_2024_02"
+          },
+          {
+            "text": "crazy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4756179956719279,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "crazy_2024_02"
+          },
+          {
+            "text": "faucet",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4756179956719279,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "faucet_2024_02"
+          },
+          {
+            "text": "annoying",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.4940047763055191,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "annoying_2024_02"
+          },
+          {
+            "text": "sound",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4756179956719279,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "sound_2024_02"
+          },
+          {
+            "text": "dripping",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4756179956719279,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "dripping_2024_02"
+          },
+          {
+            "text": "disappointed",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.6904457145195919,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disappointed_2024_02"
+          },
+          {
+            "text": "acknowledge",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8126978261047043,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "acknowledge_2024_02"
+          },
+          {
+            "text": "contribution",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8126978261047043,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "contribution_2024_02"
+          },
+          {
+            "text": "place",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5894303301232867,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "place_2024_02"
+          },
+          {
+            "text": "society",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.5894303301232867,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "society_2024_02"
+          },
+          {
+            "text": "discrimination",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5894303301232867,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "discrimination_2024_02"
+          },
+          {
+            "text": "strongly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5894303301232867,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "strongly_2024_02"
+          },
+          {
+            "text": "disapprove",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.5832800463511376,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disapprove_2024_02"
+          },
+          {
+            "text": "form",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5894303301232867,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "form_2024_02"
+          },
+          {
+            "text": "needed",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9682748878956773,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "needed_2024_02"
+          },
+          {
+            "text": "friend",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9682748878956773,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "friend_2024_02"
+          },
+          {
+            "text": "feel",
+            "frequency": 2,
+            "sudden": 0.5,
+            "sentiment": -0.9515719458053354,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "feel_2024_02"
+          },
+          {
+            "text": "remorse",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.9515719458053354,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "remorse_2024_02"
+          },
+          {
+            "text": "deep",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.3981813890219201,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "deep_2024_02"
+          },
+          {
+            "text": "days",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9716590563766658,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "days_2024_02"
+          },
+          {
+            "text": "missing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9716590563766658,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "missing_2024_02"
+          },
+          {
+            "text": "someone",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": -0.7649135566316545,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "someone_2024_02"
+          },
+          {
+            "text": "comes",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9716590563766658,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "comes_2024_02"
+          },
+          {
+            "text": "waves",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9716590563766658,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "waves_2024_02"
+          },
+          {
+            "text": "harder",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9716590563766658,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "harder_2024_02"
+          },
+          {
+            "text": "grief",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.9771258722757921,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "grief_2024_02"
+          },
+          {
+            "text": "old",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9816431631625164,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "old_2024_02"
+          },
+          {
+            "text": "cut",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9816431631625164,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "cut_2024_02"
+          },
+          {
+            "text": "beautiful",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9816431631625164,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "beautiful_2024_02"
+          },
+          {
+            "text": "tree",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9816431631625164,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "tree_2024_02"
+          },
+          {
+            "text": "sad",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.9835930173459928,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "sad_2024_02"
+          },
+          {
+            "text": "see",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9816431631625164,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "see_2024_02"
+          },
+          {
+            "text": "afraid",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.7465031452418771,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "afraid_2024_02"
+          },
+          {
+            "text": "wrong",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.7470667014829815,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "wrong_2024_02"
+          },
+          {
+            "text": "forever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7470667014829815,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "forever_2024_02"
+          },
+          {
+            "text": "making",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.7470667014829815,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "making_2024_02"
+          },
+          {
+            "text": "decision",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.7470667014829815,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "decision_2024_02"
+          },
+          {
+            "text": "regretting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7470667014829815,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "regretting_2024_02"
+          },
+          {
+            "text": "smell",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5984861858480144,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "smell_2024_02"
+          },
+          {
+            "text": "rotten",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5984861858480144,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "rotten_2024_02"
+          },
+          {
+            "text": "disgusting",
+            "frequency": 2,
+            "sudden": 0.75,
+            "sentiment": -0.5982005860845674,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disgusting_2024_02"
+          },
+          {
+            "text": "outrageous",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49858877038932403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "outrageous_2024_02"
+          },
+          {
+            "text": "angry",
+            "frequency": 2,
+            "sudden": 1.0,
+            "sentiment": -0.4983212387334788,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "angry_2024_02"
+          },
+          {
+            "text": "corruption",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49858877038932403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "corruption_2024_02"
+          },
+          {
+            "text": "continues",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49858877038932403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "continues_2024_02"
+          },
+          {
+            "text": "unpunished",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.49858877038932403,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "unpunished_2024_02"
+          },
+          {
+            "text": "future",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": -0.3489070691226516,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "future_2024_02"
+          },
+          {
+            "text": "generations",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.3489070691226516,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "generations_2024_02"
+          },
+          {
+            "text": "instructions",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.4655475510051474,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "instructions_2024_02"
+          },
+          {
+            "text": "follow",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4655475510051474,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "follow_2024_02"
+          },
+          {
+            "text": "contradictory",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4655475510051474,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "contradictory_2024_02"
+          },
+          {
+            "text": "choice",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7459786024905043,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "choice_2024_02"
+          },
+          {
+            "text": "right",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.7459786024905043,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "right_2024_02"
+          },
+          {
+            "text": "career",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7459786024905043,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "career_2024_02"
+          },
+          {
+            "text": "whether",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7459786024905043,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "whether_2024_02"
+          },
+          {
+            "text": "waving",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5581680568866432,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "waving_2024_02"
+          },
+          {
+            "text": "waved",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5581680568866432,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "waved_2024_02"
+          },
+          {
+            "text": "constant",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.5123915569391102,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "constant_2024_02"
+          },
+          {
+            "text": "focus",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5123915569391102,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "focus_2024_02"
+          },
+          {
+            "text": "work",
+            "frequency": 1,
+            "sudden": 0.2857142857142857,
+            "sentiment": -0.5123915569391102,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "work_2024_02"
+          },
+          {
+            "text": "interruption",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5123915569391102,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "interruption_2024_02"
+          },
+          {
+            "text": "people",
+            "frequency": 2,
+            "sudden": 1.0,
+            "sentiment": -0.5830542946278001,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "people_2024_02"
+          },
+          {
+            "text": "spaces",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5681936029344796,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "spaces_2024_02"
+          },
+          {
+            "text": "treat",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.5681936029344796,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "treat_2024_02"
+          },
+          {
+            "text": "disrespect",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5681936029344796,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "disrespect_2024_02"
+          },
+          {
+            "text": "wasteful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5771297625789884,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "wasteful_2024_02"
+          },
+          {
+            "text": "resources",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5771297625789884,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "resources_2024_02"
+          },
+          {
+            "text": "take",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9348690037149936,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "take_2024_02"
+          },
+          {
+            "text": "younger",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9348690037149936,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "younger_2024_02"
+          },
+          {
+            "text": "opportunities",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9348690037149936,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "opportunities_2024_02"
+          },
+          {
+            "text": "real",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9825926881749183,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "real_2024_02"
+          },
+          {
+            "text": "pet",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9825926881749183,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "pet_2024_02"
+          },
+          {
+            "text": "painful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9825926881749183,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "painful_2024_02"
+          },
+          {
+            "text": "losing",
+            "frequency": 1,
+            "sudden": 0.5,
+            "sentiment": -0.9825926881749183,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "losing_2024_02"
+          },
+          {
+            "text": "family",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.9825926881749183,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "family_2024_02"
+          },
+          {
+            "text": "neighborhood",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9855428715294693,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "neighborhood_2024_02"
+          },
+          {
+            "text": "moving",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.9855428715294693,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "moving_2024_02"
+          },
+          {
+            "text": "away",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.9855428715294693,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "away_2024_02"
+          },
+          {
+            "text": "affect",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7459395890007727,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "affect_2024_02"
+          },
+          {
+            "text": "change",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.7459395890007727,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "change_2024_02"
+          },
+          {
+            "text": "climate",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.7459395890007727,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "climate_2024_02"
+          },
+          {
+            "text": "behavior",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.5979149863211205,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "behavior_2024_02"
+          },
+          {
+            "text": "way",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.5979149863211205,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "way_2024_02"
+          },
+          {
+            "text": "treating",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5979149863211205,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "treating_2024_02"
+          },
+          {
+            "text": "excuse",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5979149863211205,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "excuse_2024_02"
+          },
+          {
+            "text": "enough",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4980537070776336,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "enough_2024_02"
+          },
+          {
+            "text": "repeatedly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.4980537070776336,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "repeatedly_2024_02"
+          },
+          {
+            "text": "lied",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.4980537070776336,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "lied_2024_02"
+          },
+          {
+            "text": "fairly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.3371325297281146,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "fairly_2024_02"
+          },
+          {
+            "text": "regular",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.3371325297281146,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "regular_2024_02"
+          },
+          {
+            "text": "activities",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.3371325297281146,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "activities_2024_02"
+          },
+          {
+            "text": "unremarkable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.3371325297281146,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "unremarkable_2024_02"
+          },
+          {
+            "text": "tasks",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.3371325297281146,
+            "emotion": "joy",
+            "color": "#F57C00",
+            "topic": "Negative",
+            "id": "tasks_2024_02"
+          }
+        ]
+      }
+    }
+  ]
+}

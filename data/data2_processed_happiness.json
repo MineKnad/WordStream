@@ -1,0 +1,2697 @@
+{
+  "metadata": {
+    "dataset_name": "upload_1767809584.366201_data2",
+    "total_documents": 60,
+    "total_periods": 9,
+    "periods": [
+      "2024-01",
+      "2024-04",
+      "2024-05",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12"
+    ],
+    "categories": [
+      "very_happy",
+      "happy",
+      "fine",
+      "unhappy",
+      "very_unhappy"
+    ],
+    "total_unique_words": 43,
+    "created": "2026-01-07T19:13:11.334998",
+    "sentiment_model": "happiness"
+  },
+  "data": [
+    {
+      "date": "2024-01",
+      "words": {
+        "very_happy": [
+          {
+            "text": "fantastic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2024_01"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "wonderful_2024_01"
+          },
+          {
+            "text": "absolutely",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.93,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "absolutely_2024_01"
+          },
+          {
+            "text": "love",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "love_2024_01"
+          },
+          {
+            "text": "product",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "product_2024_01"
+          },
+          {
+            "text": "amazing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "amazing_2024_01"
+          },
+          {
+            "text": "great",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "great_2024_01"
+          },
+          {
+            "text": "smoothly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "smoothly_2024_01"
+          },
+          {
+            "text": "everything",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "everything_2024_01"
+          },
+          {
+            "text": "working",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "working_2024_01"
+          },
+          {
+            "text": "perfectly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "perfectly_2024_01"
+          },
+          {
+            "text": "ever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "ever_2024_01"
+          },
+          {
+            "text": "experience",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "experience_2024_01"
+          },
+          {
+            "text": "best",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "best_2024_01"
+          },
+          {
+            "text": "brilliant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "brilliant_2024_01"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "terrible",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.8400000000000001,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "terrible_2024_01"
+          },
+          {
+            "text": "disappointing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.76,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disappointing_2024_01"
+          },
+          {
+            "text": "quality",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.76,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "quality_2024_01"
+          },
+          {
+            "text": "service",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.76,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "service_2024_01"
+          },
+          {
+            "text": "poor",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.76,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "poor_2024_01"
+          },
+          {
+            "text": "angry",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.92,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "angry_2024_01"
+          },
+          {
+            "text": "support",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.92,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "support_2024_01"
+          },
+          {
+            "text": "awful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.92,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "awful_2024_01"
+          },
+          {
+            "text": "situation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.92,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "situation_2024_01"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-04",
+      "words": {
+        "very_happy": [
+          {
+            "text": "satisfied",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.94,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "satisfied_2024_04"
+          },
+          {
+            "text": "outstanding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.94,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "outstanding_2024_04"
+          },
+          {
+            "text": "results",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.94,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "results_2024_04"
+          },
+          {
+            "text": "outcome",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.94,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "outcome_2024_04"
+          },
+          {
+            "text": "perfect",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.76,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "perfect_2024_04"
+          },
+          {
+            "text": "execution",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.76,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "execution_2024_04"
+          },
+          {
+            "text": "attention",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.76,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "attention_2024_04"
+          },
+          {
+            "text": "delighted",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.76,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "delighted_2024_04"
+          },
+          {
+            "text": "detail",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.76,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "detail_2024_04"
+          },
+          {
+            "text": "fantastic",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2024_04"
+          },
+          {
+            "text": "glorious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "glorious_2024_04"
+          },
+          {
+            "text": "everyone",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "everyone_2024_04"
+          },
+          {
+            "text": "work",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "work_2024_04"
+          },
+          {
+            "text": "achievement",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "achievement_2024_04"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "interface",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "interface_2024_04"
+          },
+          {
+            "text": "confusing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "confusing_2024_04"
+          },
+          {
+            "text": "difficult",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "difficult_2024_04"
+          },
+          {
+            "text": "properly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "properly_2024_04"
+          },
+          {
+            "text": "makes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "makes_2024_04"
+          },
+          {
+            "text": "use",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "use_2024_04"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "mess",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.96,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "mess_2024_04"
+          },
+          {
+            "text": "complete",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.96,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "complete_2024_04"
+          },
+          {
+            "text": "disaster",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.96,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disaster_2024_04"
+          },
+          {
+            "text": "awful",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.96,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "awful_2024_04"
+          },
+          {
+            "text": "hate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.96,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "hate_2024_04"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-05",
+      "words": {
+        "very_happy": [
+          {
+            "text": "interface",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "interface_2024_05"
+          },
+          {
+            "text": "beautiful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "beautiful_2024_05"
+          },
+          {
+            "text": "intuitive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "intuitive_2024_05"
+          },
+          {
+            "text": "love",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "love_2024_05"
+          },
+          {
+            "text": "design",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "design_2024_05"
+          },
+          {
+            "text": "experience",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "experience_2024_05"
+          },
+          {
+            "text": "finish",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "finish_2024_05"
+          },
+          {
+            "text": "start",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "start_2024_05"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "wonderful_2024_05"
+          }
+        ],
+        "happy": [
+          {
+            "text": "impressive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.41999999999999993,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "impressive_2024_05"
+          },
+          {
+            "text": "team",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.41999999999999993,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "team_2024_05"
+          },
+          {
+            "text": "work",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.41999999999999993,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "work_2024_05"
+          },
+          {
+            "text": "exceptional",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.41999999999999993,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "exceptional_2024_05"
+          },
+          {
+            "text": "job",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.41999999999999993,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "job_2024_05"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "money",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.78,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "money_2024_05"
+          },
+          {
+            "text": "boring",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.78,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "boring_2024_05"
+          },
+          {
+            "text": "tedious",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.78,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "tedious_2024_05"
+          },
+          {
+            "text": "worth",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.78,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "worth_2024_05"
+          },
+          {
+            "text": "constant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "constant_2024_05"
+          },
+          {
+            "text": "performance",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "performance_2024_05"
+          },
+          {
+            "text": "terrible",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "terrible_2024_05"
+          },
+          {
+            "text": "crashes",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "crashes_2024_05"
+          },
+          {
+            "text": "nightmare",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "nightmare_2024_05"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-07",
+      "words": {
+        "very_happy": [
+          {
+            "text": "features",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "features_2024_07"
+          },
+          {
+            "text": "enhancements",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "enhancements_2024_07"
+          },
+          {
+            "text": "love",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "love_2024_07"
+          },
+          {
+            "text": "awesome",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "awesome_2024_07"
+          },
+          {
+            "text": "progress",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "progress_2024_07"
+          },
+          {
+            "text": "fantastic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2024_07"
+          },
+          {
+            "text": "great",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "great_2024_07"
+          },
+          {
+            "text": "team",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "team_2024_07"
+          },
+          {
+            "text": "work",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "work_2024_07"
+          }
+        ],
+        "happy": [
+          {
+            "text": "support",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.45999999999999996,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "support_2024_07"
+          },
+          {
+            "text": "accommodating",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.45999999999999996,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "accommodating_2024_07"
+          },
+          {
+            "text": "customer",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.45999999999999996,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "customer_2024_07"
+          },
+          {
+            "text": "friendly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.45999999999999996,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "friendly_2024_07"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "nightmare",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.84,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "nightmare_2024_07"
+          },
+          {
+            "text": "completely",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "completely_2024_07"
+          },
+          {
+            "text": "broken",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "broken_2024_07"
+          },
+          {
+            "text": "unusable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.84,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unusable_2024_07"
+          },
+          {
+            "text": "quality",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "quality_2024_07"
+          },
+          {
+            "text": "disappointing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disappointing_2024_07"
+          },
+          {
+            "text": "unacceptable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unacceptable_2024_07"
+          },
+          {
+            "text": "disgusting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disgusting_2024_07"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-08",
+      "words": {
+        "very_happy": [
+          {
+            "text": "version",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6799999999999999,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "version_2024_08"
+          },
+          {
+            "text": "latest",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6799999999999999,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "latest_2024_08"
+          },
+          {
+            "text": "recommended",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6799999999999999,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "recommended_2024_08"
+          },
+          {
+            "text": "superb",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.6799999999999999,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "superb_2024_08"
+          },
+          {
+            "text": "highly",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.61,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "highly_2024_08"
+          },
+          {
+            "text": "satisfied",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.75,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "satisfied_2024_08"
+          },
+          {
+            "text": "exactly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.96,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "exactly_2024_08"
+          },
+          {
+            "text": "perfect",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.96,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "perfect_2024_08"
+          },
+          {
+            "text": "needed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.96,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "needed_2024_08"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "thrilled_2024_08"
+          },
+          {
+            "text": "excellent",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "excellent_2024_08"
+          },
+          {
+            "text": "performance",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "performance_2024_08"
+          },
+          {
+            "text": "reliability",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "reliability_2024_08"
+          },
+          {
+            "text": "effective",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "effective_2024_08"
+          },
+          {
+            "text": "love",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "love_2024_08"
+          },
+          {
+            "text": "brilliant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "brilliant_2024_08"
+          },
+          {
+            "text": "solution",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "solution_2024_08"
+          }
+        ],
+        "happy": [
+          {
+            "text": "improvements",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "improvements_2024_08"
+          },
+          {
+            "text": "amazing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "amazing_2024_08"
+          },
+          {
+            "text": "much",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "much_2024_08"
+          },
+          {
+            "text": "better",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "better_2024_08"
+          },
+          {
+            "text": "impressed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.54,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "impressed_2024_08"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.54,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "wonderful_2024_08"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "interface",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5800000000000001,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "interface_2024_08"
+          },
+          {
+            "text": "confusing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5800000000000001,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "confusing_2024_08"
+          },
+          {
+            "text": "hard",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5800000000000001,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "hard_2024_08"
+          },
+          {
+            "text": "navigate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.5800000000000001,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "navigate_2024_08"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "terrible",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.83,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "terrible_2024_08"
+          },
+          {
+            "text": "experience",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.94,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "experience_2024_08"
+          },
+          {
+            "text": "absolutely",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.94,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "absolutely_2024_08"
+          },
+          {
+            "text": "service",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.19999999999999996,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "service_2024_08"
+          },
+          {
+            "text": "worst",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.94,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "worst_2024_08"
+          },
+          {
+            "text": "ever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.94,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "ever_2024_08"
+          },
+          {
+            "text": "constant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.62,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "constant_2024_08"
+          },
+          {
+            "text": "angry",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.62,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "angry_2024_08"
+          },
+          {
+            "text": "quality",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.62,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "quality_2024_08"
+          },
+          {
+            "text": "issues",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.62,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "issues_2024_08"
+          },
+          {
+            "text": "poor",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.62,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "poor_2024_08"
+          },
+          {
+            "text": "complete",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "complete_2024_08"
+          },
+          {
+            "text": "results",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "results_2024_08"
+          },
+          {
+            "text": "failure",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "failure_2024_08"
+          },
+          {
+            "text": "waste",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "waste_2024_08"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-09",
+      "words": {
+        "very_happy": [
+          {
+            "text": "update",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "update_2024_09"
+          },
+          {
+            "text": "phenomenal",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "phenomenal_2024_09"
+          },
+          {
+            "text": "outstanding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "outstanding_2024_09"
+          },
+          {
+            "text": "results",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "results_2024_09"
+          },
+          {
+            "text": "fantastic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2024_09"
+          },
+          {
+            "text": "achievement",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "achievement_2024_09"
+          },
+          {
+            "text": "seamless",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.98,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "seamless_2024_09"
+          },
+          {
+            "text": "delighted",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.98,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "delighted_2024_09"
+          },
+          {
+            "text": "smooth",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.98,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "smooth_2024_09"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "terrible",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": -0.98,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "terrible_2024_09"
+          },
+          {
+            "text": "hate",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.98,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "hate_2024_09"
+          },
+          {
+            "text": "experience",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": 0.0,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "experience_2024_09"
+          },
+          {
+            "text": "user",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.98,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "user_2024_09"
+          },
+          {
+            "text": "design",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.98,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "design_2024_09"
+          },
+          {
+            "text": "poor",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.98,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "poor_2024_09"
+          },
+          {
+            "text": "nervous",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "nervous_2024_09"
+          },
+          {
+            "text": "hoping",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "hoping_2024_09"
+          },
+          {
+            "text": "best",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "best_2024_09"
+          },
+          {
+            "text": "stability",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.6599999999999999,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "stability_2024_09"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-10",
+      "words": {
+        "very_happy": [
+          {
+            "text": "feature",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "feature_2024_10"
+          },
+          {
+            "text": "excellent",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "excellent_2024_10"
+          },
+          {
+            "text": "works",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "works_2024_10"
+          },
+          {
+            "text": "charm",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "charm_2024_10"
+          },
+          {
+            "text": "service",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "service_2024_10"
+          },
+          {
+            "text": "helpful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "helpful_2024_10"
+          },
+          {
+            "text": "friendly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "friendly_2024_10"
+          },
+          {
+            "text": "amazing",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.89,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "amazing_2024_10"
+          },
+          {
+            "text": "customer",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "customer_2024_10"
+          },
+          {
+            "text": "updates",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "updates_2024_10"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "thrilled_2024_10"
+          },
+          {
+            "text": "excited",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "excited_2024_10"
+          },
+          {
+            "text": "collaboration",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "collaboration_2024_10"
+          },
+          {
+            "text": "teamwork",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "teamwork_2024_10"
+          },
+          {
+            "text": "interface",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "interface_2024_10"
+          },
+          {
+            "text": "beautiful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "beautiful_2024_10"
+          },
+          {
+            "text": "love",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "love_2024_10"
+          },
+          {
+            "text": "design",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "design_2024_10"
+          },
+          {
+            "text": "intuitive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "intuitive_2024_10"
+          }
+        ],
+        "happy": [
+          {
+            "text": "impressed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.28,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "impressed_2024_10"
+          },
+          {
+            "text": "outstanding",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.28,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "outstanding_2024_10"
+          },
+          {
+            "text": "features",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.28,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "features_2024_10"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "progress",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "progress_2024_10"
+          },
+          {
+            "text": "disappointed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disappointed_2024_10"
+          },
+          {
+            "text": "lack",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "lack_2024_10"
+          },
+          {
+            "text": "improvements",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "improvements_2024_10"
+          },
+          {
+            "text": "slow",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "slow_2024_10"
+          },
+          {
+            "text": "product",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "product_2024_10"
+          },
+          {
+            "text": "quality",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": -0.21999999999999997,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "quality_2024_10"
+          },
+          {
+            "text": "unacceptable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unacceptable_2024_10"
+          },
+          {
+            "text": "disgusting",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disgusting_2024_10"
+          },
+          {
+            "text": "worst",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "worst_2024_10"
+          },
+          {
+            "text": "awful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "awful_2024_10"
+          },
+          {
+            "text": "purchase",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "purchase_2024_10"
+          },
+          {
+            "text": "ever",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.72,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "ever_2024_10"
+          },
+          {
+            "text": "support",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "support_2024_10"
+          },
+          {
+            "text": "unhelpful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "unhelpful_2024_10"
+          },
+          {
+            "text": "disappointing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.86,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "disappointing_2024_10"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-11",
+      "words": {
+        "very_happy": [
+          {
+            "text": "improvements",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "improvements_2024_11"
+          },
+          {
+            "text": "much",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "much_2024_11"
+          },
+          {
+            "text": "great",
+            "frequency": 2,
+            "sudden": 3.0,
+            "sentiment": 0.93,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "great_2024_11"
+          },
+          {
+            "text": "efficient",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.8600000000000001,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "efficient_2024_11"
+          },
+          {
+            "text": "fantastic",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2024_11"
+          },
+          {
+            "text": "team",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "team_2024_11"
+          },
+          {
+            "text": "everyone",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "everyone_2024_11"
+          },
+          {
+            "text": "job",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "job_2024_11"
+          },
+          {
+            "text": "satisfied",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "satisfied_2024_11"
+          },
+          {
+            "text": "overall",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "overall_2024_11"
+          },
+          {
+            "text": "wonderful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "wonderful_2024_11"
+          },
+          {
+            "text": "experience",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "experience_2024_11"
+          },
+          {
+            "text": "highly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "highly_2024_11"
+          },
+          {
+            "text": "penny",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "penny_2024_11"
+          },
+          {
+            "text": "excellent",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "excellent_2024_11"
+          },
+          {
+            "text": "every",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "every_2024_11"
+          },
+          {
+            "text": "product",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "product_2024_11"
+          },
+          {
+            "text": "worth",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "worth_2024_11"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "bugs",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "bugs_2024_11"
+          },
+          {
+            "text": "frustrated",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "frustrated_2024_11"
+          },
+          {
+            "text": "technical",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "technical_2024_11"
+          },
+          {
+            "text": "issues",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "issues_2024_11"
+          }
+        ]
+      }
+    },
+    {
+      "date": "2024-12",
+      "words": {
+        "very_happy": [
+          {
+            "text": "problems",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "problems_2024_12"
+          },
+          {
+            "text": "solves",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "solves_2024_12"
+          },
+          {
+            "text": "love",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "love_2024_12"
+          },
+          {
+            "text": "innovation",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "innovation_2024_12"
+          },
+          {
+            "text": "brilliant",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "brilliant_2024_12"
+          },
+          {
+            "text": "improvements",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "improvements_2024_12"
+          },
+          {
+            "text": "thrilled",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "thrilled_2024_12"
+          },
+          {
+            "text": "results",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "results_2024_12"
+          },
+          {
+            "text": "fantastic",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "fantastic_2024_12"
+          },
+          {
+            "text": "great",
+            "frequency": 1,
+            "sudden": 0.6666666666666666,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "great_2024_12"
+          },
+          {
+            "text": "service",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "service_2024_12"
+          },
+          {
+            "text": "attention",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "attention_2024_12"
+          },
+          {
+            "text": "detail",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 1.0,
+            "emotion": "happy",
+            "color": "#2E7D32",
+            "topic": "very_happy",
+            "id": "detail_2024_12"
+          }
+        ],
+        "happy": [
+          {
+            "text": "responsive",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.24,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "responsive_2024_12"
+          },
+          {
+            "text": "team",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": 0.24,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "team_2024_12"
+          },
+          {
+            "text": "support",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.24,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "support_2024_12"
+          },
+          {
+            "text": "incredibly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.24,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "incredibly_2024_12"
+          },
+          {
+            "text": "helpful",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.24,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "helpful_2024_12"
+          },
+          {
+            "text": "outstanding",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "outstanding_2024_12"
+          },
+          {
+            "text": "quality",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "quality_2024_12"
+          },
+          {
+            "text": "excellent",
+            "frequency": 2,
+            "sudden": 1.5,
+            "sentiment": 0.78,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "excellent_2024_12"
+          },
+          {
+            "text": "care",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "care_2024_12"
+          },
+          {
+            "text": "customer",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.56,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "customer_2024_12"
+          },
+          {
+            "text": "investment",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3999999999999999,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "investment_2024_12"
+          },
+          {
+            "text": "best",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": 0.3999999999999999,
+            "emotion": "happy",
+            "color": "#66BB6A",
+            "topic": "happy",
+            "id": "best_2024_12"
+          }
+        ],
+        "unhappy": [
+          {
+            "text": "complete",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "complete_2024_12"
+          },
+          {
+            "text": "money",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "money_2024_12"
+          },
+          {
+            "text": "useless",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "useless_2024_12"
+          },
+          {
+            "text": "waste",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "waste_2024_12"
+          },
+          {
+            "text": "product",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.54,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "product_2024_12"
+          },
+          {
+            "text": "frustrated",
+            "frequency": 1,
+            "sudden": 1.0,
+            "sentiment": -0.43999999999999995,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "frustrated_2024_12"
+          },
+          {
+            "text": "buggy",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.43999999999999995,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "buggy_2024_12"
+          },
+          {
+            "text": "software",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.43999999999999995,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "software_2024_12"
+          },
+          {
+            "text": "unreliable",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.43999999999999995,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "unreliable_2024_12"
+          },
+          {
+            "text": "poorly",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "poorly_2024_12"
+          },
+          {
+            "text": "designed",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "designed_2024_12"
+          },
+          {
+            "text": "interface",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "interface_2024_12"
+          },
+          {
+            "text": "confusing",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.56,
+            "emotion": "happy",
+            "color": "#F57C00",
+            "topic": "unhappy",
+            "id": "confusing_2024_12"
+          }
+        ],
+        "very_unhappy": [
+          {
+            "text": "progress",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8200000000000001,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "progress_2024_12"
+          },
+          {
+            "text": "angry",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8200000000000001,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "angry_2024_12"
+          },
+          {
+            "text": "lack",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8200000000000001,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "lack_2024_12"
+          },
+          {
+            "text": "broken",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8200000000000001,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "broken_2024_12"
+          },
+          {
+            "text": "promises",
+            "frequency": 1,
+            "sudden": 2.0,
+            "sentiment": -0.8200000000000001,
+            "emotion": "happy",
+            "color": "#D32F2F",
+            "topic": "very_unhappy",
+            "id": "promises_2024_12"
+          }
+        ]
+      }
+    }
+  ]
+}
